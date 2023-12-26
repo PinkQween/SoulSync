@@ -1,5 +1,5 @@
 //
-//  FirstLuanch.swift
+//  FirstLaunch.swift
 //  SoulSync
 //
 //  Created by Hanna Skairipa on 11/27/23.
@@ -302,7 +302,7 @@ struct InfoView: View {
                         IsCompleteCheckOrX(isComplete: isPasswordContainsLowercase, field: "Password contains a lowercase letter")
                         IsCompleteCheckOrX(isComplete: isPasswordContainsUppercase, field: "Password contains an uppercase letter")
                         IsCompleteCheckOrX(isComplete: isPasswordContainsSpecialCharacter, field: "Password contains a special character")
-                        IsCompleteCheckOrX(isComplete: password == confirmPassword, field: "Mathing Password")
+                        IsCompleteCheckOrX(isComplete: password == confirmPassword, field: "Matching Password")
                         
                     }
                     .padding()
@@ -582,7 +582,7 @@ struct PreferencesView: View {
     var body: some View {
         ScrollView {
             VStack {
-                Text("Select your prefernces")
+                Text("Select your preferences")
                     .font(.title)
                     .fontWeight(.medium)
                 
@@ -618,7 +618,7 @@ struct PreferencesView: View {
                 }
                 
             HStack {
-                Text("Intrests:")
+                Text("Interests:")
                     .padding([.top, .leading, .trailing], 6.0)
 
                 Spacer()
@@ -627,7 +627,7 @@ struct PreferencesView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         ForEach(preferencesOptions?.interestsOptions.options ?? [], id: \.self) { option in
-                            ForEach(option.subIntrests ?? [], id: \.self) { subInterest in
+                            ForEach(option.subInterests ?? [], id: \.self) { subInterest in
                                 PreferButton(option: subInterest.option, selectedOptions: $selectedInterestsOptions, multiple: preferencesOptions?.interestsOptions.multiple)
                             }
                         }

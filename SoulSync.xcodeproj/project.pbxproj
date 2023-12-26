@@ -11,7 +11,7 @@
 		952E8D9D2B2F6F800055CEEA /* SignUpModals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E8D9C2B2F6F800055CEEA /* SignUpModals.swift */; };
 		952E8DA02B2F72EF0055CEEA /* LoadPrefrences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E8D9F2B2F72EF0055CEEA /* LoadPrefrences.swift */; };
 		954EF3EE2B1573F800925972 /* SoulSyncApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954EF3ED2B1573F800925972 /* SoulSyncApp.swift */; };
-		954EF3F02B1573F800925972 /* FirstLuanch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954EF3EF2B1573F800925972 /* FirstLuanch.swift */; };
+		954EF3F02B1573F800925972 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954EF3EF2B1573F800925972 /* FirstLaunch.swift */; };
 		954EF3F22B1573FA00925972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954EF3F12B1573FA00925972 /* Assets.xcassets */; };
 		954EF3F52B1573FA00925972 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954EF3F42B1573FA00925972 /* Preview Assets.xcassets */; };
 		954EF47B2B1CDCD100925972 /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = 954EF47A2B1CDCD100925972 /* PhoneNumberKit */; };
@@ -40,7 +40,7 @@
 		952E8D9F2B2F72EF0055CEEA /* LoadPrefrences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPrefrences.swift; sourceTree = "<group>"; };
 		954EF3EA2B1573F800925972 /* SoulSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoulSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		954EF3ED2B1573F800925972 /* SoulSyncApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulSyncApp.swift; sourceTree = "<group>"; };
-		954EF3EF2B1573F800925972 /* FirstLuanch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLuanch.swift; sourceTree = "<group>"; };
+		954EF3EF2B1573F800925972 /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
 		954EF3F12B1573FA00925972 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		954EF3F42B1573FA00925972 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9598AE342B36413500899429 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
@@ -130,7 +130,7 @@
 		954EF3FB2B164E8500925972 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				954EF3EF2B1573F800925972 /* FirstLuanch.swift */,
+				954EF3EF2B1573F800925972 /* FirstLaunch.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -233,7 +233,7 @@
 			files = (
 				9598AE3C2B379D3400899429 /* Main.swift in Sources */,
 				952E8DA02B2F72EF0055CEEA /* LoadPrefrences.swift in Sources */,
-				954EF3F02B1573F800925972 /* FirstLuanch.swift in Sources */,
+				954EF3F02B1573F800925972 /* FirstLaunch.swift in Sources */,
 				9598AE352B36413500899429 /* Shapes.swift in Sources */,
 				952E8D9D2B2F6F800055CEEA /* SignUpModals.swift in Sources */,
 				954EF3EE2B1573F800925972 /* SoulSyncApp.swift in Sources */,

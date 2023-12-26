@@ -9,8 +9,8 @@ import Foundation
 
 // MARK: - Preferences
 struct Preferences {
-    // MARK: - Standered Options
-    struct StanderedOption: Codable {
+    // MARK: - Standard Options
+    struct StandardOption: Codable {
         let options: [String]
         let multiple: Bool
     }
@@ -21,10 +21,10 @@ struct Preferences {
         let multiple: Bool
     }
     
-    // MARK: - Intrest Option
+    // MARK: - Interest Option
     struct Option: Codable, Hashable {
         let option: String
-        let subIntrests: [Option]?
+        let subInterests: [Option]?
         
         // Implementing Hashable conformance
         func hash(into hasher: inout Hasher) {
@@ -46,7 +46,7 @@ struct Preferences {
     }
     
     struct PreferencesOptionsModel: Codable {
-        let genderOptions, sexOptions, sexualityOptions, relationshipStatusOptions, ageRange: StanderedOption
+        let genderOptions, sexOptions, sexualityOptions, relationshipStatusOptions, ageRange: StandardOption
         let interestsOptions: InterestsOptions
         
         static func loadPreferences(completion: @escaping (PreferencesOptionsModel?) -> Void) {

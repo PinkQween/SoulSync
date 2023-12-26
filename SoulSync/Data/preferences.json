@@ -28,7 +28,7 @@
       {"option": "Gaming"},
       {
         "option": "Technology",
-        "subIntrests": [
+        "subInterests": [
           {"option": "Web Development"},
           {"option": "Mobile App Development"},
           {"option": "Networking"},
