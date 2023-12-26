@@ -131,6 +131,7 @@ struct InfoView: View {
     @State private var errorMessage = ""
     @State private var birthdate = Date()
     let dateFormatter = DateFormatter()
+
     
     
     let phoneNumberKit = PhoneNumberKit()
@@ -362,6 +363,9 @@ struct InfoView: View {
             return
         }
         
+        
+        dateFormatter.dateFormat = "YY/MM/dd"
+        
         let parameters: [String: Any] = [
             "username": fullName,
             "phoneNumber": fullPhoneNumber,
@@ -475,9 +479,10 @@ struct PhoneVerificationView: View {
                 Text("Verify")
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(Color.blue)
+                    .background(!verificationCode.isEmpty ? Color.blue : Color.gray)
                     .foregroundColor(.white)
                     .cornerRadius(10)
+                    .disabled(verificationCode.isEmpty)
             }
             .padding()
             .alert(isPresented: $showAlert) {
