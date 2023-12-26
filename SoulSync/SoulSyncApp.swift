@@ -11,7 +11,8 @@ import SwiftUI
 struct SoulSyncApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            FirstLaunchView()
+                .preferredColorScheme(.dark)
         }
     }
 }

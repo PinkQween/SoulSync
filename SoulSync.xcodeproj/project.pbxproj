@@ -7,18 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		952E8D9A2B2F6F380055CEEA /* preferences.json in Resources */ = {isa = PBXBuildFile; fileRef = 952E8D992B2F6F380055CEEA /* preferences.json */; };
+		952E8D9D2B2F6F800055CEEA /* SignUpModals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E8D9C2B2F6F800055CEEA /* SignUpModals.swift */; };
+		952E8DA02B2F72EF0055CEEA /* LoadPrefrences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E8D9F2B2F72EF0055CEEA /* LoadPrefrences.swift */; };
 		954EF3EE2B1573F800925972 /* SoulSyncApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954EF3ED2B1573F800925972 /* SoulSyncApp.swift */; };
-		954EF3F02B1573F800925972 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954EF3EF2B1573F800925972 /* ContentView.swift */; };
+		954EF3F02B1573F800925972 /* FirstLuanch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954EF3EF2B1573F800925972 /* FirstLuanch.swift */; };
 		954EF3F22B1573FA00925972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954EF3F12B1573FA00925972 /* Assets.xcassets */; };
 		954EF3F52B1573FA00925972 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954EF3F42B1573FA00925972 /* Preview Assets.xcassets */; };
+		954EF47B2B1CDCD100925972 /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = 954EF47A2B1CDCD100925972 /* PhoneNumberKit */; };
+		9598AE352B36413500899429 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AE342B36413500899429 /* Shapes.swift */; };
+		9598AE392B37337800899429 /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9598AE362B37301C00899429 /* video1.mp4 */; };
+		9598AE3A2B37337B00899429 /* video2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9598AE372B37301D00899429 /* video2.mp4 */; };
+		9598AE3C2B379D3400899429 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AE3B2B379D3400899429 /* Main.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		954EF4532B1CD1DB00925972 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		952E8D992B2F6F380055CEEA /* preferences.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = preferences.json; sourceTree = "<group>"; usesTabs = 1; };
+		952E8D9C2B2F6F800055CEEA /* SignUpModals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModals.swift; sourceTree = "<group>"; };
+		952E8D9F2B2F72EF0055CEEA /* LoadPrefrences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPrefrences.swift; sourceTree = "<group>"; };
 		954EF3EA2B1573F800925972 /* SoulSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoulSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		954EF3ED2B1573F800925972 /* SoulSyncApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulSyncApp.swift; sourceTree = "<group>"; };
-		954EF3EF2B1573F800925972 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		954EF3EF2B1573F800925972 /* FirstLuanch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLuanch.swift; sourceTree = "<group>"; };
 		954EF3F12B1573FA00925972 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		954EF3F42B1573FA00925972 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9598AE342B36413500899429 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		9598AE362B37301C00899429 /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
+		9598AE372B37301D00899429 /* video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video2.mp4; sourceTree = "<group>"; };
+		9598AE3B2B379D3400899429 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,17 +54,45 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				954EF47B2B1CDCD100925972 /* PhoneNumberKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		952E8D982B2F6EF70055CEEA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				952E8D992B2F6F380055CEEA /* preferences.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		952E8D9B2B2F6F610055CEEA /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				952E8D9C2B2F6F800055CEEA /* SignUpModals.swift */,
+				9598AE3B2B379D3400899429 /* Main.swift */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
+		952E8D9E2B2F72DD0055CEEA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				952E8D9F2B2F72EF0055CEEA /* LoadPrefrences.swift */,
+				9598AE342B36413500899429 /* Shapes.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		954EF3E12B1573F800925972 = {
 			isa = PBXGroup;
 			children = (
 				954EF3EC2B1573F800925972 /* SoulSync */,
 				954EF3EB2B1573F800925972 /* Products */,
+				954EF45E2B1CD40D00925972 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -52,7 +108,11 @@
 			isa = PBXGroup;
 			children = (
 				954EF3ED2B1573F800925972 /* SoulSyncApp.swift */,
-				954EF3EF2B1573F800925972 /* ContentView.swift */,
+				954EF3FB2B164E8500925972 /* Views */,
+				952E8D9B2B2F6F610055CEEA /* Modals */,
+				952E8D9E2B2F72DD0055CEEA /* Utils */,
+				952E8D982B2F6EF70055CEEA /* Data */,
+				9598AE382B37302500899429 /* TestingData */,
 				954EF3F12B1573FA00925972 /* Assets.xcassets */,
 				954EF3F32B1573FA00925972 /* Preview Content */,
 			);
@@ -67,6 +127,30 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		954EF3FB2B164E8500925972 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				954EF3EF2B1573F800925972 /* FirstLuanch.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		954EF45E2B1CD40D00925972 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9598AE382B37302500899429 /* TestingData */ = {
+			isa = PBXGroup;
+			children = (
+				9598AE372B37301D00899429 /* video2.mp4 */,
+				9598AE362B37301C00899429 /* video1.mp4 */,
+			);
+			path = TestingData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,12 +161,16 @@
 				954EF3E62B1573F800925972 /* Sources */,
 				954EF3E72B1573F800925972 /* Frameworks */,
 				954EF3E82B1573F800925972 /* Resources */,
+				954EF4532B1CD1DB00925972 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SoulSync;
+			packageProductDependencies = (
+				954EF47A2B1CDCD100925972 /* PhoneNumberKit */,
+			);
 			productName = SoulSync;
 			productReference = 954EF3EA2B1573F800925972 /* SoulSync.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +199,9 @@
 				Base,
 			);
 			mainGroup = 954EF3E12B1573F800925972;
+			packageReferences = (
+				954EF4792B1CDCD100925972 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
+			);
 			productRefGroup = 954EF3EB2B1573F800925972 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +217,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				954EF3F52B1573FA00925972 /* Preview Assets.xcassets in Resources */,
+				9598AE392B37337800899429 /* video1.mp4 in Resources */,
+				952E8D9A2B2F6F380055CEEA /* preferences.json in Resources */,
+				9598AE3A2B37337B00899429 /* video2.mp4 in Resources */,
 				954EF3F22B1573FA00925972 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,7 +231,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				954EF3F02B1573F800925972 /* ContentView.swift in Sources */,
+				9598AE3C2B379D3400899429 /* Main.swift in Sources */,
+				952E8DA02B2F72EF0055CEEA /* LoadPrefrences.swift in Sources */,
+				954EF3F02B1573F800925972 /* FirstLuanch.swift in Sources */,
+				9598AE352B36413500899429 /* Shapes.swift in Sources */,
+				952E8D9D2B2F6F800055CEEA /* SignUpModals.swift in Sources */,
 				954EF3EE2B1573F800925972 /* SoulSyncApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,11 +373,13 @@
 				DEVELOPMENT_TEAM = 8UA385N825;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,11 +404,13 @@
 				DEVELOPMENT_TEAM = 8UA385N825;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -344,6 +446,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		954EF4792B1CDCD100925972 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/PhoneNumberKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.7.5;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		954EF47A2B1CDCD100925972 /* PhoneNumberKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 954EF4792B1CDCD100925972 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
+			productName = PhoneNumberKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 954EF3E22B1573F800925972 /* Project object */;
 }
