@@ -170,13 +170,6 @@ struct InfoView: View {
     }
     
     var isSignUpButtonEnabled: Bool {
-        print(fullName)
-        print(fullPhoneNumber)
-        print(isPhoneValid)
-        print(password)
-        print(isPasswordValid)
-        print(password == confirmPassword)
-        
         return !fullName.isEmpty
         && isPhoneValid
         && isPasswordValid
