@@ -13,17 +13,18 @@ import Foundation
 
 struct FirstLaunchView: View {
     @State private var selectedTab = 0
-    @State var isSignUp = true
-    
+    @State private var isSignUp = true
+
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea()
-            
+
             TabView(selection: $selectedTab) {
                 LoginView(selectedTab: $selectedTab, isSignUp: $isSignUp)
                     .tag(0)
-                SignUpView(signUp: $isSignUp)
-                    .tag(1)
+                    .transition(.slide)
+                SignUpView(signUp: $isSignUp)                    .tag(1)
+                    .transition(.slide)
             }
             .tabViewStyle(.page(indexDisplayMode: .always))
             .indexViewStyle(.page(backgroundDisplayMode: .always))
@@ -35,23 +36,24 @@ struct FirstLaunchView: View {
 struct LoginView: View {
     @Binding var selectedTab: Int
     @Binding var isSignUp: Bool
-    
+
     var body: some View {
         VStack {
             Spacer()
             Spacer()
-            
+
             Text("Welcome to\nSoulSync")
                 .font(.largeTitle)
                 .fontWeight(.heavy)
                 .multilineTextAlignment(.center)
-            
+
             Spacer()
-            
+
             Button(action: {
+                isSignUp = false
+                
                 withAnimation {
-                    isSignUp = false
-                    selectedTab += 1
+                    selectedTab = 1
                 }
             }, label: {
                 Text("Login")
@@ -61,11 +63,12 @@ struct LoginView: View {
                     .foregroundColor(Color.black)
                     .cornerRadius(23)
             })
-            
+
             Button(action: {
+                isSignUp = true
+                
                 withAnimation {
-                    isSignUp = true
-                    selectedTab += 1
+                    selectedTab = 1
                 }
             }, label: {
                 Text("Sign Up")
@@ -78,7 +81,6 @@ struct LoginView: View {
                             .padding(2)
                     )
             })
-            
             Spacer()
             Spacer()
             Spacer()
@@ -91,21 +93,26 @@ struct SignUpView: View {
     @Binding var signUp: Bool
     @State private var isCompleteSignUp = false
     @State private var phone = ""
-    
+    @State private var addedDetails = false
+    @State private var addedPreferences = false
+
     var body: some View {
-        if !signUp {
-            LoginInfoView()
-        } else {
-            if !isSignUpSuccessful {
+        Group {
+            if !signUp {
+                LoginInfoView()
+            } else if !isSignUpSuccessful {
                 InfoView(isSignUpSuccessful: $isSignUpSuccessful, fullPhoneNumber: $phone)
+            } else if !isCompleteSignUp {
+                PhoneVerificationView(isCompleteSignUp: $isCompleteSignUp, phoneNumber: $phone)
+            } else if !addedDetails {
+                PreferencesView()
+            } else if !addedPreferences {
+                PreferencesView()
             } else {
-                if !isCompleteSignUp {
-                    PhoneVerificationView(isCompleteSignUp: $isCompleteSignUp, phoneNumber: $phone)
-                } else {
-                    WelcomeView()
-                }
+                WelcomeView()
             }
         }
+        .transition(.slide)
     }
 }
 
