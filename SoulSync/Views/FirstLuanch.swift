@@ -192,7 +192,6 @@ struct InfoView: View {
     var dateRange: ClosedRange<Date> {
            let calendar = Calendar.current
            let currentDate = Date()
-           let minDateComponents = calendar.dateComponents([.year, .month, .day], from: currentDate)
 
            // Calculate the minimum date for a person to be 13 years old
            let minDate = calendar.date(byAdding: .year, value: -113, to: currentDate) ?? currentDate
@@ -234,12 +233,12 @@ struct InfoView: View {
                     .keyboardType(.phonePad)
                     .textContentType(.telephoneNumber)
             }
-            .onChange(of: phoneNumber) { newValue in
-                print("full unformatted: " + countryCodes[selectedCountryCodeIndex] + String(newValue))
-                fullPhoneNumber = formatPhone(phoneNumber: countryCodes[selectedCountryCodeIndex] + String(newValue))
-                validatePhoneNumber()
-            }
-            .onChange(of: selectedCountryCodeIndex) { newValue in
+            .onChange(of: phoneNumber, { oldValue, newValue in
+                    print("full unformatted: " + countryCodes[selectedCountryCodeIndex] + String(newValue))
+                    fullPhoneNumber = formatPhone(phoneNumber: countryCodes[selectedCountryCodeIndex] + String(newValue))
+                    validatePhoneNumber()
+            })
+            .onChange(of: selectedCountryCodeIndex) { oldValue, newValue in
                 validatePhoneNumber()
             }
             .border(Color(UIColor.quaternaryLabel))
