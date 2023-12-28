@@ -485,7 +485,18 @@ struct PhoneVerificationView: View {
             TextField("Enter Verification Code", text: $verificationCode)
                 .padding()
                 .textFieldStyle(RoundedBorderTextFieldStyle())
-                .textContentType(/*@START_MENU_TOKEN@*/.oneTimeCode/*@END_MENU_TOKEN@*/)
+                .textContentType(/*@START_MENU_TOKEN@*/.oneTimeCode/*@END_MENU_TOKEN@*/).keyboardType(.numberPad)
+                .onReceive(Just(verificationCode)) { newValue in
+                        let filtered = newValue.filter { "0123456789".contains($0) }
+                        if filtered != newValue {
+                            self.verificationCode = filtered
+                        }
+
+                        // Ensure the verification code is exactly 6 digits
+                        if filtered.count > 6 {
+                            self.verificationCode = String(filtered.prefix(6))
+                        }
+                    }
             
             Button(action: {
                 // Implement verification logic here
@@ -494,10 +505,10 @@ struct PhoneVerificationView: View {
                 Text("Verify")
                     .padding()
                     .frame(maxWidth: .infinity)
-                    .background(!verificationCode.isEmpty ? Color.blue : Color.gray)
+                    .background(verificationCode.count == 6 ? Color.blue : Color.gray)
                     .foregroundColor(.white)
                     .cornerRadius(10)
-                    .disabled(verificationCode.isEmpty)
+                    .disabled(verificationCode.count != 6)
             }
             .padding()
             .alert(isPresented: $showAlert) {
