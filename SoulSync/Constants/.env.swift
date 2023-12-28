@@ -14,10 +14,12 @@ struct Env {
     
     public static let ssEndpointURI: String = {
         guard let value = ProcessInfo.processInfo.environment["SS_URI"] else {
-            notFound()
+            return "https://ss.cendrive.com/"
+//            notFound()
         }
         
-        print(value)
+//        print(value)
+//        return value
         return value
     }()
 }
