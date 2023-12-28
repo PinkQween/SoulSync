@@ -105,9 +105,9 @@ struct SignUpView: View {
             } else if !isCompleteSignUp {
                 PhoneVerificationView(isCompleteSignUp: $isCompleteSignUp, phoneNumber: $phone)
             } else if !addedDetails {
-                DescriptorsView(addedDetails: $addedDetails)
+                DescriptorsView(addedDetails: $addedDetails, phoneNumber: $phone)
             } else if !addedPreferences {
-                PreferencesView(addedPreferences: $addedPreferences)
+                PreferencesView(addedPreferences: $addedPreferences, phoneNumber: $phone)
             } else {
                 WelcomeView()
             }
@@ -414,6 +414,14 @@ struct InfoView: View {
                     // Navigate to the verification page
                     // Set the flag to trigger navigation
                     self.isSignUpSuccessful = true
+                } else if let error = jsonResponse?["error"] as? String {
+                    // Handle specific errors
+                    switch error {
+                    case "phone_exists":
+                        showAlert(title: "Phone Number Already Exists", message: "A user with this phone number already exists.")
+                    default:
+                        showAlert(title: "Server Error", message: "Unexpected server response: \(error)")
+                    }
                 } else {
                     // Handle unsuccessful sign-up
                     if let error = jsonResponse?["error"] as? String {
@@ -560,6 +568,16 @@ struct PhoneVerificationView: View {
                     // Respond to successful verification (you can navigate to the next screen or perform other actions)
                     print("Verification Successful")
                     self.isCompleteSignUp = true
+                } else if let error = jsonResponse?["error"] as? String {
+                    // Handle specific errors
+                    switch error {
+                    case "phone_exists":
+                        showAlert(title: "Phone Number Already Exists", message: "A user with this phone number already exists.")
+                    case "wrong_code":
+                        showAlert(title: "Wrong code", message: "The code you entered doesn't match the expected one'")
+                    default:
+                        showAlert(title: "Server Error", message: "Unexpected server response: \(error)")
+                    }
                 } else {
                     // Handle unsuccessful verification
                     if let error = jsonResponse?["error"] as? String {
@@ -594,6 +612,7 @@ struct PreferencesView: View {
     @State private var showAlert = false
     @State private var errorTitle = ""
     @State private var errorMessage = ""
+    @Binding var phoneNumber: String
     
     var body: some View {
         ScrollView {
@@ -747,6 +766,7 @@ struct PreferencesView: View {
         }
         
         let parameters: [String: Any] = [
+            "phoneNumber": phoneNumber,
             "gender": selectedGenderOptions,
             "sex": selectedSexOptions,
             "intrests": selectedInterestsOptions,
@@ -788,6 +808,14 @@ struct PreferencesView: View {
                     // Navigate to the verification page
                     // Set the flag to trigger navigation
                     self.addedPreferences = true
+                } else if let error = jsonResponse?["error"] as? String {
+                    // Handle specific errors
+                    switch error {
+                    case "phone_exists":
+                        showAlert(title: "Phone Number Already Exists", message: "A user with this phone number already exists.")
+                    default:
+                        showAlert(title: "Server Error", message: "Unexpected server response: \(error)")
+                    }
                 } else {
                     // Handle unsuccessful sign-up
                     if let error = jsonResponse?["error"] as? String {
@@ -820,11 +848,12 @@ struct DescriptorsView: View {
     @State private var showAlert = false
     @State private var errorTitle = ""
     @State private var errorMessage = ""
+    @Binding var phoneNumber: String
     
     var body: some View {
         ScrollView {
             VStack {
-                Text("Select your preferences")
+                Text("Select who you are")
                     .font(.title)
                     .fontWeight(.medium)
                 
@@ -958,6 +987,7 @@ struct DescriptorsView: View {
         }
         
         let parameters: [String: Any] = [
+            "phoneNumber": phoneNumber,
             "gender": selectedGenderOptions,
             "sex": selectedSexOptions,
             "intrests": selectedInterestsOptions,
@@ -998,6 +1028,14 @@ struct DescriptorsView: View {
                     // Navigate to the verification page
                     // Set the flag to trigger navigation
                     self.addedDetails = true
+                } else if let error = jsonResponse?["error"] as? String {
+                    // Handle specific errors
+                    switch error {
+                    case "phone_exists":
+                        showAlert(title: "Phone Number Already Exists", message: "A user with this phone number already exists.")
+                    default:
+                        showAlert(title: "Server Error", message: "Unexpected server response: \(error)")
+                    }
                 } else {
                     // Handle unsuccessful sign-up
                     if let error = jsonResponse?["error"] as? String {
