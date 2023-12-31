@@ -10,6 +10,9 @@ import Combine
 import PhoneNumberKit
 import AVKit
 import Foundation
+import MobileCoreServices
+import AVFoundation
+import PhotosUI
 
 struct FirstLaunchView: View {
     @State private var selectedTab = 0
@@ -30,6 +33,9 @@ struct FirstLaunchView: View {
             .indexViewStyle(.page(backgroundDisplayMode: .always))
         }
         .foregroundColor(Color.white)
+        .onAppear(perform: {
+            print(UserDefaults.standard.string(forKey: "token") ?? "Not found")
+        })
     }
 }
 
@@ -93,6 +99,7 @@ struct SignUpView: View {
     @Binding var signUp: Bool
     @State private var isCompleteSignUp = false
     @State private var phone = ""
+    @State private var token = ""
     @State private var addedDetails = false
     @State private var addedPreferences = false
 
@@ -101,9 +108,9 @@ struct SignUpView: View {
             if !signUp {
                 LoginInfoView()
             } else if !isSignUpSuccessful {
-                InfoView(isSignUpSuccessful: $isSignUpSuccessful, fullPhoneNumber: $phone)
+                InfoView(isSignUpSuccessful: $isSignUpSuccessful, fullPhoneNumber: $phone, token: $token)
             } else if !isCompleteSignUp {
-                PhoneVerificationView(isCompleteSignUp: $isCompleteSignUp, phoneNumber: $phone)
+                PhoneVerificationView(isCompleteSignUp: $isCompleteSignUp, phoneNumber: $phone, token: $token)
             } else if !addedDetails {
                 DescriptorsView(addedDetails: $addedDetails, phoneNumber: $phone)
             } else if !addedPreferences {
@@ -125,6 +132,7 @@ struct LoginInfoView: View {
 struct InfoView: View {
     @Binding var isSignUpSuccessful: Bool
     @Binding var fullPhoneNumber: String
+    @Binding var token: String
     @State private var phoneNumber = ""
     @State private var fullName = ""
     @State private var password = ""
@@ -370,8 +378,7 @@ struct InfoView: View {
             return
         }
         
-        
-        dateFormatter.dateFormat = "YY/MM/dd"
+        dateFormatter.dateFormat = "dd/MM/yy"
         
         let parameters: [String: Any] = [
             "username": fullName,
@@ -413,6 +420,7 @@ struct InfoView: View {
                 if let success = jsonResponse?["success"] as? Bool, success {
                     // Navigate to the verification page
                     // Set the flag to trigger navigation
+                    self.token = (jsonResponse?["token"] as? String)!
                     self.isSignUpSuccessful = true
                 } else if let error = jsonResponse?["error"] as? String {
                     // Handle specific errors
@@ -448,29 +456,35 @@ struct IsCompleteCheckOrX: View {
     @State var field: String
     
     var body: some View {
-        HStack {
+        HStack(spacing: 8) {
             Image(systemName: isComplete ? "checkmark.circle" : "xmark.circle")
                 .resizable()
                 .foregroundColor(isComplete ? Color.green : Color.gray)
                 .aspectRatio(contentMode: .fit)
+                .frame(width: 60, height: 60) // Adjust the size as needed
             
-            Text(field)
-                .font(.title)
-                .fontWeight(.semibold)
-                .minimumScaleFactor(0.5)
-                .lineLimit(2)
-                .allowsTightening(true)
-                .scaledToFit()
+            GeometryReader { geometry in
+                VStack(alignment: .leading) {
+                    Text(field)
+                        .font(.title)
+                        .fontWeight(.semibold)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.5)
+                        .frame(width: geometry.size.width, height: geometry.size.height, alignment: .leading)
+                }
+            }
+            .frame(height: 60) // Match the height of the icon
             
             Spacer()
         }
-        
+        .fixedSize(horizontal: false, vertical: true) // Allow the text to expand vertically
     }
 }
 
 struct PhoneVerificationView: View {
     @Binding var isCompleteSignUp: Bool
     @Binding var phoneNumber: String
+    @Binding var token: String
     @State private var verificationCode = ""
     @State private var showAlert = false
     @State private var errorTitle = ""
@@ -541,14 +555,14 @@ struct PhoneVerificationView: View {
         }
         
         let parameters: [String: Any] = [
-            "phoneNumber": phoneNumber,
             "verificationCode": verificationCode
         ]
         
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
+        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+            
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: parameters)
         } catch {
@@ -577,7 +591,9 @@ struct PhoneVerificationView: View {
                 // Handle the response from the server
                 if let success = jsonResponse?["success"] as? Bool, success {
                     // Respond to successful verification (you can navigate to the next screen or perform other actions)
-                    print("Verification Successful")
+                    UserDefaults.standard.set(self.token, forKey: "token")
+                    
+                    
                     self.isCompleteSignUp = true
                 } else if let error = jsonResponse?["error"] as? String {
                     // Handle specific errors
@@ -585,7 +601,7 @@ struct PhoneVerificationView: View {
                     case "phone_exists":
                         showAlert(title: "Phone Number Already Exists", message: "A user with this phone number already exists.")
                     case "wrong_code":
-                        showAlert(title: "Wrong code", message: "The code you entered doesn't match the expected one'")
+                        showAlert(title: "Wrong code", message: "The code you entered doesn't match the expected one")
                     default:
                         showAlert(title: "Server Error", message: "Unexpected server response: \(error)")
                     }
@@ -732,7 +748,7 @@ struct PreferencesView: View {
             Button(action: {
                 addPrefs()
             }, label: {
-                Text("Complete")
+                Text("Next")
                     .font(.headline)
                     .frame(width: 300.0, height: 60.0)
                     .cornerRadius(23)
@@ -777,7 +793,6 @@ struct PreferencesView: View {
         }
         
         let parameters: [String: Any] = [
-            "phoneNumber": phoneNumber,
             "gender": selectedGenderOptions,
             "sex": selectedSexOptions,
             "intrests": selectedInterestsOptions,
@@ -789,6 +804,8 @@ struct PreferencesView: View {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        request.addValue("Bearer \(UserDefaults.standard.string(forKey: "token") ?? "")", forHTTPHeaderField: "Authorization")
         
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: parameters)
@@ -998,7 +1015,6 @@ struct DescriptorsView: View {
         }
         
         let parameters: [String: Any] = [
-            "phoneNumber": phoneNumber,
             "gender": selectedGenderOptions,
             "sex": selectedSexOptions,
             "intrests": selectedInterestsOptions,
@@ -1009,6 +1025,8 @@ struct DescriptorsView: View {
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        
+        request.addValue("Bearer \(UserDefaults.standard.string(forKey: "token") ?? "")", forHTTPHeaderField: "Authorization")
         
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: parameters)
@@ -1294,6 +1312,135 @@ extension AVPlayer {
         try? AVAudioSession.sharedInstance().setActive(true)
         return queuePlayer
     }()
+}
+
+struct FrameView: View {
+    var image: CGImage?
+    private let label = Text("Frame")
+    
+    var body: some View {
+        if let image = image {
+            Image(image, scale: 1.0, orientation: .up, label: label)
+        } else {
+            Color.black
+        }
+    }
+}
+
+struct OuterView: View {
+    @StateObject private var modal = FrameHandler()
+    
+    var body: some View {
+        FrameView(image: modal.frame)
+            .ignoresSafeArea()
+    }
+}
+
+struct AuthorizationChecker {
+    static func checkCaptureAuthorizationStatus() async -> Status {
+        switch AVCaptureDevice.authorizationStatus(for: .video) {
+        case .authorized:
+            return .permitted
+            
+        case .notDetermined:
+            let isPermissionGranted = await AVCaptureDevice.requestAccess(for: .video)
+            if isPermissionGranted {
+                return .permitted
+            } else {
+                fallthrough
+            }
+            
+        case .denied:
+            fallthrough
+            
+        case .restricted:
+            fallthrough
+            
+        @unknown default:
+            return .notPermitted
+        }
+    }
+}
+
+extension AuthorizationChecker {
+    enum Status {
+        case permitted
+        case notPermitted
+    }
+}
+
+struct SetupProfileView: View {
+    @State private var pickingVideo: Bool = false
+    @State private var selectedPitch: PhotosPickerItem?
+    @State private var isProccessing: Bool = false
+    @State private var pickedVideoURL: URL?
+    
+    var body: some View {
+        VStack {
+            Text("Setup profile")
+                .font(.title)
+                .fontWeight(.medium)
+            
+            Button(action: {
+                pickingVideo = true
+            }, label: {
+                Text("Pick pitch video")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(16)
+            })
+            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            .photosPicker(isPresented: $pickingVideo, selection: $selectedPitch, matching: .videos)
+            .onChange(of: selectedPitch) { oldValue, newValue in
+                if let newValue {
+                    Task {
+                        do {
+                           isProccessing = true
+                            let pickedMovie = try await newValue.loadTransferable(type: VideoPickerTransferable.self)
+                            isProccessing = false
+                            pickedVideoURL = pickedMovie?.videoURL
+                        } catch {
+                            print(error.localizedDescription)
+                        }
+                    }
+                }
+            }
+            
+            Spacer()
+            
+            Button(action: {
+                
+            }, label: {
+                Text("Done")
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(16)
+            })
+            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        }
+    }
+}
+
+struct VideoPickerTransferable: Transferable {
+    let videoURL: URL
+    static var transferRepresentation: some TransferRepresentation {
+        FileRepresentation(contentType: .movie) { exportingFile in
+            return .init(exportingFile.videoURL)
+        } importing: { ReceivedTransferredFile in
+            let originalFile = ReceivedTransferredFile.file
+            let coppiedFile = URL.documentsDirectory.appending(path: "videoPicker.mov")
+            if FileManager.default.fileExists(atPath: coppiedFile.path()) {
+                try FileManager.default.removeItem(at: coppiedFile)
+            }
+            try FileManager.default.copyItem(at: originalFile, to: coppiedFile)
+            
+            return .init(videoURL: coppiedFile)
+        }
+    }
 }
 
 struct FirstLaunchView_Previews: PreviewProvider {

@@ -15,6 +15,8 @@
 		954EF3F22B1573FA00925972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954EF3F12B1573FA00925972 /* Assets.xcassets */; };
 		954EF3F52B1573FA00925972 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954EF3F42B1573FA00925972 /* Preview Assets.xcassets */; };
 		954EF47B2B1CDCD100925972 /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = 954EF47A2B1CDCD100925972 /* PhoneNumberKit */; };
+		955937592B3F7FC7006BF0D3 /* FrameHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955937582B3F7FC7006BF0D3 /* FrameHandler.swift */; };
+		955937612B40B0EF006BF0D3 /* SoulSyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955937602B40B0EF006BF0D3 /* SoulSyncTests.swift */; };
 		9598AE352B36413500899429 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AE342B36413500899429 /* Shapes.swift */; };
 		9598AE392B37337800899429 /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9598AE362B37301C00899429 /* video1.mp4 */; };
 		9598AE3A2B37337B00899429 /* video2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9598AE372B37301D00899429 /* video2.mp4 */; };
@@ -22,6 +24,16 @@
 		95CC64172B3BB7000010ABC2 /* .env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC64162B3BB7000010ABC2 /* .env.swift */; };
 		95CC641C2B3BCD630010ABC2 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 95CC64152B3BB4B90010ABC2 /* Config.xcconfig */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		955937622B40B0EF006BF0D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 954EF3E22B1573F800925972 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 954EF3E92B1573F800925972;
+			remoteInfo = SoulSync;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		954EF4532B1CD1DB00925972 /* Embed Frameworks */ = {
@@ -45,6 +57,9 @@
 		954EF3EF2B1573F800925972 /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
 		954EF3F12B1573FA00925972 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		954EF3F42B1573FA00925972 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		955937582B3F7FC7006BF0D3 /* FrameHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameHandler.swift; sourceTree = "<group>"; };
+		9559375E2B40B0EE006BF0D3 /* SoulSyncTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoulSyncTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		955937602B40B0EF006BF0D3 /* SoulSyncTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulSyncTests.swift; sourceTree = "<group>"; };
 		9598AE342B36413500899429 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		9598AE362B37301C00899429 /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
 		9598AE372B37301D00899429 /* video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video2.mp4; sourceTree = "<group>"; };
@@ -60,6 +75,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				954EF47B2B1CDCD100925972 /* PhoneNumberKit in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9559375B2B40B0EE006BF0D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -87,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				952E8D9F2B2F72EF0055CEEA /* LoadPrefrences.swift */,
+				955937582B3F7FC7006BF0D3 /* FrameHandler.swift */,
 				9598AE342B36413500899429 /* Shapes.swift */,
 			);
 			path = Utils;
@@ -96,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				954EF3EC2B1573F800925972 /* SoulSync */,
+				9559375F2B40B0EF006BF0D3 /* SoulSyncTests */,
 				954EF3EB2B1573F800925972 /* Products */,
 				954EF45E2B1CD40D00925972 /* Frameworks */,
 			);
@@ -105,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				954EF3EA2B1573F800925972 /* SoulSync.app */,
+				9559375E2B40B0EE006BF0D3 /* SoulSyncTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,7 +163,7 @@
 		954EF3FB2B164E8500925972 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				954EF3EF2B1573F800925972 /* FirstLaunch.swift */,
+				955937672B40B533006BF0D3 /* Signup */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -148,6 +173,22 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9559375F2B40B0EF006BF0D3 /* SoulSyncTests */ = {
+			isa = PBXGroup;
+			children = (
+				955937602B40B0EF006BF0D3 /* SoulSyncTests.swift */,
+			);
+			path = SoulSyncTests;
+			sourceTree = "<group>";
+		};
+		955937672B40B533006BF0D3 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				954EF3EF2B1573F800925972 /* FirstLaunch.swift */,
+			);
+			path = Signup;
 			sourceTree = "<group>";
 		};
 		9598AE382B37302500899429 /* TestingData */ = {
@@ -191,6 +232,24 @@
 			productReference = 954EF3EA2B1573F800925972 /* SoulSync.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9559375D2B40B0EE006BF0D3 /* SoulSyncTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 955937642B40B0EF006BF0D3 /* Build configuration list for PBXNativeTarget "SoulSyncTests" */;
+			buildPhases = (
+				9559375A2B40B0EE006BF0D3 /* Sources */,
+				9559375B2B40B0EE006BF0D3 /* Frameworks */,
+				9559375C2B40B0EE006BF0D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				955937632B40B0EF006BF0D3 /* PBXTargetDependency */,
+			);
+			name = SoulSyncTests;
+			productName = SoulSyncTests;
+			productReference = 9559375E2B40B0EE006BF0D3 /* SoulSyncTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -203,6 +262,10 @@
 				TargetAttributes = {
 					954EF3E92B1573F800925972 = {
 						CreatedOnToolsVersion = 15.0.1;
+					};
+					9559375D2B40B0EE006BF0D3 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 954EF3E92B1573F800925972;
 					};
 				};
 			};
@@ -223,6 +286,7 @@
 			projectRoot = "";
 			targets = (
 				954EF3E92B1573F800925972 /* SoulSync */,
+				9559375D2B40B0EE006BF0D3 /* SoulSyncTests */,
 			);
 		};
 /* End PBXProject section */
@@ -241,6 +305,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9559375C2B40B0EE006BF0D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -254,11 +325,28 @@
 				954EF3F02B1573F800925972 /* FirstLaunch.swift in Sources */,
 				9598AE352B36413500899429 /* Shapes.swift in Sources */,
 				952E8D9D2B2F6F800055CEEA /* SignUpModals.swift in Sources */,
+				955937592B3F7FC7006BF0D3 /* FrameHandler.swift in Sources */,
 				954EF3EE2B1573F800925972 /* SoulSyncApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9559375A2B40B0EE006BF0D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				955937612B40B0EF006BF0D3 /* SoulSyncTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		955937632B40B0EF006BF0D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 954EF3E92B1573F800925972 /* SoulSync */;
+			targetProxy = 955937622B40B0EF006BF0D3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		954EF3F62B1573FA00925972 /* Debug */ = {
@@ -396,6 +484,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SoulSync/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera to make you video pitch";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need mic access to go aong with the video";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -429,6 +519,8 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SoulSync/Info.plist;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera to make you video pitch";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need mic access to go aong with the video";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -445,6 +537,50 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		955937652B40B0EF006BF0D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8UA385N825;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cendrive.SoulSyncTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoulSync.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SoulSync";
+			};
+			name = Debug;
+		};
+		955937662B40B0EF006BF0D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8UA385N825;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cendrive.SoulSyncTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoulSync.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SoulSync";
 			};
 			name = Release;
 		};
@@ -465,6 +601,15 @@
 			buildConfigurations = (
 				954EF3F92B1573FA00925972 /* Debug */,
 				954EF3FA2B1573FA00925972 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		955937642B40B0EF006BF0D3 /* Build configuration list for PBXNativeTarget "SoulSyncTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				955937652B40B0EF006BF0D3 /* Debug */,
+				955937662B40B0EF006BF0D3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
