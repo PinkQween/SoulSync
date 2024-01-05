@@ -145,10 +145,19 @@ struct InfoView: View {
     @State private var errorTitle = ""
     @State private var errorMessage = ""
     @State private var birthdate = Date()
+    @State private var deviceToken: String?
+    
+    func registerForPushNotifications() {
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, _ in
+                if granted {
+                    DispatchQueue.main.async {
+                        UIApplication.shared.registerForRemoteNotifications()
+                    }
+                }
+            }
+        }
+    
     let dateFormatter = DateFormatter()
-
-    
-    
     let phoneNumberKit = PhoneNumberKit()
     
     var isOver13: Bool {
@@ -338,6 +347,9 @@ struct InfoView: View {
                 }.padding().background(.black)
             })
         }.padding()
+            .onAppear {
+                registerForPushNotifications() // Call this function to register for push notifications when the view appears
+            }
     }
     
     func validatePhoneNumber() {
@@ -386,7 +398,7 @@ struct InfoView: View {
             "password": password,
             "confirmPassword": confirmPassword,
             "birthdate": dateFormatter.string(from: birthdate),
-            "deviceID": UIDevice.current.identifierForVendor?.uuidString ?? ""
+            "deviceID": deviceToken ?? ""
         ]
         
         var request = URLRequest(url: url)
