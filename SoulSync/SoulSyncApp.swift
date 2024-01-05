@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct SoulSyncApp: App {
+    @UIApplicationDelegateAdaptor private var delugate: SoulSyncDelegate
+    
     var body: some Scene {
         WindowGroup {
             FirstLaunchView()

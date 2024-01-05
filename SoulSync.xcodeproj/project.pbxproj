@@ -10,6 +10,7 @@
 		952E8D9A2B2F6F380055CEEA /* preferences.json in Resources */ = {isa = PBXBuildFile; fileRef = 952E8D992B2F6F380055CEEA /* preferences.json */; };
 		952E8D9D2B2F6F800055CEEA /* SignUpModals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E8D9C2B2F6F800055CEEA /* SignUpModals.swift */; };
 		952E8DA02B2F72EF0055CEEA /* LoadPrefrences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E8D9F2B2F72EF0055CEEA /* LoadPrefrences.swift */; };
+		95489BF22B486E3D004160F6 /* SoulSyncDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95489BF12B486E3D004160F6 /* SoulSyncDelegate.swift */; };
 		954EF3EE2B1573F800925972 /* SoulSyncApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954EF3ED2B1573F800925972 /* SoulSyncApp.swift */; };
 		954EF3F02B1573F800925972 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954EF3EF2B1573F800925972 /* FirstLaunch.swift */; };
 		954EF3F22B1573FA00925972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954EF3F12B1573FA00925972 /* Assets.xcassets */; };
@@ -52,6 +53,8 @@
 		952E8D992B2F6F380055CEEA /* preferences.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = preferences.json; sourceTree = "<group>"; usesTabs = 1; };
 		952E8D9C2B2F6F800055CEEA /* SignUpModals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModals.swift; sourceTree = "<group>"; };
 		952E8D9F2B2F72EF0055CEEA /* LoadPrefrences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPrefrences.swift; sourceTree = "<group>"; };
+		95489BF02B48646E004160F6 /* SoulSync.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SoulSync.entitlements; sourceTree = "<group>"; };
+		95489BF12B486E3D004160F6 /* SoulSyncDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulSyncDelegate.swift; sourceTree = "<group>"; };
 		954EF3EA2B1573F800925972 /* SoulSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoulSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		954EF3ED2B1573F800925972 /* SoulSyncApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulSyncApp.swift; sourceTree = "<group>"; };
 		954EF3EF2B1573F800925972 /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
@@ -137,7 +140,9 @@
 		954EF3EC2B1573F800925972 /* SoulSync */ = {
 			isa = PBXGroup;
 			children = (
+				95489BF02B48646E004160F6 /* SoulSync.entitlements */,
 				954EF3ED2B1573F800925972 /* SoulSyncApp.swift */,
+				95489BF12B486E3D004160F6 /* SoulSyncDelegate.swift */,
 				954EF3FB2B164E8500925972 /* Views */,
 				952E8D9B2B2F6F610055CEEA /* Modals */,
 				952E8D9E2B2F72DD0055CEEA /* Utils */,
@@ -324,6 +329,7 @@
 				952E8DA02B2F72EF0055CEEA /* LoadPrefrences.swift in Sources */,
 				954EF3F02B1573F800925972 /* FirstLaunch.swift in Sources */,
 				9598AE352B36413500899429 /* Shapes.swift in Sources */,
+				95489BF22B486E3D004160F6 /* SoulSyncDelegate.swift in Sources */,
 				952E8D9D2B2F6F800055CEEA /* SignUpModals.swift in Sources */,
 				955937592B3F7FC7006BF0D3 /* FrameHandler.swift in Sources */,
 				954EF3EE2B1573F800925972 /* SoulSyncApp.swift in Sources */,
@@ -476,6 +482,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SoulSync/SoulSync.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SoulSync/Preview Content\"";
@@ -511,6 +518,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SoulSync/SoulSync.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SoulSync/Preview Content\"";

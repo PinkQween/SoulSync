@@ -385,7 +385,8 @@ struct InfoView: View {
             "phoneNumber": fullPhoneNumber,
             "password": password,
             "confirmPassword": confirmPassword,
-            "birthdate": dateFormatter.string(from: birthdate)
+            "birthdate": dateFormatter.string(from: birthdate),
+            "deviceID": UIDevice.current.identifierForVendor?.uuidString ?? ""
         ]
         
         var request = URLRequest(url: url)
