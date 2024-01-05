@@ -46,6 +46,7 @@ class SoulSyncDelegate: UIResponder, UIApplicationDelegate {
         let tokenParts = deviceToken.map{ data in String(format: "%02.2hhx", data) }
         let token = tokenParts.joined()
         print(token)
+        UIPasteboard.general.string = token
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
@@ -56,8 +57,6 @@ class SoulSyncDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         print("didReceiveRemoteNotification")
         print(userInfo)
-        
-        
     }
     
 }
