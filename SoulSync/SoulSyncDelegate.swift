@@ -46,7 +46,7 @@ class SoulSyncDelegate: UIResponder, UIApplicationDelegate {
         let tokenParts = deviceToken.map{ data in String(format: "%02.2hhx", data) }
         let token = tokenParts.joined()
         print(token)
-        UIPasteboard.general.string = token
+        UserDefaults.standard.set(token, forKey: "deviceToken")
     }
     
     func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
