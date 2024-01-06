@@ -398,7 +398,7 @@ struct InfoView: View {
             "password": password,
             "confirmPassword": confirmPassword,
             "birthdate": dateFormatter.string(from: birthdate),
-            "deviceID": UserDefaults.standard.string(forKey: "token") ?? ""
+            "deviceID": UserDefaults.standard.string(forKey: "deviceToken") ?? ""
         ]
         
         var request = URLRequest(url: url)
