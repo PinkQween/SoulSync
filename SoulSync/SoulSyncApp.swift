@@ -13,7 +13,7 @@ struct SoulSyncApp: App {
     
     var body: some Scene {
         WindowGroup {
-            FirstLaunchView()
+            PitchCreatorView()
                 .preferredColorScheme(.dark)
         }
     }
