@@ -18,12 +18,13 @@
 		954EF47B2B1CDCD100925972 /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = 954EF47A2B1CDCD100925972 /* PhoneNumberKit */; };
 		955937592B3F7FC7006BF0D3 /* FrameHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955937582B3F7FC7006BF0D3 /* FrameHandler.swift */; };
 		955937612B40B0EF006BF0D3 /* SoulSyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955937602B40B0EF006BF0D3 /* SoulSyncTests.swift */; };
+		955F573C2B4D7892009AC08D /* PitchCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955F573B2B4D7892009AC08D /* PitchCreator.swift */; };
+		957B94B52B4B1385009A52A7 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 957B94B42B4B1385009A52A7 /* iPhoneNumberField */; };
 		9598AE352B36413500899429 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AE342B36413500899429 /* Shapes.swift */; };
 		9598AE392B37337800899429 /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9598AE362B37301C00899429 /* video1.mp4 */; };
 		9598AE3A2B37337B00899429 /* video2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9598AE372B37301D00899429 /* video2.mp4 */; };
 		9598AE3C2B379D3400899429 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AE3B2B379D3400899429 /* Main.swift */; };
 		95CC64172B3BB7000010ABC2 /* .env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC64162B3BB7000010ABC2 /* .env.swift */; };
-		95CC641C2B3BCD630010ABC2 /* Config.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 95CC64152B3BB4B90010ABC2 /* Config.xcconfig */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		955937582B3F7FC7006BF0D3 /* FrameHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameHandler.swift; sourceTree = "<group>"; };
 		9559375E2B40B0EE006BF0D3 /* SoulSyncTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoulSyncTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		955937602B40B0EF006BF0D3 /* SoulSyncTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulSyncTests.swift; sourceTree = "<group>"; };
+		955F573B2B4D7892009AC08D /* PitchCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchCreator.swift; sourceTree = "<group>"; };
 		9598AE342B36413500899429 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		9598AE362B37301C00899429 /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
 		9598AE372B37301D00899429 /* video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video2.mp4; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				954EF47B2B1CDCD100925972 /* PhoneNumberKit in Frameworks */,
+				957B94B52B4B1385009A52A7 /* iPhoneNumberField in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -192,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				954EF3EF2B1573F800925972 /* FirstLaunch.swift */,
+				955F573B2B4D7892009AC08D /* PitchCreator.swift */,
 			);
 			path = Signup;
 			sourceTree = "<group>";
@@ -232,6 +236,7 @@
 			name = SoulSync;
 			packageProductDependencies = (
 				954EF47A2B1CDCD100925972 /* PhoneNumberKit */,
+				957B94B42B4B1385009A52A7 /* iPhoneNumberField */,
 			);
 			productName = SoulSync;
 			productReference = 954EF3EA2B1573F800925972 /* SoulSync.app */;
@@ -263,7 +268,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1500;
-				LastUpgradeCheck = 1500;
+				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					954EF3E92B1573F800925972 = {
 						CreatedOnToolsVersion = 15.0.1;
@@ -285,6 +290,7 @@
 			mainGroup = 954EF3E12B1573F800925972;
 			packageReferences = (
 				954EF4792B1CDCD100925972 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
+				957B94B32B4B1385009A52A7 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
 			);
 			productRefGroup = 954EF3EB2B1573F800925972 /* Products */;
 			projectDirPath = "";
@@ -301,7 +307,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				95CC641C2B3BCD630010ABC2 /* Config.xcconfig in Resources */,
 				954EF3F52B1573FA00925972 /* Preview Assets.xcassets in Resources */,
 				9598AE392B37337800899429 /* video1.mp4 in Resources */,
 				952E8D9A2B2F6F380055CEEA /* preferences.json in Resources */,
@@ -333,6 +338,7 @@
 				952E8D9D2B2F6F800055CEEA /* SignUpModals.swift in Sources */,
 				955937592B3F7FC7006BF0D3 /* FrameHandler.swift in Sources */,
 				954EF3EE2B1573F800925972 /* SoulSyncApp.swift in Sources */,
+				955F573C2B4D7892009AC08D /* PitchCreator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -490,6 +496,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SoulSync/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SoulSync;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera to make you video pitch";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need mic access to go aong with the video";
@@ -526,6 +533,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SoulSync/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SoulSync;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera to make you video pitch";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need mic access to go aong with the video";
@@ -554,6 +562,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 8UA385N825;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -576,6 +585,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 8UA385N825;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
@@ -633,6 +643,14 @@
 				minimumVersion = 3.7.5;
 			};
 		};
+		957B94B32B4B1385009A52A7 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MojtabaHs/iPhoneNumberField.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -640,6 +658,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 954EF4792B1CDCD100925972 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */;
 			productName = PhoneNumberKit;
+		};
+		957B94B42B4B1385009A52A7 /* iPhoneNumberField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 957B94B32B4B1385009A52A7 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;
+			productName = iPhoneNumberField;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
