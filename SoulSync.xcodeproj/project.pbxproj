@@ -25,6 +25,8 @@
 		9598AE3A2B37337B00899429 /* video2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9598AE372B37301D00899429 /* video2.mp4 */; };
 		9598AE3C2B379D3400899429 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AE3B2B379D3400899429 /* Main.swift */; };
 		95CC64172B3BB7000010ABC2 /* .env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC64162B3BB7000010ABC2 /* .env.swift */; };
+		95EB6FA72B55B968005CD892 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EB6FA62B55B968005CD892 /* Launch Screen.storyboard */; };
+		95EB6FA92B55BA69005CD892 /* Launch Screen Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95EB6FA82B55BA69005CD892 /* Launch Screen Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +74,8 @@
 		95CC64152B3BB4B90010ABC2 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		95CC64162B3BB7000010ABC2 /* .env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = .env.swift; sourceTree = "<group>"; };
 		95CC641A2B3BB9130010ABC2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95EB6FA62B55B968005CD892 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		95EB6FA82B55BA69005CD892 /* Launch Screen Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Launch Screen Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +158,8 @@
 				9598AE382B37302500899429 /* TestingData */,
 				954EF3F32B1573FA00925972 /* Preview Content */,
 				954EF3F12B1573FA00925972 /* Assets.xcassets */,
+				95EB6FA82B55BA69005CD892 /* Launch Screen Assets.xcassets */,
+				95EB6FA62B55B968005CD892 /* Launch Screen.storyboard */,
 				95CC64152B3BB4B90010ABC2 /* Config.xcconfig */,
 				95CC641A2B3BB9130010ABC2 /* Info.plist */,
 			);
@@ -307,7 +313,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95EB6FA72B55B968005CD892 /* Launch Screen.storyboard in Resources */,
 				954EF3F52B1573FA00925972 /* Preview Assets.xcassets in Resources */,
+				95EB6FA92B55BA69005CD892 /* Launch Screen Assets.xcassets in Resources */,
 				9598AE392B37337800899429 /* video1.mp4 in Resources */,
 				952E8D9A2B2F6F380055CEEA /* preferences.json in Resources */,
 				9598AE3A2B37337B00899429 /* video2.mp4 in Resources */,
@@ -503,6 +511,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
@@ -541,6 +550,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
