@@ -19,6 +19,7 @@
 		955937592B3F7FC7006BF0D3 /* FrameHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955937582B3F7FC7006BF0D3 /* FrameHandler.swift */; };
 		955937612B40B0EF006BF0D3 /* SoulSyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955937602B40B0EF006BF0D3 /* SoulSyncTests.swift */; };
 		955F573C2B4D7892009AC08D /* PitchCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955F573B2B4D7892009AC08D /* PitchCreator.swift */; };
+		9576BD882B5747C5001240B3 /* videoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576BD872B5747C5001240B3 /* videoEditor.swift */; };
 		957B94B52B4B1385009A52A7 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 957B94B42B4B1385009A52A7 /* iPhoneNumberField */; };
 		9598AE352B36413500899429 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AE342B36413500899429 /* Shapes.swift */; };
 		9598AE392B37337800899429 /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9598AE362B37301C00899429 /* video1.mp4 */; };
@@ -67,6 +68,7 @@
 		9559375E2B40B0EE006BF0D3 /* SoulSyncTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoulSyncTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		955937602B40B0EF006BF0D3 /* SoulSyncTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulSyncTests.swift; sourceTree = "<group>"; };
 		955F573B2B4D7892009AC08D /* PitchCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchCreator.swift; sourceTree = "<group>"; };
+		9576BD872B5747C5001240B3 /* videoEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoEditor.swift; sourceTree = "<group>"; };
 		9598AE342B36413500899429 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
 		9598AE362B37301C00899429 /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
 		9598AE372B37301D00899429 /* video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video2.mp4; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				955937672B40B533006BF0D3 /* Signup */,
+				9576BD862B5747A6001240B3 /* Tests */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,6 +207,14 @@
 				955F573B2B4D7892009AC08D /* PitchCreator.swift */,
 			);
 			path = Signup;
+			sourceTree = "<group>";
+		};
+		9576BD862B5747A6001240B3 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				9576BD872B5747C5001240B3 /* videoEditor.swift */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		9598AE382B37302500899429 /* TestingData */ = {
@@ -339,6 +350,7 @@
 			files = (
 				9598AE3C2B379D3400899429 /* Main.swift in Sources */,
 				95CC64172B3BB7000010ABC2 /* .env.swift in Sources */,
+				9576BD882B5747C5001240B3 /* videoEditor.swift in Sources */,
 				952E8DA02B2F72EF0055CEEA /* LoadPrefrences.swift in Sources */,
 				954EF3F02B1573F800925972 /* FirstLaunch.swift in Sources */,
 				9598AE352B36413500899429 /* Shapes.swift in Sources */,
@@ -508,6 +520,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera to make you video pitch";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need mic access to go aong with the video";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need to save the pitch to your camera roll";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -547,6 +560,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera to make you video pitch";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need mic access to go aong with the video";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need to save the pitch to your camera roll";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
