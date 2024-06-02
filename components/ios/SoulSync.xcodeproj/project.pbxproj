@@ -1,0 +1,777 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 60;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9517145B2C0BBDB1000C3883 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 9517145A2C0BBDB1000C3883 /* iPhoneNumberField */; };
+		952E8D9A2B2F6F380055CEEA /* preferences.json in Resources */ = {isa = PBXBuildFile; fileRef = 952E8D992B2F6F380055CEEA /* preferences.json */; };
+		952E8D9D2B2F6F800055CEEA /* SignUpModals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E8D9C2B2F6F800055CEEA /* SignUpModals.swift */; };
+		952E8DA02B2F72EF0055CEEA /* LoadPrefrences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E8D9F2B2F72EF0055CEEA /* LoadPrefrences.swift */; };
+		95489BF22B486E3D004160F6 /* SoulSyncDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95489BF12B486E3D004160F6 /* SoulSyncDelegate.swift */; };
+		954EF3EE2B1573F800925972 /* SoulSyncApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954EF3ED2B1573F800925972 /* SoulSyncApp.swift */; };
+		954EF3F02B1573F800925972 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954EF3EF2B1573F800925972 /* FirstLaunch.swift */; };
+		954EF3F22B1573FA00925972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954EF3F12B1573FA00925972 /* Assets.xcassets */; };
+		954EF3F52B1573FA00925972 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954EF3F42B1573FA00925972 /* Preview Assets.xcassets */; };
+		955937592B3F7FC7006BF0D3 /* FrameHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955937582B3F7FC7006BF0D3 /* FrameHandler.swift */; };
+		955937612B40B0EF006BF0D3 /* SoulSyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955937602B40B0EF006BF0D3 /* SoulSyncTests.swift */; };
+		955F573C2B4D7892009AC08D /* PitchCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955F573B2B4D7892009AC08D /* PitchCreator.swift */; };
+		9576BD882B5747C5001240B3 /* videoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576BD872B5747C5001240B3 /* videoEditor.swift */; };
+		9598AE352B36413500899429 /* Shapes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AE342B36413500899429 /* Shapes.swift */; };
+		9598AE392B37337800899429 /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9598AE362B37301C00899429 /* video1.mp4 */; };
+		9598AE3A2B37337B00899429 /* video2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9598AE372B37301D00899429 /* video2.mp4 */; };
+		9598AE3C2B379D3400899429 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AE3B2B379D3400899429 /* Main.swift */; };
+		95A8665C2C0AB0E600B7C2A7 /* ReactNativeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8665B2C0AB0E600B7C2A7 /* ReactNativeController.swift */; };
+		95A8665E2C0AB17700B7C2A7 /* ReactNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8665D2C0AB17700B7C2A7 /* ReactNative.swift */; };
+		95A866602C0B470D00B7C2A7 /* RN_TEST.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8665F2C0B470D00B7C2A7 /* RN_TEST.swift */; };
+		95CC64172B3BB7000010ABC2 /* .env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC64162B3BB7000010ABC2 /* .env.swift */; };
+		95EB6FA72B55B968005CD892 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EB6FA62B55B968005CD892 /* Launch Screen.storyboard */; };
+		95EB6FA92B55BA69005CD892 /* Launch Screen Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95EB6FA82B55BA69005CD892 /* Launch Screen Assets.xcassets */; };
+		E1CEF87FB8A04B820B705046 /* libPods-SoulSync.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1306A5EB8C29712444135FE1 /* libPods-SoulSync.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		955937622B40B0EF006BF0D3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 954EF3E22B1573F800925972 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 954EF3E92B1573F800925972;
+			remoteInfo = SoulSync;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		954EF4532B1CD1DB00925972 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1306A5EB8C29712444135FE1 /* libPods-SoulSync.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SoulSync.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6C617E130E5CEDE261451410 /* Pods-SoulSync.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoulSync.release.xcconfig"; path = "Target Support Files/Pods-SoulSync/Pods-SoulSync.release.xcconfig"; sourceTree = "<group>"; };
+		952E8D992B2F6F380055CEEA /* preferences.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = preferences.json; sourceTree = "<group>"; usesTabs = 1; };
+		952E8D9C2B2F6F800055CEEA /* SignUpModals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModals.swift; sourceTree = "<group>"; };
+		952E8D9F2B2F72EF0055CEEA /* LoadPrefrences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPrefrences.swift; sourceTree = "<group>"; };
+		95489BF02B48646E004160F6 /* SoulSync.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SoulSync.entitlements; sourceTree = "<group>"; };
+		95489BF12B486E3D004160F6 /* SoulSyncDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulSyncDelegate.swift; sourceTree = "<group>"; };
+		954EF3EA2B1573F800925972 /* SoulSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoulSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		954EF3ED2B1573F800925972 /* SoulSyncApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulSyncApp.swift; sourceTree = "<group>"; };
+		954EF3EF2B1573F800925972 /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
+		954EF3F12B1573FA00925972 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		954EF3F42B1573FA00925972 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		955937582B3F7FC7006BF0D3 /* FrameHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameHandler.swift; sourceTree = "<group>"; };
+		9559375E2B40B0EE006BF0D3 /* SoulSyncTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoulSyncTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		955937602B40B0EF006BF0D3 /* SoulSyncTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulSyncTests.swift; sourceTree = "<group>"; };
+		955F573B2B4D7892009AC08D /* PitchCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchCreator.swift; sourceTree = "<group>"; };
+		9576BD872B5747C5001240B3 /* videoEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoEditor.swift; sourceTree = "<group>"; };
+		9598AE342B36413500899429 /* Shapes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shapes.swift; sourceTree = "<group>"; };
+		9598AE362B37301C00899429 /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
+		9598AE372B37301D00899429 /* video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video2.mp4; sourceTree = "<group>"; };
+		9598AE3B2B379D3400899429 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
+		95A8665B2C0AB0E600B7C2A7 /* ReactNativeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactNativeController.swift; sourceTree = "<group>"; };
+		95A8665D2C0AB17700B7C2A7 /* ReactNative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactNative.swift; sourceTree = "<group>"; };
+		95A8665F2C0B470D00B7C2A7 /* RN_TEST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RN_TEST.swift; sourceTree = "<group>"; };
+		95CC64152B3BB4B90010ABC2 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
+		95CC64162B3BB7000010ABC2 /* .env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = .env.swift; sourceTree = "<group>"; };
+		95CC641A2B3BB9130010ABC2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95EB6FA62B55B968005CD892 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		95EB6FA82B55BA69005CD892 /* Launch Screen Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Launch Screen Assets.xcassets"; sourceTree = "<group>"; };
+		C6F40D5A62DD205805B02601 /* Pods-SoulSync.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SoulSync.debug.xcconfig"; path = "Target Support Files/Pods-SoulSync/Pods-SoulSync.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		954EF3E72B1573F800925972 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E1CEF87FB8A04B820B705046 /* libPods-SoulSync.a in Frameworks */,
+				9517145B2C0BBDB1000C3883 /* iPhoneNumberField in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9559375B2B40B0EE006BF0D3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		952E8D982B2F6EF70055CEEA /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				952E8D992B2F6F380055CEEA /* preferences.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		952E8D9B2B2F6F610055CEEA /* Modals */ = {
+			isa = PBXGroup;
+			children = (
+				952E8D9C2B2F6F800055CEEA /* SignUpModals.swift */,
+				9598AE3B2B379D3400899429 /* Main.swift */,
+			);
+			path = Modals;
+			sourceTree = "<group>";
+		};
+		952E8D9E2B2F72DD0055CEEA /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				952E8D9F2B2F72EF0055CEEA /* LoadPrefrences.swift */,
+				955937582B3F7FC7006BF0D3 /* FrameHandler.swift */,
+				9598AE342B36413500899429 /* Shapes.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		954EF3E12B1573F800925972 = {
+			isa = PBXGroup;
+			children = (
+				954EF3EC2B1573F800925972 /* SoulSync */,
+				9559375F2B40B0EF006BF0D3 /* SoulSyncTests */,
+				954EF3EB2B1573F800925972 /* Products */,
+				954EF45E2B1CD40D00925972 /* Frameworks */,
+				BF1E99592C0CFBB21A3A1758 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		954EF3EB2B1573F800925972 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				954EF3EA2B1573F800925972 /* SoulSync.app */,
+				9559375E2B40B0EE006BF0D3 /* SoulSyncTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		954EF3EC2B1573F800925972 /* SoulSync */ = {
+			isa = PBXGroup;
+			children = (
+				95489BF02B48646E004160F6 /* SoulSync.entitlements */,
+				954EF3ED2B1573F800925972 /* SoulSyncApp.swift */,
+				95489BF12B486E3D004160F6 /* SoulSyncDelegate.swift */,
+				95A8665A2C0AB0C000B7C2A7 /* ViewControllers */,
+				954EF3FB2B164E8500925972 /* Views */,
+				952E8D9B2B2F6F610055CEEA /* Modals */,
+				952E8D9E2B2F72DD0055CEEA /* Utils */,
+				952E8D982B2F6EF70055CEEA /* Data */,
+				95CC64142B3BB4770010ABC2 /* Constants */,
+				9598AE382B37302500899429 /* TestingData */,
+				954EF3F32B1573FA00925972 /* Preview Content */,
+				954EF3F12B1573FA00925972 /* Assets.xcassets */,
+				95EB6FA82B55BA69005CD892 /* Launch Screen Assets.xcassets */,
+				95EB6FA62B55B968005CD892 /* Launch Screen.storyboard */,
+				95CC64152B3BB4B90010ABC2 /* Config.xcconfig */,
+				95CC641A2B3BB9130010ABC2 /* Info.plist */,
+			);
+			path = SoulSync;
+			sourceTree = "<group>";
+		};
+		954EF3F32B1573FA00925972 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				954EF3F42B1573FA00925972 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		954EF3FB2B164E8500925972 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				955937672B40B533006BF0D3 /* Signup */,
+				9576BD862B5747A6001240B3 /* Tests */,
+				95A8665D2C0AB17700B7C2A7 /* ReactNative.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		954EF45E2B1CD40D00925972 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1306A5EB8C29712444135FE1 /* libPods-SoulSync.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9559375F2B40B0EF006BF0D3 /* SoulSyncTests */ = {
+			isa = PBXGroup;
+			children = (
+				955937602B40B0EF006BF0D3 /* SoulSyncTests.swift */,
+			);
+			path = SoulSyncTests;
+			sourceTree = "<group>";
+		};
+		955937672B40B533006BF0D3 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				954EF3EF2B1573F800925972 /* FirstLaunch.swift */,
+				955F573B2B4D7892009AC08D /* PitchCreator.swift */,
+			);
+			path = Signup;
+			sourceTree = "<group>";
+		};
+		9576BD862B5747A6001240B3 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				9576BD872B5747C5001240B3 /* videoEditor.swift */,
+				95A8665F2C0B470D00B7C2A7 /* RN_TEST.swift */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		9598AE382B37302500899429 /* TestingData */ = {
+			isa = PBXGroup;
+			children = (
+				9598AE372B37301D00899429 /* video2.mp4 */,
+				9598AE362B37301C00899429 /* video1.mp4 */,
+			);
+			path = TestingData;
+			sourceTree = "<group>";
+		};
+		95A8665A2C0AB0C000B7C2A7 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				95A8665B2C0AB0E600B7C2A7 /* ReactNativeController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		95CC64142B3BB4770010ABC2 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				95CC64162B3BB7000010ABC2 /* .env.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		BF1E99592C0CFBB21A3A1758 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C6F40D5A62DD205805B02601 /* Pods-SoulSync.debug.xcconfig */,
+				6C617E130E5CEDE261451410 /* Pods-SoulSync.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		954EF3E92B1573F800925972 /* SoulSync */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 954EF3F82B1573FA00925972 /* Build configuration list for PBXNativeTarget "SoulSync" */;
+			buildPhases = (
+				3CD205E3BAC549F33C28980C /* [CP] Check Pods Manifest.lock */,
+				954EF3E62B1573F800925972 /* Sources */,
+				954EF3E72B1573F800925972 /* Frameworks */,
+				954EF3E82B1573F800925972 /* Resources */,
+				954EF4532B1CD1DB00925972 /* Embed Frameworks */,
+				4AAABFFCBD5D159A5B040778 /* [CP] Embed Pods Frameworks */,
+				EA083414B55B5211410A6E2C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SoulSync;
+			packageProductDependencies = (
+				9517145A2C0BBDB1000C3883 /* iPhoneNumberField */,
+			);
+			productName = SoulSync;
+			productReference = 954EF3EA2B1573F800925972 /* SoulSync.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9559375D2B40B0EE006BF0D3 /* SoulSyncTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 955937642B40B0EF006BF0D3 /* Build configuration list for PBXNativeTarget "SoulSyncTests" */;
+			buildPhases = (
+				9559375A2B40B0EE006BF0D3 /* Sources */,
+				9559375B2B40B0EE006BF0D3 /* Frameworks */,
+				9559375C2B40B0EE006BF0D3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				955937632B40B0EF006BF0D3 /* PBXTargetDependency */,
+			);
+			name = SoulSyncTests;
+			productName = SoulSyncTests;
+			productReference = 9559375E2B40B0EE006BF0D3 /* SoulSyncTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		954EF3E22B1573F800925972 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1510;
+				TargetAttributes = {
+					954EF3E92B1573F800925972 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+					9559375D2B40B0EE006BF0D3 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 954EF3E92B1573F800925972;
+					};
+				};
+			};
+			buildConfigurationList = 954EF3E52B1573F800925972 /* Build configuration list for PBXProject "SoulSync" */;
+			compatibilityVersion = "Xcode 15.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 954EF3E12B1573F800925972;
+			packageReferences = (
+				951714592C0BBDB1000C3883 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
+			);
+			productRefGroup = 954EF3EB2B1573F800925972 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				954EF3E92B1573F800925972 /* SoulSync */,
+				9559375D2B40B0EE006BF0D3 /* SoulSyncTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		954EF3E82B1573F800925972 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95EB6FA72B55B968005CD892 /* Launch Screen.storyboard in Resources */,
+				954EF3F52B1573FA00925972 /* Preview Assets.xcassets in Resources */,
+				95EB6FA92B55BA69005CD892 /* Launch Screen Assets.xcassets in Resources */,
+				9598AE392B37337800899429 /* video1.mp4 in Resources */,
+				952E8D9A2B2F6F380055CEEA /* preferences.json in Resources */,
+				9598AE3A2B37337B00899429 /* video2.mp4 in Resources */,
+				954EF3F22B1573FA00925972 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9559375C2B40B0EE006BF0D3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3CD205E3BAC549F33C28980C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-SoulSync-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4AAABFFCBD5D159A5B040778 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoulSync/Pods-SoulSync-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoulSync/Pods-SoulSync-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SoulSync/Pods-SoulSync-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EA083414B55B5211410A6E2C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoulSync/Pods-SoulSync-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SoulSync/Pods-SoulSync-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SoulSync/Pods-SoulSync-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		954EF3E62B1573F800925972 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9598AE3C2B379D3400899429 /* Main.swift in Sources */,
+				95CC64172B3BB7000010ABC2 /* .env.swift in Sources */,
+				9576BD882B5747C5001240B3 /* videoEditor.swift in Sources */,
+				95A866602C0B470D00B7C2A7 /* RN_TEST.swift in Sources */,
+				952E8DA02B2F72EF0055CEEA /* LoadPrefrences.swift in Sources */,
+				954EF3F02B1573F800925972 /* FirstLaunch.swift in Sources */,
+				9598AE352B36413500899429 /* Shapes.swift in Sources */,
+				95A8665C2C0AB0E600B7C2A7 /* ReactNativeController.swift in Sources */,
+				95489BF22B486E3D004160F6 /* SoulSyncDelegate.swift in Sources */,
+				952E8D9D2B2F6F800055CEEA /* SignUpModals.swift in Sources */,
+				955937592B3F7FC7006BF0D3 /* FrameHandler.swift in Sources */,
+				954EF3EE2B1573F800925972 /* SoulSyncApp.swift in Sources */,
+				955F573C2B4D7892009AC08D /* PitchCreator.swift in Sources */,
+				95A8665E2C0AB17700B7C2A7 /* ReactNative.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9559375A2B40B0EE006BF0D3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				955937612B40B0EF006BF0D3 /* SoulSyncTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		955937632B40B0EF006BF0D3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 954EF3E92B1573F800925972 /* SoulSync */;
+			targetProxy = 955937622B40B0EF006BF0D3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		954EF3F62B1573FA00925972 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95CC64152B3BB4B90010ABC2 /* Config.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		954EF3F72B1573FA00925972 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95CC64152B3BB4B90010ABC2 /* Config.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		954EF3F92B1573FA00925972 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95CC64152B3BB4B90010ABC2 /* Config.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SoulSync/SoulSync.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20;
+				DEVELOPMENT_ASSET_PATHS = "\"SoulSync/Preview Content\"";
+				DEVELOPMENT_TEAM = 8UA385N825;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SoulSync/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SoulSync;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera to make you video pitch";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need mic access to go aong with the video";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need to save the pitch to your camera roll";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cendrive.SoulSync;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		954EF3FA2B1573FA00925972 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 95CC64152B3BB4B90010ABC2 /* Config.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SoulSync/SoulSync.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 20;
+				DEVELOPMENT_ASSET_PATHS = "\"SoulSync/Preview Content\"";
+				DEVELOPMENT_TEAM = 8UA385N825;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SoulSync/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = SoulSync;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.social-networking";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need camera to make you video pitch";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "We need mic access to go aong with the video";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "We need to save the pitch to your camera roll";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cendrive.SoulSync;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		955937652B40B0EF006BF0D3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 8UA385N825;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cendrive.SoulSyncTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoulSync.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SoulSync";
+			};
+			name = Debug;
+		};
+		955937662B40B0EF006BF0D3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEVELOPMENT_TEAM = 8UA385N825;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.cendrive.SoulSyncTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SoulSync.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/SoulSync";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		954EF3E52B1573F800925972 /* Build configuration list for PBXProject "SoulSync" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				954EF3F62B1573FA00925972 /* Debug */,
+				954EF3F72B1573FA00925972 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		954EF3F82B1573FA00925972 /* Build configuration list for PBXNativeTarget "SoulSync" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				954EF3F92B1573FA00925972 /* Debug */,
+				954EF3FA2B1573FA00925972 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		955937642B40B0EF006BF0D3 /* Build configuration list for PBXNativeTarget "SoulSyncTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				955937652B40B0EF006BF0D3 /* Debug */,
+				955937662B40B0EF006BF0D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		951714592C0BBDB1000C3883 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MojtabaHs/iPhoneNumberField.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.10.4;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9517145A2C0BBDB1000C3883 /* iPhoneNumberField */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 951714592C0BBDB1000C3883 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;
+			productName = iPhoneNumberField;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 954EF3E22B1573F800925972 /* Project object */;
+}

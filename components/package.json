@@ -1,0 +1,17 @@
+{
+  "name": "components",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "yarn react-native start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "react": "18.2.0",
+    "react-native": "^0.74.1",
+    "react-native-camera": "^4.2.1"
+  }
+}

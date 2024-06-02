@@ -1,0 +1,11 @@
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+
+platform :ios, '17.0'
+
+target 'SoulSync' do
+  use_react_native!
+  pod 'PhoneNumberKit', '~> 3.7'
+  # pod 'iPhoneNumberField', :git => 'https://github.com/MojtabaHs/iPhoneNumberField.git'
+
+end
