@@ -3,6 +3,10 @@ import express from "express";
 import apn from "apn";
 import fs from 'fs';
 import https from 'https';
+import api from './api';
+import path from 'path';
+import { env } from './utils';
+import bodyParser from 'body-parser';
 
 const findNextAvailablePort = (port: number) => {
     return new Promise<number>((resolve, reject) => {
@@ -25,8 +29,9 @@ const findNextAvailablePort = (port: number) => {
 
 const PORT = await findNextAvailablePort(process.env.PORT as unknown as number || 443);
 const app = express();
-const key = fs.readFileSync('certs/server.key');
-const cert = fs.readFileSync('certs/server.crt');
+// const key = fs.readFileSync('certs/server.key');
+// const cert = fs.readFileSync('certs/server.crt');
+const publicDir = path.join(__dirname, env === 'dev' ? '..' : '../..', 'public');
 
 const apnProvider = new apn.Provider({
     token: {
@@ -37,12 +42,23 @@ const apnProvider = new apn.Provider({
     production: false
 });
 
-app.get('/', (req, res) => {
-    res.json({ message: 'Hello World!' });
+
+
+app.use(express.static(publicDir));
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(publicDir, 'index.html'));
 });
 
-const httpsServer = https.createServer({ key: key, cert: cert }, app);
+
+
+app.use(bodyParser.json());
+app.use("/api", api);
+
+
+
+// const httpsServer = https.createServer({ key: key, cert: cert }, app);
 
 app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT} w/ https!`);
+    console.log(`Server listening on port ${PORT}`);
 });
