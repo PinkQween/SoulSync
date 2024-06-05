@@ -40,6 +40,17 @@
                ReferencedContainer = "container:SoulSync.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "954B5F932C0D0E690022F859"
+               BuildableName = "SoulSyncUITests.xctest"
+               BlueprintName = "SoulSyncUITests"
+               ReferencedContainer = "container:SoulSync.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

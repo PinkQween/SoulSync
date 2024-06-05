@@ -1,17 +1,17 @@
 export default interface UserData {
     username: string;
-    phoneNumber: string;
-    hashedPassword: string;
+    email: string;
+    hashedPassword?: string;
     code: number;
     deviceID: string[];
     verified: boolean;
     temp: boolean;
     createdAt: number;
-    token: string;
+    token?: string;
+    birthdate: string;
     preferences?: {
         gender: string;
         sex: string;
-        interests: string[];
         sexuality: string;
         relationshipStatus: string;
         ageRange: {
@@ -22,8 +22,16 @@ export default interface UserData {
     details?: {
         gender: string;
         sex: string;
-        interests: string[];
         sexuality: string;
         relationshipStatus: string;
     };
+    friendMaking?: {
+        likes?: string[];
+        dislikes?: string[];
+    };
+    dating?: {
+        likes?: string[];
+        dislikes?: string[];
+        isLocked?: boolean;
+    }
 }

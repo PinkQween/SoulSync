@@ -10,7 +10,7 @@ import Combine
 
 struct PhoneVerificationView: View {
     @Binding var isCompleteSignUp: Bool
-    @Binding var phoneNumber: String
+    @Binding var email: String
     @Binding var token: String
     @State private var verificationCode = ""
     @State private var showAlert = false
@@ -19,7 +19,7 @@ struct PhoneVerificationView: View {
     
     var body: some View {
         VStack {
-            Text("Phone Verification")
+            Text("Email Verification")
                 .font(.title)
                 .padding()
             
@@ -41,7 +41,7 @@ struct PhoneVerificationView: View {
             
             Button(action: {
                 // Implement verification logic here
-                self.verifyPhoneNumber()
+                self.verify()
             }) {
                 Text("Verify")
                     .padding()
@@ -71,34 +71,24 @@ struct PhoneVerificationView: View {
         errorMessage = message
     }
     
-    func verifyPhoneNumber() {
+    func verify() {
         // Implement your phone verification logic here
         // You can use the values of `verificationCode` and `phoneNumber`
         // to perform the verification process, such as sending a request to a server.
         
-        guard let url = URL(string: "\(Env.ssEndpointURI)verify") else {
-            print("Invalid URL")
-            return
-        }
+        dump(token)
         
         let parameters: [String: Any] = [
             "verificationCode": verificationCode
         ]
         
-        var request = URLRequest(url: url)
-        request.httpMethod = "PUT"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.addValue("Bearer \(token)", forHTTPHeaderField: "Authorization")
+        let headers: [String: String] = [
+            "Authorization": "Bearer \(token)",
+        ]
         
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: parameters)
-        } catch {
-            print("Error serializing JSON: \(error)")
-            showAlert(title: "Error serializing JSON", message: !error.localizedDescription.isEmpty ? error.localizedDescription : "No message")
-            return
-        }
+//        request.addValue("Bearer \(UserDefaults.standard.string(forKey: "token") ?? "")", forHTTPHeaderField: "Authorization")
         
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        NetworkManager.shared.put(to: URL(string: "\(apiURL)/verify")!, body: parameters, headers: headers) { data, response, error in
             if let error = error {
                 print("Error: \(error)")
                 showAlert(title: "Error", message: !error.localizedDescription.isEmpty ? error.localizedDescription : "No message")
@@ -115,20 +105,25 @@ struct PhoneVerificationView: View {
             do {
                 let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
                 
+                dump(jsonResponse)
+                
                 // Handle the response from the server
                 if let success = jsonResponse?["success"] as? Bool, success {
                     // Respond to successful verification (you can navigate to the next screen or perform other actions)
-                    UserDefaults.standard.set(self.token, forKey: "token")
+//                    UserDefaults.standard.set(self.token, forKey: "token")
+                    let _ = KeychainManager.save(key: "token", value: self.token)
                     
                     
                     self.isCompleteSignUp = true
-                } else if let error = jsonResponse?["error"] as? String {
+                } else if let error = ServerErrors(rawValue: jsonResponse?["error"] as? String ?? "") {
                     // Handle specific errors
                     switch error {
-                    case "phone_exists":
-                        showAlert(title: "Phone Number Already Exists", message: "A user with this phone number already exists.")
-                    case "wrong_code":
+                    case .WRONG_CODE:
                         showAlert(title: "Wrong code", message: "The code you entered doesn't match the expected one")
+                    case .NO_TOKEN:
+                        showAlert(title: "No token", message: "The client forgot to send the token")
+                    case .INVALID_TOKEN:
+                        showAlert(title: "Invalid Token", message: "The client send a invlaid token")
                     default:
                         showAlert(title: "Server Error", message: "Unexpected server response: \(error)")
                     }
@@ -149,6 +144,6 @@ struct PhoneVerificationView: View {
                 
                 showAlert(title: "Error decoding JSON", message: !error.localizedDescription.isEmpty ? error.localizedDescription : "No message")
             }
-        }.resume()
+        }
     }
 }

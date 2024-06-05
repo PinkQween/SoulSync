@@ -1,53 +1,58 @@
 import fs from 'fs';
-import path from 'path';
 import type UserData from '../types/UserData';
 
 let userData: UserData[] = [];
 
-const checkForUpdates = () => {
-    // console.log("Checking for updates...");
-    try {
-        const fileData = fs.readFileSync(path.join(__dirname, '../../db/other/soulSyncUsers.json'), 'utf-8');
-        userData = JSON.parse(fileData);
-    } catch (error) {
-        console.error('Error reading initial user data file:', error);
-    }
+const dbPath = "/Volumes/External (please use)/SoulSync/server/db/db.json"
 
-    const currentTime = new Date().getTime();
+const checkForUpdates = () => {
+    userData = setDBToCache();
 
     // Remove temporary users in memory
     userData = userData.filter((user) => {
-        if (user.temp && currentTime - user.createdAt > 10 * 60 * 1000) {
-            console.log(`Deleting temporary user in memory: ${user.phoneNumber}`);
-            return false;
+        if (user.temp && new Date().getTime() - user.createdAt > 1000 * 60 * 10) {
+            console.log(`Deleting temporary user in memory: ${user.email}`);
+            userData.splice(userData.indexOf(user), 1);
+
+            saveUserDataToFile();
+            
+            return
         }
-        return true;
     });
-
-    // Remove temporary users from the JSON file
-    saveUserDataToFile();
 };
 
-setInterval(checkForUpdates, 2500);
+setInterval(checkForUpdates, 10000);
 
-// Schedule a function to delete temporary users after 10 minutes
-setTimeout(() => {
-    console.log("Deleting temporary users older than 10 minutes...");
+export const saveUserDataToFile = () => fs.writeFileSync(dbPath, JSON.stringify(userData, null, 2), 'utf-8');
 
-    // Remove temporary users in memory
-    userData = userData.filter(
-        (user) => !user.temp || new Date().getTime() - user.createdAt <= 10 * 60 * 1000
-    );
+const setDBToCache = (): UserData[] => JSON.parse(fs.readFileSync(dbPath, 'utf-8'));
 
-    // Remove temporary users from the JSON file
+export const addUser = (user: UserData) => {
+    const ret = userData.push(user);
+
     saveUserDataToFile();
-}, 10 * 60 * 1000);
 
-const saveUserDataToFile = () => {
-    const filePath = path.join(__dirname, '../../db/db.json');
-    const jsonData = JSON.stringify(userData, null, 2);
+    return ret;
+}
 
-    fs.writeFileSync(filePath, jsonData, 'utf-8');
+export const updateUser = (user: UserData, index: number) => {
+    const ret = userData[index] = user;
+
+    saveUserDataToFile();
+
+    return ret;
+}
+
+export default () => {
+    return setDBToCache();
 };
 
-export default userData;
+userData = setDBToCache()
+
+process.on('SIGINT', () => {
+    console.log('Exiting... Saving user data to file.');
+    saveUserDataToFile();
+    console.log(userData);
+});
+
+// console.log(JSON.parse(fs.readFileSync(dbPath, 'utf-8')));

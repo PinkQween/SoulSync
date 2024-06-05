@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct PreferencesView: View {
     @State private var preferences: Preferences.PreferencesModel?
@@ -20,7 +21,11 @@ struct PreferencesView: View {
     @State private var showAlert = false
     @State private var errorTitle = ""
     @State private var errorMessage = ""
-    @Binding var phoneNumber: String
+    @Binding var email: String
+    @State var customAgeRangeLowerLimit: String = ""
+    @State var customAgeRangeUpperLimit: String = ""
+    @State var isPositiveLowerLimit: Bool = false
+    @State var isPositiveUpperLimit: Bool = true
     
     var body: some View {
         ScrollView {
@@ -56,23 +61,6 @@ struct PreferencesView: View {
                     HStack {
                         ForEach(preferencesOptions?.sexOptions.options ?? [], id: \.self) { option in
                             PreferButton(option: option, selectedOptions: $selectedSexOptions, multiple: preferencesOptions?.sexOptions.multiple)
-                        }
-                    }
-                }
-                
-                HStack {
-                    Text("Interests:")
-                        .padding([.top, .leading, .trailing], 6.0)
-                    
-                    Spacer()
-                }
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(preferencesOptions?.interestsOptions.options ?? [], id: \.self) { option in
-                            ForEach(option.subInterests ?? [], id: \.self) { subInterest in
-                                PreferButton(option: subInterest.option, selectedOptions: $selectedInterestsOptions, multiple: preferencesOptions?.interestsOptions.multiple)
-                            }
                         }
                     }
                 }
@@ -124,6 +112,31 @@ struct PreferencesView: View {
                 }
             }
             
+            if (!selectedAgeRangeOptions.isEmpty && selectedAgeRangeOptions[0] == "Custom") {
+                VStack {
+                    HStack {
+                        Toggle(isOn: $isPositiveLowerLimit) {
+                            Image(systemName: "plus.forwardslash.minus")
+                        }
+                        .frame(width: 100)
+                        
+                        TextField("Lower Limit", text: $customAgeRangeLowerLimit)
+                            .padding()
+                            .keyboardType(.decimalPad)
+                    }
+                    HStack {
+                        Toggle(isOn: $isPositiveUpperLimit) {
+                            Image(systemName: "plus.forwardslash.minus")
+                        }
+                        .frame(width: 100)
+                        
+                        TextField("Upper Limit", text: $customAgeRangeUpperLimit)
+                            .padding()
+                            .keyboardType(.decimalPad)
+                    }
+                }
+            }
+            
             Spacer()
             
             Button(action: {
@@ -139,24 +152,25 @@ struct PreferencesView: View {
                             .padding(2)
                     )
             })
-            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+            .padding()
+            .onAppear {
+                Preferences.PreferencesOptionsModel.loadPreferences { loadedPreferences in
+                    preferencesOptions = loadedPreferences
+                    
+                    dump(loadedPreferences)
+                }
+            }.alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text(errorTitle),
+                    message: Text(errorMessage),
+                    dismissButton: .cancel()
+                )
+            }
         }
         .padding()
-        .onAppear {
-            Preferences.PreferencesOptionsModel.loadPreferences { loadedPreferences in
-                preferencesOptions = loadedPreferences
-                
-                dump(loadedPreferences)
-            }
-        }.alert(isPresented: $showAlert) {
-            Alert(
-                title: Text(errorTitle),
-                message: Text(errorMessage),
-                dismissButton: .cancel()
-            )
-        }
     }
-    
+        
+            
     func showAlert(title: String, message: String) {
         showAlert = true
         errorTitle = title
@@ -164,13 +178,16 @@ struct PreferencesView: View {
     }
     
     private func addPrefs() -> Void {
-        // Implement your sign-up logic here
-        // You can use the values of `fullName`, `phoneNumber`, `password`, and `confirmPassword`
-        // to perform the sign-up process, such as sending a request to a server.
+        var lowerAge = 0
+        var upperAge = 0
         
-        guard let url = URL(string: "\(Env.ssEndpointURI)prefs") else {
-            print("Invalid URL")
-            return
+        if (selectedAgeRangeOptions[0] == "custom") {
+            lowerAge = Int(isPositiveLowerLimit ? "+" : "-" + customAgeRangeLowerLimit) ?? 0
+            upperAge = Int(isPositiveLowerLimit ? "+" : "-" + customAgeRangeLowerLimit) ?? 0
+        } else {
+            let ageComponents = selectedAgeRangeOptions[0].split(separator: "±")
+            let lowerAge = Int(ageComponents[0]) ?? 0
+            let upperAge = Int(ageComponents[0]) ?? 0
         }
         
         let parameters: [String: Any] = [
@@ -179,24 +196,16 @@ struct PreferencesView: View {
             "intrests": selectedInterestsOptions,
             "sexuality": selectedSexualityOptions,
             "relationshipStatus": selectedRelationshipStatusOptions,
-            "ageRange": selectedAgeRangeOptions
+            "ageRange": "\(lowerAge)-\(upperAge)"
         ]
         
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let headers: [String: String] = [
+            "Authorization": "Bearer \(String(describing: KeychainManager.loadString(key: "token")))",
+        ]
         
-        request.addValue("Bearer \(UserDefaults.standard.string(forKey: "token") ?? "")", forHTTPHeaderField: "Authorization")
+//        request.addValue("Bearer \(UserDefaults.standard.string(forKey: "token") ?? "")", forHTTPHeaderField: "Authorization")
         
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: parameters)
-        } catch {
-            print("Error serializing JSON: \(error)")
-            showAlert(title: "Error serializing JSON", message: !error.localizedDescription.isEmpty ? error.localizedDescription : "No message")
-            return
-        }
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        NetworkManager.shared.post(to: URL(string: "\(apiURL)/prefs")!, body: parameters, headers: headers) { data, response, error in
             if let error = error {
                 print("Error: \(error)")
                 showAlert(title: "Error", message: !error.localizedDescription.isEmpty ? error.localizedDescription : "No message")
@@ -217,10 +226,10 @@ struct PreferencesView: View {
                     // Navigate to the verification page
                     // Set the flag to trigger navigation
                     self.addedPreferences = true
-                } else if let error = jsonResponse?["error"] as? String {
+                } else if let error = ServerErrors(rawValue: jsonResponse?["error"] as? String ?? "") {
                     // Handle specific errors
                     switch error {
-                    case "phone_exists":
+                    case .EMAIL_EXISTS:
                         showAlert(title: "Phone Number Already Exists", message: "A user with this phone number already exists.")
                     default:
                         showAlert(title: "Server Error", message: "Unexpected server response: \(error)")
@@ -242,7 +251,7 @@ struct PreferencesView: View {
                 
                 showAlert(title: "Error decoding JSON", message: !error.localizedDescription.isEmpty ? error.localizedDescription : "No message")
             }
-        }.resume()
+        }
     }
 }
 
@@ -257,10 +266,9 @@ struct DescriptorsView: View {
     @State private var showAlert = false
     @State private var errorTitle = ""
     @State private var errorMessage = ""
-    @Binding var phoneNumber: String
+    @Binding var email: String
     
     var body: some View {
-        ScrollView {
             VStack {
                 Text("Select who you are")
                     .font(.title)
@@ -298,23 +306,6 @@ struct DescriptorsView: View {
                 }
                 
                 HStack {
-                    Text("Interests:")
-                        .padding([.top, .leading, .trailing], 6.0)
-                    
-                    Spacer()
-                }
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(preferencesOptions?.interestsOptions.options ?? [], id: \.self) { option in
-                            ForEach(option.subInterests ?? [], id: \.self) { subInterest in
-                                PreferButton(option: subInterest.option, selectedOptions: $selectedInterestsOptions, multiple: preferencesOptions?.interestsOptions.multiple)
-                            }
-                        }
-                    }
-                }
-                
-                HStack {
                     Text("Sexuality:")
                         .padding([.top, .leading, .trailing], 6.0)
                     
@@ -344,39 +335,38 @@ struct DescriptorsView: View {
                         }
                     }
                 }
-            }
-            
-            Spacer()
-            
-            Button(action: {
-                addDetails()
-            }, label: {
-                Text("Next")
-                    .font(.headline)
-                    .frame(width: 300.0, height: 60.0)
-                    .cornerRadius(23)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 23)
-                            .stroke(Color.white, lineWidth: 2)
-                            .padding(2)
-                    )
-            })
-            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-        }
-        .padding()
-        .onAppear {
-            Preferences.PreferencesOptionsModel.loadPreferences { loadedPreferences in
-                preferencesOptions = loadedPreferences
                 
-                dump(loadedPreferences)
+                Spacer()
+                
+                Button(action: {
+                    addDetails()
+                }, label: {
+                    Text("Next")
+                        .font(.headline)
+                        .frame(width: 300.0, height: 60.0)
+                        .cornerRadius(23)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 23)
+                                .stroke(Color.white, lineWidth: 2)
+                                .padding(2)
+                        )
+                })
+                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             }
-        }.alert(isPresented: $showAlert) {
-            Alert(
-                title: Text(errorTitle),
-                message: Text(errorMessage),
-                dismissButton: .cancel()
-            )
-        }
+            .padding()
+            .onAppear {
+                Preferences.PreferencesOptionsModel.loadPreferences { loadedPreferences in
+                    preferencesOptions = loadedPreferences
+                    
+                    dump(loadedPreferences)
+                }
+            }.alert(isPresented: $showAlert) {
+                Alert(
+                    title: Text(errorTitle),
+                    message: Text(errorMessage),
+                    dismissButton: .cancel()
+                )
+            }
     }
     
     func showAlert(title: String, message: String) {
@@ -386,15 +376,6 @@ struct DescriptorsView: View {
     }
     
     private func addDetails() -> Void {
-        // Implement your sign-up logic here
-        // You can use the values of `fullName`, `phoneNumber`, `password`, and `confirmPassword`
-        // to perform the sign-up process, such as sending a request to a server.
-        
-        guard let url = URL(string: "\(Env.ssEndpointURI)details") else {
-            print("Invalid URL")
-            return
-        }
-        
         let parameters: [String: Any] = [
             "gender": selectedGenderOptions,
             "sex": selectedSexOptions,
@@ -403,21 +384,11 @@ struct DescriptorsView: View {
             "relationshipStatus": selectedRelationshipStatusOptions
         ]
         
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        let headers: [String: String] = [
+            "Authorization": "Bearer \(String(describing: KeychainManager.loadString(key: "token")))",
+        ]
         
-        request.addValue("Bearer \(UserDefaults.standard.string(forKey: "token") ?? "")", forHTTPHeaderField: "Authorization")
-        
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: parameters)
-        } catch {
-            print("Error serializing JSON: \(error)")
-            showAlert(title: "Error serializing JSON", message: !error.localizedDescription.isEmpty ? error.localizedDescription : "No message")
-            return
-        }
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        NetworkManager.shared.post(to: URL(string: "\(apiURL)/details")!, body: parameters, headers: headers) { data, response, error in
             if let error = error {
                 print("Error: \(error)")
                 showAlert(title: "Error", message: !error.localizedDescription.isEmpty ? error.localizedDescription : "No message")
@@ -438,10 +409,10 @@ struct DescriptorsView: View {
                     // Navigate to the verification page
                     // Set the flag to trigger navigation
                     self.addedDetails = true
-                } else if let error = jsonResponse?["error"] as? String {
+                } else if let error = ServerErrors(rawValue: jsonResponse?["error"] as? String ?? "") {
                     // Handle specific errors
                     switch error {
-                    case "phone_exists":
+                    case .EMAIL_EXISTS:
                         showAlert(title: "Phone Number Already Exists", message: "A user with this phone number already exists.")
                     default:
                         showAlert(title: "Server Error", message: "Unexpected server response: \(error)")
@@ -463,7 +434,7 @@ struct DescriptorsView: View {
                 
                 showAlert(title: "Error decoding JSON", message: !error.localizedDescription.isEmpty ? error.localizedDescription : "No message")
             }
-        }.resume()
+        }
     }
 }
 
@@ -504,4 +475,9 @@ struct PreferButton: View {
                 }
             }
     }
+}
+
+#Preview {
+    PreferencesView(addedPreferences: .constant(false), email: .constant("hanna@hannaskairipa.com"))
+        .preferredColorScheme(.dark)
 }

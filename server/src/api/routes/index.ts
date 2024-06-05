@@ -3,8 +3,8 @@ import type Routes from '../../types/Routes';
 
 const route = Router();
 
-route.get('/', (req, res) => {
-    res.send('Hello World!');
+route.get('/', (_, res) => {
+    res.status(200).json({ message: 'API up and running!!!' });
 });
 
 export default {

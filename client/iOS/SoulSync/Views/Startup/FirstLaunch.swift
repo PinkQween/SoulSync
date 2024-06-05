@@ -93,7 +93,8 @@ struct OnboardingProcess: View {
     @State private var isLoginSuccessful = false
     @Binding var signUp: Bool
     @State private var isCompleteSignUp = false
-    @State private var phone = ""
+//    @State private var phone = ""
+    @State private var email = ""
     @State private var token = ""
     @State private var addedDetails = false
     @State private var addedPreferences = false
@@ -121,13 +122,13 @@ struct OnboardingProcess: View {
     @ViewBuilder
     private var signUpView: some View {
         if !isSignUpSuccessful {
-            SignUpInfoView(isSignUpSuccessful: $isSignUpSuccessful, fullPhoneNumber: $phone, token: $token)
+            SignUpInfoView(isSignUpSuccessful: $isSignUpSuccessful, email: $email, token: $token)
         } else if !isCompleteSignUp {
-            PhoneVerificationView(isCompleteSignUp: $isCompleteSignUp, phoneNumber: $phone, token: $token)
+            PhoneVerificationView(isCompleteSignUp: $isCompleteSignUp, email: $email, token: $token)
         } else if !addedDetails {
-            DescriptorsView(addedDetails: $addedDetails, phoneNumber: $phone)
+            DescriptorsView(addedDetails: $addedDetails, email: $email)
         } else if !addedPreferences {
-            PreferencesView(addedPreferences: $addedPreferences, phoneNumber: $phone)
+            PreferencesView(addedPreferences: $addedPreferences, email: $email)
         } else {
             RewelcomeView()
         }

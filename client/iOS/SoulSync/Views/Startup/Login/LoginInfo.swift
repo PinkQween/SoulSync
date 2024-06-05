@@ -23,6 +23,7 @@ struct LoginInfoView: View {
     @State private var errorMessage = ""
     @State private var textBoxPadding: Double = 4
     @State private var selectedCountryCodeIndex = 0
+    @State private var email: String = ""
     let phoneNumberKit = PhoneNumberKit()
     
     var isPasswordValid: Bool {
@@ -31,8 +32,13 @@ struct LoginInfoView: View {
         return passwordPredicate.evaluate(with: password)
     }
     
+    var isEmailValid: Bool {
+        let emailRegex = #"^[^!-/\[-_{-~]*(?:[0-9A-Za-z](?:[0-9A-Za-z]+|(\.)(?!\1)))*([^!-/\[-_{-~]){1,256}@[a-zA-Z0-9][a-zA-Z0-9-]{0,64}(?:\.[a-zA-Z0-9][a-zA-Z0-9-]{0,25})+"#
+        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
+    }
+    
     var isLoginButtonEnabled: Bool {
-        return isPasswordValid && isPhoneValid
+        return isPasswordValid && isEmailValid
     }
     
     var countryCodes: [String] {
@@ -54,42 +60,48 @@ struct LoginInfoView: View {
                 .font(.title)
                 .padding()
             
-            HStack {
-                Picker("Country Code", selection: $selectedCountryCodeIndex) {
-                    ForEach(Array(countryCodes.enumerated()), id: \.offset) { index, code in
-                        Text(code)
-                    }
-                }
-                .pickerStyle(.menu)
+//            HStack {
+//                Picker("Country Code", selection: $selectedCountryCodeIndex) {
+//                    ForEach(Array(countryCodes.enumerated()), id: \.offset) { index, code in
+//                        Text(code)
+//                    }
+//                }
+//                .pickerStyle(.menu)
                 
                 
-                iPhoneNumberField("Phone Number", text: $displayPhoneNumber)
-                    .padding(textBoxPadding)
-                    .textContentType(.telephoneNumber)
-                    .keyboardType(.phonePad)
-                    .textFieldStyle(PlainTextFieldStyle())
-                    .onReceive(Just(displayPhoneNumber)) { newText in
-                                    let filtered = newText.filter { $0.isNumber }
-                                    if filtered != newText {
-                                        self.displayPhoneNumber = filtered
-                                    }
-                                    
-                                    // Enforce a maximum length for the phone number, adjust as needed
-                                    let maxLength = 10 // Adjust this value based on your requirements
-                                    if self.displayPhoneNumber.count > maxLength {
-                                        self.displayPhoneNumber = String(self.displayPhoneNumber.prefix(maxLength))
-                                    }
-                                }
-            }
-            .onChange(of: displayPhoneNumber) { oldValue, newValue in
-                fullPhoneNumber = formatPhone(phoneNumber: countryCodes[selectedCountryCodeIndex] + newValue)
-                validatePhoneNumber()
-            }
-            .onChange(of: selectedCountryCodeIndex) { oldValue, newValue in
-                validatePhoneNumber()
-            }
-            .border(Color(UIColor.quaternaryLabel))
-            .cornerRadius(6)
+                //                iPhoneNumberField("Phone Number", text: $displayPhoneNumber)
+                //                    .padding(textBoxPadding)
+                //                    .textContentType(.telephoneNumber)
+                //                    .keyboardType(.phonePad)
+                //                    .textFieldStyle(PlainTextFieldStyle())
+                //                    .onReceive(Just(displayPhoneNumber)) { newText in
+                //                                    let filtered = newText.filter { $0.isNumber }
+                //                                    if filtered != newText {
+                //                                        self.displayPhoneNumber = filtered
+                //                                    }
+                //
+                //                                    // Enforce a maximum length for the phone number, adjust as needed
+                //                                    let maxLength = 10 // Adjust this value based on your requirements
+                //                                    if self.displayPhoneNumber.count > maxLength {
+                //                                        self.displayPhoneNumber = String(self.displayPhoneNumber.prefix(maxLength))
+                //                                    }
+                //                                }
+                //            }
+                //            .onChange(of: displayPhoneNumber) { oldValue, newValue in
+                //                fullPhoneNumber = formatPhone(phoneNumber: countryCodes[selectedCountryCodeIndex] + newValue)
+                //                validatePhoneNumber()
+                //            }
+                //            .onChange(of: selectedCountryCodeIndex) { oldValue, newValue in
+                //                validatePhoneNumber()
+                //            }
+                //            .border(Color(UIColor.quaternaryLabel))
+                //            .cornerRadius(6)
+            
+            TextField("Email", text: $email)
+                .padding(textBoxPadding)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .textContentType(.emailAddress)
+                .keyboardType(.emailAddress)
             
             SecureField("Password", text: $password)
                 .padding(textBoxPadding)
@@ -122,34 +134,17 @@ struct LoginInfoView: View {
     }
     
     func login() {
-        // Implement your phone verification logic here
-        // You can use the values of `verificationCode` and `phoneNumber`
-        // to perform the verification process, such as sending a request to a server.
+                // Implement your phone verification logic here
+                // You can use the values of `verificationCode` and `phoneNumber`
+                // to perform the verification process, such as sending a request to a server.
         
-        guard let url = URL(string: "\(Env.ssEndpointURI)login") else {
-            print("Invalid URL")
-            return
-        }
+                let parameters: [String: Any] = [
+                    "email": email,
+                    "password": password,
+                    "deviceID": UserDefaults.standard.string(forKey: "deviceToken") ?? ""
+                ]
         
-        let parameters: [String: Any] = [
-            "phoneNumber": fullPhoneNumber,
-            "password": password,
-            "deviceID": UserDefaults.standard.string(forKey: "deviceToken") ?? ""
-        ]
-        
-        var request = URLRequest(url: url)
-        request.httpMethod = "POST"
-        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        
-        do {
-            request.httpBody = try JSONSerialization.data(withJSONObject: parameters)
-        } catch {
-            print("Error serializing JSON: \(error)")
-            showAlert(title: "Error serializing JSON", message: !error.localizedDescription.isEmpty ? error.localizedDescription : "No message")
-            return
-        }
-        
-        URLSession.shared.dataTask(with: request) { data, response, error in
+        NetworkManager.shared.post(to: URL(string: "\(apiURL)/login")!, body: parameters) { data, response, error in
             if let error = error {
                 print("Error: \(error)")
                 showAlert(title: "Error", message: !error.localizedDescription.isEmpty ? error.localizedDescription : "No message")
@@ -169,7 +164,7 @@ struct LoginInfoView: View {
                 // Handle the response from the server
                 if let success = jsonResponse?["success"] as? Bool, success {
                     // Respond to successful verification (you can navigate to the next screen or perform other actions)
-                    UserDefaults.standard.set((jsonResponse?["token"] as? String)!, forKey: "token")
+                    let _ = KeychainManager.save(key: "token", value: (jsonResponse?["message"] as? [String: Any])?["token"] as? String ?? "")
                     
                     
                     self.isLoginSuccessful = true
@@ -200,7 +195,7 @@ struct LoginInfoView: View {
                 
                 showAlert(title: "Error decoding JSON", message: !error.localizedDescription.isEmpty ? error.localizedDescription : "No message")
             }
-        }.resume()
+        }
     }
     
     func validatePhoneNumber() {

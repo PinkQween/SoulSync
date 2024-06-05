@@ -7,10 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		951F27E12C0F43580085E581 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F27E02C0F43580085E581 /* KeychainManager.swift */; };
+		951F27E32C0F4EBA0085E581 /* ServerErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F27E22C0F4EBA0085E581 /* ServerErrors.swift */; };
 		952E8D9A2B2F6F380055CEEA /* preferences.json in Resources */ = {isa = PBXBuildFile; fileRef = 952E8D992B2F6F380055CEEA /* preferences.json */; };
 		952E8D9D2B2F6F800055CEEA /* SignUpModals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E8D9C2B2F6F800055CEEA /* SignUpModals.swift */; };
 		952E8DA02B2F72EF0055CEEA /* LoadPrefrences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E8D9F2B2F72EF0055CEEA /* LoadPrefrences.swift */; };
 		95489BF22B486E3D004160F6 /* SoulSyncDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95489BF12B486E3D004160F6 /* SoulSyncDelegate.swift */; };
+		954B5F972C0D0E690022F859 /* SoulSyncUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B5F962C0D0E690022F859 /* SoulSyncUITests.swift */; };
+		954B5F992C0D0E690022F859 /* SoulSyncUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B5F982C0D0E690022F859 /* SoulSyncUITestsLaunchTests.swift */; };
 		954EF3EE2B1573F800925972 /* SoulSyncApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954EF3ED2B1573F800925972 /* SoulSyncApp.swift */; };
 		954EF3F02B1573F800925972 /* FirstLaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954EF3EF2B1573F800925972 /* FirstLaunch.swift */; };
 		954EF3F22B1573FA00925972 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954EF3F12B1573FA00925972 /* Assets.xcassets */; };
@@ -26,6 +30,8 @@
 		955F573C2B4D7892009AC08D /* PitchCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955F573B2B4D7892009AC08D /* PitchCreator.swift */; };
 		9576BD882B5747C5001240B3 /* videoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576BD872B5747C5001240B3 /* videoEditor.swift */; };
 		957B94B52B4B1385009A52A7 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 957B94B42B4B1385009A52A7 /* iPhoneNumberField */; };
+		958072642C10A608002E9DF3 /* Streaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958072632C10A608002E9DF3 /* Streaming.swift */; };
+		958072662C10AB12002E9DF3 /* VideoStreamingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958072652C10AB12002E9DF3 /* VideoStreamingManager.swift */; };
 		958BED432C0BD9BC000A5DE0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958BED422C0BD9BC000A5DE0 /* NetworkManager.swift */; };
 		958BED462C0BDA72000A5DE0 /* URLSessionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958BED452C0BDA72000A5DE0 /* URLSessionDelegate.swift */; };
 		958BED4A2C0BE73A000A5DE0 /* JailbreakDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958BED492C0BE73A000A5DE0 /* JailbreakDetector.swift */; };
@@ -35,15 +41,20 @@
 		958BED582C0CACE6000A5DE0 /* Editor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958BED572C0CACE6000A5DE0 /* Editor.swift */; };
 		9598AE392B37337800899429 /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9598AE362B37301C00899429 /* video1.mp4 */; };
 		9598AE3A2B37337B00899429 /* video2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9598AE372B37301D00899429 /* video2.mp4 */; };
-		9598AE3C2B379D3400899429 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9598AE3B2B379D3400899429 /* Main.swift */; };
 		95A8665C2C0AB0E600B7C2A7 /* ReactNativeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8665B2C0AB0E600B7C2A7 /* ReactNativeController.swift */; };
 		95A8665E2C0AB17700B7C2A7 /* ReactNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8665D2C0AB17700B7C2A7 /* ReactNative.swift */; };
-		95CC64172B3BB7000010ABC2 /* .env.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95CC64162B3BB7000010ABC2 /* .env.swift */; };
 		95EB6FA72B55B968005CD892 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EB6FA62B55B968005CD892 /* Launch Screen.storyboard */; };
 		95EB6FA92B55BA69005CD892 /* Launch Screen Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95EB6FA82B55BA69005CD892 /* Launch Screen Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		954B5F9A2C0D0E690022F859 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 954EF3E22B1573F800925972 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 954EF3E92B1573F800925972;
+			remoteInfo = SoulSync;
+		};
 		955937622B40B0EF006BF0D3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 954EF3E22B1573F800925972 /* Project object */;
@@ -67,11 +78,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		951F27E02C0F43580085E581 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		951F27E22C0F4EBA0085E581 /* ServerErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerErrors.swift; sourceTree = "<group>"; };
 		952E8D992B2F6F380055CEEA /* preferences.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = preferences.json; sourceTree = "<group>"; usesTabs = 1; };
 		952E8D9C2B2F6F800055CEEA /* SignUpModals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModals.swift; sourceTree = "<group>"; };
 		952E8D9F2B2F72EF0055CEEA /* LoadPrefrences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPrefrences.swift; sourceTree = "<group>"; };
 		95489BF02B48646E004160F6 /* SoulSync.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SoulSync.entitlements; sourceTree = "<group>"; };
 		95489BF12B486E3D004160F6 /* SoulSyncDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulSyncDelegate.swift; sourceTree = "<group>"; };
+		954B5F942C0D0E690022F859 /* SoulSyncUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoulSyncUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		954B5F962C0D0E690022F859 /* SoulSyncUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulSyncUITests.swift; sourceTree = "<group>"; };
+		954B5F982C0D0E690022F859 /* SoulSyncUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulSyncUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		954EF3EA2B1573F800925972 /* SoulSync.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SoulSync.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		954EF3ED2B1573F800925972 /* SoulSyncApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulSyncApp.swift; sourceTree = "<group>"; };
 		954EF3EF2B1573F800925972 /* FirstLaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunch.swift; sourceTree = "<group>"; };
@@ -87,6 +103,8 @@
 		955C2D4B2C0CFC6C00F30F83 /* NetworkInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInfo.swift; sourceTree = "<group>"; };
 		955F573B2B4D7892009AC08D /* PitchCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchCreator.swift; sourceTree = "<group>"; };
 		9576BD872B5747C5001240B3 /* videoEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoEditor.swift; sourceTree = "<group>"; };
+		958072632C10A608002E9DF3 /* Streaming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streaming.swift; sourceTree = "<group>"; };
+		958072652C10AB12002E9DF3 /* VideoStreamingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoStreamingManager.swift; sourceTree = "<group>"; };
 		958BED422C0BD9BC000A5DE0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		958BED452C0BDA72000A5DE0 /* URLSessionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDelegate.swift; sourceTree = "<group>"; };
 		958BED472C0BDC7B000A5DE0 /* server.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = server.cer; sourceTree = "<group>"; };
@@ -97,17 +115,22 @@
 		958BED572C0CACE6000A5DE0 /* Editor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Editor.swift; sourceTree = "<group>"; };
 		9598AE362B37301C00899429 /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
 		9598AE372B37301D00899429 /* video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video2.mp4; sourceTree = "<group>"; };
-		9598AE3B2B379D3400899429 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 		95A8665B2C0AB0E600B7C2A7 /* ReactNativeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactNativeController.swift; sourceTree = "<group>"; };
 		95A8665D2C0AB17700B7C2A7 /* ReactNative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactNative.swift; sourceTree = "<group>"; };
 		95CC64152B3BB4B90010ABC2 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
-		95CC64162B3BB7000010ABC2 /* .env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = .env.swift; sourceTree = "<group>"; };
 		95CC641A2B3BB9130010ABC2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		95EB6FA62B55B968005CD892 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		95EB6FA82B55BA69005CD892 /* Launch Screen Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Launch Screen Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		954B5F912C0D0E690022F859 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		954EF3E72B1573F800925972 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -139,7 +162,6 @@
 			isa = PBXGroup;
 			children = (
 				952E8D9C2B2F6F800055CEEA /* SignUpModals.swift */,
-				9598AE3B2B379D3400899429 /* Main.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -148,8 +170,19 @@
 			isa = PBXGroup;
 			children = (
 				952E8D9F2B2F72EF0055CEEA /* LoadPrefrences.swift */,
+				958072652C10AB12002E9DF3 /* VideoStreamingManager.swift */,
+				951F27E02C0F43580085E581 /* KeychainManager.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		954B5F952C0D0E690022F859 /* SoulSyncUITests */ = {
+			isa = PBXGroup;
+			children = (
+				954B5F962C0D0E690022F859 /* SoulSyncUITests.swift */,
+				954B5F982C0D0E690022F859 /* SoulSyncUITestsLaunchTests.swift */,
+			);
+			path = SoulSyncUITests;
 			sourceTree = "<group>";
 		};
 		954EF3E12B1573F800925972 = {
@@ -157,6 +190,7 @@
 			children = (
 				954EF3EC2B1573F800925972 /* SoulSync */,
 				9559375F2B40B0EF006BF0D3 /* SoulSyncTests */,
+				954B5F952C0D0E690022F859 /* SoulSyncUITests */,
 				954EF3EB2B1573F800925972 /* Products */,
 				954EF45E2B1CD40D00925972 /* Frameworks */,
 			);
@@ -167,6 +201,7 @@
 			children = (
 				954EF3EA2B1573F800925972 /* SoulSync.app */,
 				9559375E2B40B0EE006BF0D3 /* SoulSyncTests.xctest */,
+				954B5F942C0D0E690022F859 /* SoulSyncUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -264,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				9576BD872B5747C5001240B3 /* videoEditor.swift */,
+				958072632C10A608002E9DF3 /* Streaming.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -273,6 +309,7 @@
 			children = (
 				958BED422C0BD9BC000A5DE0 /* NetworkManager.swift */,
 				958BED452C0BDA72000A5DE0 /* URLSessionDelegate.swift */,
+				951F27E22C0F4EBA0085E581 /* ServerErrors.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -317,7 +354,6 @@
 		95CC64142B3BB4770010ABC2 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
-				95CC64162B3BB7000010ABC2 /* .env.swift */,
 				955C2D4B2C0CFC6C00F30F83 /* NetworkInfo.swift */,
 			);
 			path = Constants;
@@ -326,6 +362,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		954B5F932C0D0E690022F859 /* SoulSyncUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 954B5F9C2C0D0E690022F859 /* Build configuration list for PBXNativeTarget "SoulSyncUITests" */;
+			buildPhases = (
+				954B5F902C0D0E690022F859 /* Sources */,
+				954B5F912C0D0E690022F859 /* Frameworks */,
+				954B5F922C0D0E690022F859 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				954B5F9B2C0D0E690022F859 /* PBXTargetDependency */,
+			);
+			name = SoulSyncUITests;
+			productName = SoulSyncUITests;
+			productReference = 954B5F942C0D0E690022F859 /* SoulSyncUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		954EF3E92B1573F800925972 /* SoulSync */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 954EF3F82B1573FA00925972 /* Build configuration list for PBXNativeTarget "SoulSync" */;
@@ -373,9 +427,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 1540;
 				LastUpgradeCheck = 1510;
 				TargetAttributes = {
+					954B5F932C0D0E690022F859 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 954EF3E92B1573F800925972;
+					};
 					954EF3E92B1573F800925972 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -404,11 +462,19 @@
 			targets = (
 				954EF3E92B1573F800925972 /* SoulSync */,
 				9559375D2B40B0EE006BF0D3 /* SoulSyncTests */,
+				954B5F932C0D0E690022F859 /* SoulSyncUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		954B5F922C0D0E690022F859 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		954EF3E82B1573F800925972 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -433,14 +499,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		954B5F902C0D0E690022F859 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				954B5F992C0D0E690022F859 /* SoulSyncUITestsLaunchTests.swift in Sources */,
+				954B5F972C0D0E690022F859 /* SoulSyncUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		954EF3E62B1573F800925972 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				958BED432C0BD9BC000A5DE0 /* NetworkManager.swift in Sources */,
-				9598AE3C2B379D3400899429 /* Main.swift in Sources */,
 				955C2D482C0CF0F400F30F83 /* Prefrences.swift in Sources */,
-				95CC64172B3BB7000010ABC2 /* .env.swift in Sources */,
 				958BED4A2C0BE73A000A5DE0 /* JailbreakDetector.swift in Sources */,
 				955C2D4A2C0CF2C300F30F83 /* Rewelcome.swift in Sources */,
 				958BED582C0CACE6000A5DE0 /* Editor.swift in Sources */,
@@ -448,15 +521,19 @@
 				955C2D462C0CF05E00F30F83 /* Verifacation.swift in Sources */,
 				952E8DA02B2F72EF0055CEEA /* LoadPrefrences.swift in Sources */,
 				955C2D4C2C0CFC6D00F30F83 /* NetworkInfo.swift in Sources */,
+				951F27E32C0F4EBA0085E581 /* ServerErrors.swift in Sources */,
 				955C2D402C0CEC7A00F30F83 /* LoginInfo.swift in Sources */,
 				954EF3F02B1573F800925972 /* FirstLaunch.swift in Sources */,
 				958BED562C0CAB4A000A5DE0 /* VideoPicker.swift in Sources */,
 				95A8665C2C0AB0E600B7C2A7 /* ReactNativeController.swift in Sources */,
+				958072662C10AB12002E9DF3 /* VideoStreamingManager.swift in Sources */,
 				955C2D442C0CEFCD00F30F83 /* BasicInfo.swift in Sources */,
 				95489BF22B486E3D004160F6 /* SoulSyncDelegate.swift in Sources */,
 				952E8D9D2B2F6F800055CEEA /* SignUpModals.swift in Sources */,
 				954EF3EE2B1573F800925972 /* SoulSyncApp.swift in Sources */,
+				951F27E12C0F43580085E581 /* KeychainManager.swift in Sources */,
 				958BED522C0CA9CF000A5DE0 /* Camera.swift in Sources */,
+				958072642C10A608002E9DF3 /* Streaming.swift in Sources */,
 				955F573C2B4D7892009AC08D /* PitchCreator.swift in Sources */,
 				958BED462C0BDA72000A5DE0 /* URLSessionDelegate.swift in Sources */,
 				958BED542C0CAA17000A5DE0 /* CameraController.swift in Sources */,
@@ -475,6 +552,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		954B5F9B2C0D0E690022F859 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 954EF3E92B1573F800925972 /* SoulSync */;
+			targetProxy = 954B5F9A2C0D0E690022F859 /* PBXContainerItemProxy */;
+		};
 		955937632B40B0EF006BF0D3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 954EF3E92B1573F800925972 /* SoulSync */;
@@ -483,6 +565,42 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		954B5F9D2C0D0E690022F859 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8UA385N825;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hannaskairipa.SoulSyncUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SoulSync;
+			};
+			name = Debug;
+		};
+		954B5F9E2C0D0E690022F859 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8UA385N825;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hannaskairipa.SoulSyncUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SoulSync;
+			};
+			name = Release;
+		};
 		954EF3F62B1573FA00925972 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 95CC64152B3BB4B90010ABC2 /* Config.xcconfig */;
@@ -733,6 +851,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		954B5F9C2C0D0E690022F859 /* Build configuration list for PBXNativeTarget "SoulSyncUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				954B5F9D2C0D0E690022F859 /* Debug */,
+				954B5F9E2C0D0E690022F859 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		954EF3E52B1573F800925972 /* Build configuration list for PBXProject "SoulSync" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

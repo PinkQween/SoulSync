@@ -12,7 +12,7 @@ import Combine
 
 struct SignUpInfoView: View {
     @Binding var isSignUpSuccessful: Bool
-    @Binding var fullPhoneNumber: String
+    @Binding var email: String
     @Binding var token: String
     @State private var phoneNumber = ""
     @State private var fullName = ""
@@ -66,9 +66,14 @@ struct SignUpInfoView: View {
         return NSPredicate(format: "SELF MATCHES %@", specialCharRegex).evaluate(with: password)
     }
     
+    var isEmailValid: Bool {
+        let emailRegex = #"^[^!-/\[-_{-~]*(?:[0-9A-Za-z](?:[0-9A-Za-z]+|(\.)(?!\1)))*([^!-/\[-_{-~]){1,256}@[a-zA-Z0-9][a-zA-Z0-9-]{0,64}(?:\.[a-zA-Z0-9][a-zA-Z0-9-]{0,25})+"#
+        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
+    }
+    
     var isSignUpButtonEnabled: Bool {
         return !fullName.isEmpty
-        && isPhoneValid
+        && isEmailValid
         && isPasswordValid
         && password == confirmPassword
     }
@@ -117,42 +122,47 @@ struct SignUpInfoView: View {
             }
             .padding(textBoxPadding)
             
-            HStack {
-                Picker("Country Code", selection: $selectedCountryCodeIndex) {
-                    ForEach(0..<countryCodes.count, id: \.self) {
-                        Text(countryCodes[$0])
-                    }
-                }
-                .pickerStyle(.menu)
-                
-                
-                iPhoneNumberField("Phone Number", text: $displayPhoneNumber)
-                    .padding(textBoxPadding)
-                    .textContentType(.telephoneNumber)
-                    .keyboardType(.phonePad)
-                    .textFieldStyle(PlainTextFieldStyle())
-                    .onReceive(Just(displayPhoneNumber)) { newText in
-                        let filtered = newText.filter { $0.isNumber }
-                        if filtered != newText {
-                            self.displayPhoneNumber = filtered
-                        }
-                        
-                        // Enforce a maximum length for the phone number, adjust as needed
-                        let maxLength = 10 // Adjust this value based on your requirements
-                        if self.displayPhoneNumber.count > maxLength {
-                            self.displayPhoneNumber = String(self.displayPhoneNumber.prefix(maxLength))
-                        }
-                    }
-            }
-            .onChange(of: displayPhoneNumber) { oldValue, newValue in
-                fullPhoneNumber = formatPhone(phoneNumber: countryCodes[selectedCountryCodeIndex] + newValue)
-                validatePhoneNumber()
-            }
-            .onChange(of: selectedCountryCodeIndex) { oldValue, newValue in
-                validatePhoneNumber()
-            }
-            .border(Color(UIColor.quaternaryLabel))
-            .cornerRadius(6)
+            TextField("Email", text: $email)
+                .padding(textBoxPadding)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .textContentType(.emailAddress)
+            
+//            HStack {
+//                Picker("Country Code", selection: $selectedCountryCodeIndex) {
+//                    ForEach(0..<countryCodes.count, id: \.self) {
+//                        Text(countryCodes[$0])
+//                    }
+//                }
+//                .pickerStyle(.menu)
+//                
+//                
+//                iPhoneNumberField("Phone Number", text: $displayPhoneNumber)
+//                    .padding(textBoxPadding)
+//                    .textContentType(.telephoneNumber)
+//                    .keyboardType(.phonePad)
+//                    .textFieldStyle(PlainTextFieldStyle())
+//                    .onReceive(Just(displayPhoneNumber)) { newText in
+//                        let filtered = newText.filter { $0.isNumber }
+//                        if filtered != newText {
+//                            self.displayPhoneNumber = filtered
+//                        }
+//                        
+//                        // Enforce a maximum length for the phone number, adjust as needed
+//                        let maxLength = 10 // Adjust this value based on your requirements
+//                        if self.displayPhoneNumber.count > maxLength {
+//                            self.displayPhoneNumber = String(self.displayPhoneNumber.prefix(maxLength))
+//                        }
+//                    }
+//            }
+//            .onChange(of: displayPhoneNumber) { oldValue, newValue in
+//                fullPhoneNumber = formatPhone(phoneNumber: countryCodes[selectedCountryCodeIndex] + newValue)
+//                validatePhoneNumber()
+//            }
+//            .onChange(of: selectedCountryCodeIndex) { oldValue, newValue in
+//                validatePhoneNumber()
+//            }
+//            .border(Color(UIColor.quaternaryLabel))
+//            .cornerRadius(6)
             
             SecureField("Password", text: $password)
                 .padding(textBoxPadding)
@@ -206,7 +216,8 @@ struct SignUpInfoView: View {
                         
                         IsCompleteCheckOrX(isComplete: !fullName.isEmpty, field: "Full Name")
                         IsCompleteCheckOrX(isComplete: isOver13, field: "Over 13 years of age")
-                        IsCompleteCheckOrX(isComplete: isPhoneValid, field: "Valid Phone")
+//                        IsCompleteCheckOrX(isComplete: isPhoneValid, field: "Valid Phone")
+                        IsCompleteCheckOrX(isComplete: isEmailValid, field: "Valid Email")
                         IsCompleteCheckOrX(isComplete: isPasswordLengthValid, field: "Password is at least 8 characters")
                         IsCompleteCheckOrX(isComplete: isPasswordContainsDigit, field: "Password contains a digit")
                         IsCompleteCheckOrX(isComplete: isPasswordContainsLowercase, field: "Password contains a lowercase letter")
@@ -235,7 +246,7 @@ struct SignUpInfoView: View {
     }
     
     func validatePhoneNumber() {
-        isPhoneValid = phoneNumberKit.isValidPhoneNumber(fullPhoneNumber)
+//        isPhoneValid = phoneNumberKit.isValidPhoneNumber(fullPhoneNumber)
     }
     
     func formatPhoneForDisplay(phoneNumber: String) -> String {
@@ -283,14 +294,14 @@ struct SignUpInfoView: View {
         
         let parameters: [String: Any] = [
             "username": fullName,
-            "phoneNumber": fullPhoneNumber,
+            "email": email,
             "password": password,
             "confirmPassword": confirmPassword,
             "birthdate": dateFormatter.string(from: birthdate),
             "deviceID": UserDefaults.standard.string(forKey: "deviceToken") ?? ""
         ]
         
-        NetworkManager.shared.post(to: apiURL, with: parameters) { data, response, error in
+        NetworkManager.shared.post(to: URL(string: "\(apiURL)/signup")!, body: parameters) { data, response, error in
                 if let error = error {
                     print("Error: \(error)")
                     DispatchQueue.main.async {
@@ -314,14 +325,14 @@ struct SignUpInfoView: View {
                     if let success = jsonResponse?["success"] as? Bool, success {
                         // Navigate to the verification page
                         // Set the flag to trigger navigation
-                        self.token = jsonResponse?["token"] as? String ?? ""
+                        self.token = (jsonResponse?["message"] as? [String: Any])?["token"] as? String ?? ""
                         self.isSignUpSuccessful = true
-                    } else if let error = jsonResponse?["error"] as? String {
+                    } else if let error = ServerErrors(rawValue: (jsonResponse?["error"] as? String)!) {
                         // Handle specific errors
                         DispatchQueue.main.async {
                             switch error {
-                            case "phone_exists":
-                                showAlert(title: "Phone Number Already Exists", message: "A user with this phone number already exists.")
+                            case .EMAIL_EXISTS:
+                                showAlert(title: "User Already Exists", message: "A user with this email already exists.")
                             default:
                                 showAlert(title: "Server Error", message: "Unexpected server response: \(error)")
                             }

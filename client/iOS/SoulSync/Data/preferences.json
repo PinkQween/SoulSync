@@ -7,7 +7,7 @@
       "Androgyne", "Femme", "Butch", "Two-Gender", "Genderqueer", "Multigender", "Omnigender", "Xenogender",
       "Aporagender", "Librafluid", "Subgender", "Epigender", "Proxvir", "Surgender", "Fluidflux", "Vapogender",
       "Faunagender", "Astralgender", "Autigender", "Colorgender", "Exgender", "Caelgender", "Gendervex",
-      "Elyragender", "Enby", "Juxera", "Ambonec", "Aesthetigender"
+      "Elyragender", "Enby", "Juxera", "Ambonec", "Aesthetigender", "Other"
     ],
     "multiple": false
   },
@@ -74,7 +74,7 @@
   },
   "sexualityOptions": {
     "options": [
-      "Straight", "Gay", "Lesbian", "Bisexual", "Pansexual", "Queer", "Asexual", "Demisexual", "Graysexual",
+      "Straight", "Gay (MTM)", "Lesbian", "Bisexual", "Pansexual", "Queer", "Asexual", "Demisexual", "Graysexual",
       "Homoflexible", "Heteroflexible", "Androsexual", "Gynosexual", "Skoliosexual", "Polysexual", "Omnicomsexual",
       "Questioning", "Other"
     ],
@@ -89,7 +89,7 @@
     "multiple": false
   },
   "ageRange": {
-      "options": ["±0", "±1", "±2", "±4", "±8", "±16", "±32", "±64", "No Limit"],
+      "options": ["±0", "±1", "±2", "±4", "±8", "±16", "±32", "±64", "No Limit", "Custom"],
       "multiple": false
   }
 }

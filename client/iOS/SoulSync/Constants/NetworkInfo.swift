@@ -7,4 +7,5 @@
 
 import Foundation
 
-let apiURL: URL = URL(string: "https://soulsync.hannaskairipa.com/api")!
+let apiURL: String = "https://soulsync.hannaskairipa.com/api/private"
+let testingApiURL: String = "https://soulsync.hannaskairipa.com/api/private/tests"

@@ -6,30 +6,52 @@
 //
 
 import XCTest
+@testable import SoulSync
 
 final class SoulSyncTests: XCTestCase {
+    func testAPI() {
+            // Define the expectation
+            let expectation = self.expectation(description: "GET request should succeed and return valid JSON")
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        measure {
-            // Put the code you want to measure the time of here.
+        NetworkManager.shared.get(to: URL(string: apiURL)!) { data, response, error in
+                // Handle error
+                if let error = error {
+                    XCTFail("Error making GET request: \(error.localizedDescription)")
+                    expectation.fulfill()  // fulfill the expectation to complete the test
+                    return
+                }
+                
+                // Check the response
+                if let httpResponse = response as? HTTPURLResponse {
+                    switch httpResponse.statusCode {
+                    case 200:
+                        // Success
+                        if let data = data {
+                            do {
+                                let jsonObject = try JSONSerialization.jsonObject(with: data, options: [])
+                                XCTAssertNotNil(jsonObject, "Response JSON should not be nil")
+                            } catch {
+                                XCTFail("Error parsing JSON: \(error.localizedDescription)")
+                            }
+                        } else {
+                            XCTFail("No data received")
+                        }
+                    case 400...499:
+                        XCTFail("Client error, status code: \(httpResponse.statusCode)")
+                    case 500...599:
+                        XCTFail("Server error, status code: \(httpResponse.statusCode)")
+                    default:
+                        XCTFail("Unexpected status code: \(httpResponse.statusCode)")
+                    }
+                } else {
+                    XCTFail("Invalid response received")
+                }
+                
+                // Fulfill the expectation to indicate that the background task has finished successfully.
+                expectation.fulfill()
+            }
+            
+            // Wait until the expectation is fulfilled, with a timeout of 10 seconds.
+            waitForExpectations(timeout: 10, handler: nil)
         }
-    }
-
 }
