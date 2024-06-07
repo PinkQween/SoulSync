@@ -28,6 +28,15 @@ struct SignUpInfoView: View {
     @State private var birthdate = Date()
     @State private var deviceToken: String?
     @State private var displayPhoneNumber = ""
+    @FocusState private var focusedField: Fields?
+    
+    enum Fields: Hashable {
+        case name
+        case email
+        case birthdate
+        case password
+        case verifyPassword
+    }
     
     let dateFormatter = DateFormatter()
     let phoneNumberKit = PhoneNumberKit()
@@ -67,8 +76,10 @@ struct SignUpInfoView: View {
     }
     
     var isEmailValid: Bool {
-        let emailRegex = #"^[^!-/\[-_{-~]*(?:[0-9A-Za-z](?:[0-9A-Za-z]+|(\.)(?!\1)))*([^!-/\[-_{-~]){1,256}@[a-zA-Z0-9][a-zA-Z0-9-]{0,64}(?:\.[a-zA-Z0-9][a-zA-Z0-9-]{0,25})+"#
-        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
+        let emailRegex = "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
+        let regex = try! NSRegularExpression(pattern: emailRegex, options: .caseInsensitive)
+        let range = NSRange(location: 0, length: email.utf16.count)
+        return regex.firstMatch(in: email, options: [], range: range) != nil
     }
     
     var isSignUpButtonEnabled: Bool {
@@ -112,6 +123,42 @@ struct SignUpInfoView: View {
                 .padding(textBoxPadding)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .textContentType(.name)
+                .focused($focusedField, equals: .name)
+                .onSubmit {
+                    focusedField = .email
+                }
+                .onAppear{
+                    focusedField = .name
+                }
+            
+            TextField("Email", text: $email)
+                .padding(textBoxPadding)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .textContentType(.emailAddress)
+                .focused($focusedField, equals: .email)
+                .onSubmit {
+                    focusedField = .password
+                }
+                .keyboardType(.emailAddress)
+            
+            SecureField("Password", text: $password)
+                .padding(textBoxPadding)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .textContentType(.newPassword)
+                .focused($focusedField, equals: .password)
+                .onSubmit {
+                    focusedField = .verifyPassword
+                }
+            
+            SecureField("Confirm Password", text: $confirmPassword)
+                .padding(textBoxPadding)
+                .textFieldStyle(RoundedBorderTextFieldStyle())
+                .textContentType(.newPassword)
+                .focused($focusedField, equals: .verifyPassword)
+                .onSubmit {
+                    //                    isSignUpButtonEnabled ? signUp() : showReqs.toggle()
+                    focusedField = .birthdate
+                }
             
             HStack {
                 Text("Birthdate: ")
@@ -119,60 +166,9 @@ struct SignUpInfoView: View {
                 DatePicker("Birthdate", selection: $birthdate, in: dateRange, displayedComponents: .date)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
                     .labelsHidden()
+                    .focused($focusedField, equals: .birthdate)
             }
             .padding(textBoxPadding)
-            
-            TextField("Email", text: $email)
-                .padding(textBoxPadding)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .textContentType(.emailAddress)
-            
-//            HStack {
-//                Picker("Country Code", selection: $selectedCountryCodeIndex) {
-//                    ForEach(0..<countryCodes.count, id: \.self) {
-//                        Text(countryCodes[$0])
-//                    }
-//                }
-//                .pickerStyle(.menu)
-//                
-//                
-//                iPhoneNumberField("Phone Number", text: $displayPhoneNumber)
-//                    .padding(textBoxPadding)
-//                    .textContentType(.telephoneNumber)
-//                    .keyboardType(.phonePad)
-//                    .textFieldStyle(PlainTextFieldStyle())
-//                    .onReceive(Just(displayPhoneNumber)) { newText in
-//                        let filtered = newText.filter { $0.isNumber }
-//                        if filtered != newText {
-//                            self.displayPhoneNumber = filtered
-//                        }
-//                        
-//                        // Enforce a maximum length for the phone number, adjust as needed
-//                        let maxLength = 10 // Adjust this value based on your requirements
-//                        if self.displayPhoneNumber.count > maxLength {
-//                            self.displayPhoneNumber = String(self.displayPhoneNumber.prefix(maxLength))
-//                        }
-//                    }
-//            }
-//            .onChange(of: displayPhoneNumber) { oldValue, newValue in
-//                fullPhoneNumber = formatPhone(phoneNumber: countryCodes[selectedCountryCodeIndex] + newValue)
-//                validatePhoneNumber()
-//            }
-//            .onChange(of: selectedCountryCodeIndex) { oldValue, newValue in
-//                validatePhoneNumber()
-//            }
-//            .border(Color(UIColor.quaternaryLabel))
-//            .cornerRadius(6)
-            
-            SecureField("Password", text: $password)
-                .padding(textBoxPadding)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .textContentType(.newPassword)
-            
-            SecureField("Confirm Password", text: $confirmPassword)
-                .padding(textBoxPadding)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .textContentType(.newPassword)
             
             Button(action: {
                 signUp()
@@ -216,7 +212,7 @@ struct SignUpInfoView: View {
                         
                         IsCompleteCheckOrX(isComplete: !fullName.isEmpty, field: "Full Name")
                         IsCompleteCheckOrX(isComplete: isOver13, field: "Over 13 years of age")
-//                        IsCompleteCheckOrX(isComplete: isPhoneValid, field: "Valid Phone")
+                        //                        IsCompleteCheckOrX(isComplete: isPhoneValid, field: "Valid Phone")
                         IsCompleteCheckOrX(isComplete: isEmailValid, field: "Valid Email")
                         IsCompleteCheckOrX(isComplete: isPasswordLengthValid, field: "Password is at least 8 characters")
                         IsCompleteCheckOrX(isComplete: isPasswordContainsDigit, field: "Password contains a digit")
@@ -246,7 +242,7 @@ struct SignUpInfoView: View {
     }
     
     func validatePhoneNumber() {
-//        isPhoneValid = phoneNumberKit.isValidPhoneNumber(fullPhoneNumber)
+        //        isPhoneValid = phoneNumberKit.isValidPhoneNumber(fullPhoneNumber)
     }
     
     func formatPhoneForDisplay(phoneNumber: String) -> String {
@@ -302,60 +298,60 @@ struct SignUpInfoView: View {
         ]
         
         NetworkManager.shared.post(to: URL(string: "\(apiURL)/signup")!, body: parameters) { data, response, error in
-                if let error = error {
-                    print("Error: \(error)")
-                    DispatchQueue.main.async {
-                        showAlert(title: "Error", message: !error.localizedDescription.isEmpty ? error.localizedDescription : "No message")
-                    }
-                    return
+            if let error = error {
+                print("Error: \(error)")
+                DispatchQueue.main.async {
+                    showAlert(title: "Error", message: !error.localizedDescription.isEmpty ? error.localizedDescription : "No message")
                 }
-
-                guard let data = data else {
-                    print("Data is nil")
-                    DispatchQueue.main.async {
-                        showAlert(title: "Error data nil/null", message: "No message")
-                    }
-                    return
+                return
+            }
+            
+            guard let data = data else {
+                print("Data is nil")
+                DispatchQueue.main.async {
+                    showAlert(title: "Error data nil/null", message: "No message")
                 }
-
-                do {
-                    let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-
-                    // Handle the response from the server
-                    if let success = jsonResponse?["success"] as? Bool, success {
-                        // Navigate to the verification page
-                        // Set the flag to trigger navigation
-                        self.token = (jsonResponse?["message"] as? [String: Any])?["token"] as? String ?? ""
-                        self.isSignUpSuccessful = true
-                    } else if let error = ServerErrors(rawValue: (jsonResponse?["error"] as? String)!) {
-                        // Handle specific errors
-                        DispatchQueue.main.async {
-                            switch error {
-                            case .EMAIL_EXISTS:
-                                showAlert(title: "User Already Exists", message: "A user with this email already exists.")
-                            default:
-                                showAlert(title: "Server Error", message: "Unexpected server response: \(error)")
-                            }
-                        }
-                    } else {
-                        // Handle unsuccessful sign-up
-                        DispatchQueue.main.async {
-                            if let error = jsonResponse?["error"] as? String {
-                                print("Server error: \(error)")
-                                showAlert(title: "Server error", message: "There was an error with the server")
-                            } else {
-                                print("Unexpected server response")
-                                showAlert(title: "Error", message: "Unexpected output from server")
-                            }
+                return
+            }
+            
+            do {
+                let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                
+                // Handle the response from the server
+                if let success = jsonResponse?["success"] as? Bool, success {
+                    // Navigate to the verification page
+                    // Set the flag to trigger navigation
+                    self.token = (jsonResponse?["message"] as? [String: Any])?["token"] as? String ?? ""
+                    self.isSignUpSuccessful = true
+                } else if let error = ServerErrors(rawValue: (jsonResponse?["error"] as? String)!) {
+                    // Handle specific errors
+                    DispatchQueue.main.async {
+                        switch error {
+                        case .EMAIL_EXISTS:
+                            showAlert(title: "User Already Exists", message: "A user with this email already exists.")
+                        default:
+                            showAlert(title: "Server Error", message: "Unexpected server response: \(error)")
                         }
                     }
-                } catch {
-                    print("Error decoding JSON: \(error)")
+                } else {
+                    // Handle unsuccessful sign-up
                     DispatchQueue.main.async {
-                        showAlert(title: "Error decoding JSON", message: !error.localizedDescription.isEmpty ? error.localizedDescription : "No message")
+                        if let error = jsonResponse?["error"] as? String {
+                            print("Server error: \(error)")
+                            showAlert(title: "Server error", message: "There was an error with the server")
+                        } else {
+                            print("Unexpected server response")
+                            showAlert(title: "Error", message: "Unexpected output from server")
+                        }
                     }
+                }
+            } catch {
+                print("Error decoding JSON: \(error)")
+                DispatchQueue.main.async {
+                    showAlert(title: "Error decoding JSON", message: !error.localizedDescription.isEmpty ? error.localizedDescription : "No message")
                 }
             }
+        }
     }
 }
 

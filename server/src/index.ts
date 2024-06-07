@@ -56,7 +56,7 @@ app.get('*', (req, res) => {
 
 // const httpsServer = https.createServer({ key: key, cert: cert }, app);
 
-function killProcessOnPort(port) {
+function killProcessOnPort(port: number) {
     try {
         // Use lsof to find the process ID (PID) using the specified port
         const pid = execSync(`lsof -ti tcp:${port}`);
@@ -65,7 +65,7 @@ function killProcessOnPort(port) {
         execSync(`kill -9 ${pid}`);
 
         console.log(`Successfully killed process on port ${port}.`);
-    } catch (error) {
+    } catch (error: any) {
         console.error(`Error killing process on port ${port}: ${error.stderr ? error.stderr.toString() : error.toString()}`);
     }
 }

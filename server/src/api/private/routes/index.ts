@@ -1,11 +1,12 @@
 import { Router } from 'express';
 import type Routes from '../../../types/Routes';
-import login from './Login';
-import signup from './Signup';
-import verify from './Verify';
+import login from './login';
+import signup from './signup';
+import verify from './verify';
 import tests from './tests';
 import prefs from './prefs'
 import details from './details'
+import uploadPitch from './uploadPitch'
 
 const route = Router();
 
@@ -21,4 +22,5 @@ export default {
     '/tests': tests,
     '/prefs': prefs,
     '/details': details,
+    '/upload-pitch': uploadPitch
 } as Routes;

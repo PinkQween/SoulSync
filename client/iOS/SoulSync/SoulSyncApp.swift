@@ -13,8 +13,12 @@ struct SoulSyncApp: App {
     
     var body: some Scene {
         WindowGroup {
-            FirstLaunchView()
+            FirstLaunchFAKEView(selectedTab: 1, isSignUpSuccessful: true, isLoginSuccessful: false, isCompleteSignUp: true, email: "hanna_boone@icloud.com", token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJuYW1lIjoiSGFubmEgU2thaXJpcGEiLCJiaXJ0aGRhdGUiOiIwNy8xMC8wOCIsImVtYWlsIjoiaGFubmFfYm9vbmVAaWNsb3VkLmNvbSIsImhhc2hlZFBhc3N3b3JkIjoiJDJiJDEwJGQySDF0Y3N3OXEuSFFJNHloRUFuUi5sNTluM3p5TjFtYWVNLlIvVm52eGQ3YW8vVVQ5U0lXIiwiY29kZSI6MTIyNDc5LCJkZXZpY2VJRCI6WyIyYTc4YzRmZGVlNjViZDU3MGM2NjFjZTVjZmU0ZDYzMWE4ZjdiNDA5YTY3ODJiYzM3MzUyMWE3YWNhOWNlMGJlIl0sInZlcmlmaWVkIjpmYWxzZSwidGVtcCI6dHJ1ZSwiY3JlYXRlZEF0IjoxNzE3NzY1MzQxNzU5fSwiaWF0IjoxNzE3NzY1MzQxfQ.rjQe86ZwDg1yHmm-nisrhXMyO1ak261W7jZatEjdSfY", addedDetails: true, addedPreferences: true, addedPitch: false, addedBio: false, isSwipeable: true, pitchURL: Bundle.main.url(forResource: "video1", withExtension: "mp4"))
+//            FirstLaunchView()
                 .preferredColorScheme(.dark)
+                .onOpenURL { url in
+                                    print(url)
+                                }
         }
     }
     

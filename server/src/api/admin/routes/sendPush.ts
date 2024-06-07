@@ -15,7 +15,7 @@ route.post('/', (req, res) => {
             keyId: process.env.APPLE_APNS_KEY_ID as string,
             teamId: process.env.APPLE_TEAM_ID as string,
         },
-        production: environmentValue == "dev"
+        production: environmentValue != "dev"
     });
 
     const notification = new apn.Notification();
@@ -23,7 +23,7 @@ route.post('/', (req, res) => {
     notification.alert = message;
     notification.topic = "com.hannaskairipa.SoulSync";
 
-    apnProvider.send(notification, deviceToken);
+    apnProvider.send(notification, deviceToken)
 
     res.status(200).json({ message: 'Push sent' });
 });

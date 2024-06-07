@@ -41,7 +41,7 @@ route.post('/', async (req, res) => {
         code,
         deviceID: [deviceID],
         verified: false,
-        temp: true,
+        temp: false,
         createdAt: new Date().getTime()
     };
 
@@ -54,7 +54,7 @@ route.post('/', async (req, res) => {
 
     sendEmail({
         to: newUser.email,
-        subject: 'Verify your phone number',
+        subject: 'Verify your email',
         body: verifyEmail({ code })
     })
 

@@ -13,7 +13,7 @@ class NetworkManager {
     
     private init() {}
     
-    private let session: URLSession = {
+    public let session: URLSession = {
         let configuration = URLSessionConfiguration.default
         let session = URLSession(configuration: configuration, delegate: nil, delegateQueue: nil)
         return session

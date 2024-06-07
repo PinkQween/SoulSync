@@ -141,17 +141,18 @@ class CameraViewController: UIViewController {
         }
         
         // Update file type to mp4
-        let outputURL = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString).appendingPathExtension("mp4")
+        let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let outputURL = documentsDirectory.appendingPathComponent(UUID().uuidString).appendingPathExtension("mp4")
         
         if let connection = movieOutput.connection(with: .video) {
-                    connection.preferredVideoStabilizationMode = .auto
-                    connection.videoOrientation = AVCaptureVideoOrientation(rawValue: UIDevice.current.orientation.rawValue) ?? .portrait
-
-                    if self.mirror {
-                        connection.automaticallyAdjustsVideoMirroring = false
-                        connection.isVideoMirrored = false
-                    }
-                }
+            connection.preferredVideoStabilizationMode = .auto
+            connection.videoOrientation = AVCaptureVideoOrientation(rawValue: UIDevice.current.orientation.rawValue) ?? .portrait
+            
+            if self.mirror {
+                connection.automaticallyAdjustsVideoMirroring = false
+                connection.isVideoMirrored = false
+            }
+        }
         
         movieOutput.startRecording(to: outputURL, recordingDelegate: coordinator)
         
@@ -161,16 +162,18 @@ class CameraViewController: UIViewController {
         self.mirror = false
     }
     
-    func stopRecording() {
+    func stopRecording() -> URL? {
         guard let movieOutput = self.movieOutput else {
             print("Movie output not available")
-            return
+            return nil
         }
         
         if movieOutput.isRecording {
             movieOutput.stopRecording()
             print("Recording stopped.")
+            return movieOutput.outputFileURL
         }
+        
+        return nil
     }
-    
 }

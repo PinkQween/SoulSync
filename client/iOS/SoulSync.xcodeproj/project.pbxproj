@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		95118B392C112F9700C867FB /* FirstLaunchFAKEView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95118B382C112F9700C867FB /* FirstLaunchFAKEView.swift */; };
+		95118B3B2C1142AB00C867FB /* MatchingBio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95118B3A2C1142AB00C867FB /* MatchingBio.swift */; };
+		95118B3D2C1142FE00C867FB /* MatchingBioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95118B3C2C1142FE00C867FB /* MatchingBioController.swift */; };
+		95118B3F2C114D3200C867FB /* PreviewVideoPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95118B3E2C114D3200C867FB /* PreviewVideoPlayerManager.swift */; };
 		951F27E12C0F43580085E581 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F27E02C0F43580085E581 /* KeychainManager.swift */; };
 		951F27E32C0F4EBA0085E581 /* ServerErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F27E22C0F4EBA0085E581 /* ServerErrors.swift */; };
 		952E8D9A2B2F6F380055CEEA /* preferences.json in Resources */ = {isa = PBXBuildFile; fileRef = 952E8D992B2F6F380055CEEA /* preferences.json */; };
@@ -78,6 +82,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		95118B382C112F9700C867FB /* FirstLaunchFAKEView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLaunchFAKEView.swift; sourceTree = "<group>"; };
+		95118B3A2C1142AB00C867FB /* MatchingBio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingBio.swift; sourceTree = "<group>"; };
+		95118B3C2C1142FE00C867FB /* MatchingBioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingBioController.swift; sourceTree = "<group>"; };
+		95118B3E2C114D3200C867FB /* PreviewVideoPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewVideoPlayerManager.swift; sourceTree = "<group>"; };
 		951F27E02C0F43580085E581 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		951F27E22C0F4EBA0085E581 /* ServerErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerErrors.swift; sourceTree = "<group>"; };
 		952E8D992B2F6F380055CEEA /* preferences.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = preferences.json; sourceTree = "<group>"; usesTabs = 1; };
@@ -150,6 +158,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95118B372C112F6F00C867FB /* Debugging */ = {
+			isa = PBXGroup;
+			children = (
+				95118B382C112F9700C867FB /* FirstLaunchFAKEView.swift */,
+			);
+			path = Debugging;
+			sourceTree = "<group>";
+		};
 		952E8D982B2F6EF70055CEEA /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +187,7 @@
 			children = (
 				952E8D9F2B2F72EF0055CEEA /* LoadPrefrences.swift */,
 				958072652C10AB12002E9DF3 /* VideoStreamingManager.swift */,
+				95118B3E2C114D3200C867FB /* PreviewVideoPlayerManager.swift */,
 				951F27E02C0F43580085E581 /* KeychainManager.swift */,
 			);
 			path = Utils;
@@ -213,6 +230,7 @@
 				958BED472C0BDC7B000A5DE0 /* server.cer */,
 				954EF3ED2B1573F800925972 /* SoulSyncApp.swift */,
 				95489BF12B486E3D004160F6 /* SoulSyncDelegate.swift */,
+				95118B372C112F6F00C867FB /* Debugging */,
 				958BED482C0BE6FD000A5DE0 /* AntiTheift */,
 				958BED442C0BDA4A000A5DE0 /* Networking */,
 				95A8665A2C0AB0C000B7C2A7 /* ViewControllers */,
@@ -329,6 +347,7 @@
 				958BED512C0CA9CF000A5DE0 /* Camera.swift */,
 				958BED552C0CAB4A000A5DE0 /* VideoPicker.swift */,
 				958BED572C0CACE6000A5DE0 /* Editor.swift */,
+				95118B3A2C1142AB00C867FB /* MatchingBio.swift */,
 			);
 			path = Pitches;
 			sourceTree = "<group>";
@@ -336,8 +355,8 @@
 		9598AE382B37302500899429 /* TestingData */ = {
 			isa = PBXGroup;
 			children = (
-				9598AE372B37301D00899429 /* video2.mp4 */,
 				9598AE362B37301C00899429 /* video1.mp4 */,
+				9598AE372B37301D00899429 /* video2.mp4 */,
 			);
 			path = TestingData;
 			sourceTree = "<group>";
@@ -347,6 +366,7 @@
 			children = (
 				95A8665B2C0AB0E600B7C2A7 /* ReactNativeController.swift */,
 				958BED532C0CAA17000A5DE0 /* CameraController.swift */,
+				95118B3C2C1142FE00C867FB /* MatchingBioController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -515,10 +535,13 @@
 				958BED432C0BD9BC000A5DE0 /* NetworkManager.swift in Sources */,
 				955C2D482C0CF0F400F30F83 /* Prefrences.swift in Sources */,
 				958BED4A2C0BE73A000A5DE0 /* JailbreakDetector.swift in Sources */,
+				95118B3F2C114D3200C867FB /* PreviewVideoPlayerManager.swift in Sources */,
 				955C2D4A2C0CF2C300F30F83 /* Rewelcome.swift in Sources */,
 				958BED582C0CACE6000A5DE0 /* Editor.swift in Sources */,
+				95118B3B2C1142AB00C867FB /* MatchingBio.swift in Sources */,
 				9576BD882B5747C5001240B3 /* videoEditor.swift in Sources */,
 				955C2D462C0CF05E00F30F83 /* Verifacation.swift in Sources */,
+				95118B3D2C1142FE00C867FB /* MatchingBioController.swift in Sources */,
 				952E8DA02B2F72EF0055CEEA /* LoadPrefrences.swift in Sources */,
 				955C2D4C2C0CFC6D00F30F83 /* NetworkInfo.swift in Sources */,
 				951F27E32C0F4EBA0085E581 /* ServerErrors.swift in Sources */,
@@ -533,6 +556,7 @@
 				954EF3EE2B1573F800925972 /* SoulSyncApp.swift in Sources */,
 				951F27E12C0F43580085E581 /* KeychainManager.swift in Sources */,
 				958BED522C0CA9CF000A5DE0 /* Camera.swift in Sources */,
+				95118B392C112F9700C867FB /* FirstLaunchFAKEView.swift in Sources */,
 				958072642C10A608002E9DF3 /* Streaming.swift in Sources */,
 				955F573C2B4D7892009AC08D /* PitchCreator.swift in Sources */,
 				958BED462C0BDA72000A5DE0 /* URLSessionDelegate.swift in Sources */,

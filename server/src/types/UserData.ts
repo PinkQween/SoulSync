@@ -34,4 +34,5 @@ export default interface UserData {
         dislikes?: string[];
         isLocked?: boolean;
     }
+    bio?: string
 }

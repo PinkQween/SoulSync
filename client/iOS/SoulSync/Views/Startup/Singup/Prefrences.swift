@@ -8,6 +8,33 @@
 import SwiftUI
 import Combine
 
+struct PreferenceSelectionSection: View {
+    let title: String
+    let options: [String]
+    @Binding var selectedOptions: [String]
+    let allowsMultipleSelection: Bool
+    
+    var body: some View {
+        VStack(alignment: .leading) {
+            Text(title)
+                .padding([.top, .leading, .trailing], 6.0)
+                .padding(.horizontal, 9)
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    Color.clear
+                        .padding(.horizontal, 3)
+                        .frame(height: 0)
+                    
+                    ForEach(options, id: \.self) { option in
+                        PreferButton(option: option, selectedOptions: $selectedOptions, multiple: allowsMultipleSelection)
+                    }
+                }
+            }
+        }
+    }
+}
+
 struct PreferencesView: View {
     @State private var preferences: Preferences.PreferencesModel?
     @State private var preferencesOptions: Preferences.PreferencesOptionsModel?
@@ -24,135 +51,144 @@ struct PreferencesView: View {
     @Binding var email: String
     @State var customAgeRangeLowerLimit: String = ""
     @State var customAgeRangeUpperLimit: String = ""
-    @State var isPositiveLowerLimit: Bool = false
-    @State var isPositiveUpperLimit: Bool = true
+    @State var isNegitiveLowerLimit: Bool = false
+    @State var isNegitiveUpperLimit: Bool = true
     
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             VStack {
                 Text("Select your preferences")
                     .font(.title)
                     .fontWeight(.medium)
                 
-                HStack {
-                    Text("Gender:")
-                        .padding([.top, .leading, .trailing], 6.0)
-                    
-                    Spacer()
-                }
+                //                HStack {
+                //                    Text("Gender:")
+                //                        .padding([.top, .leading, .trailing], 6.0)
+                //                    
+                //                    Spacer()
+                //                }
+                //                
+                //                
+                //                ScrollView(.horizontal, showsIndicators: false) {
+                //                    HStack {
+                //                        ForEach(preferencesOptions?.genderOptions.options ?? [], id: \.self) { option in
+                //                            PreferButton(option: option, selectedOptions: $selectedGenderOptions, multiple: preferencesOptions?.genderOptions.multiple)
+                //                        }
+                //                    }
+                //                }
+                //                
+                //                HStack {
+                //                    Text("Sex:")
+                //                        .padding([.top, .leading, .trailing], 6.0)
+                //                    
+                //                    Spacer()
+                //                }
+                //                
+                //                ScrollView(.horizontal, showsIndicators: false) {
+                //                    HStack {
+                //                        ForEach(preferencesOptions?.sexOptions.options ?? [], id: \.self) { option in
+                //                            PreferButton(option: option, selectedOptions: $selectedSexOptions, multiple: preferencesOptions?.sexOptions.multiple)
+                //                        }
+                //                    }
+                //                }
+                //                
+                //                HStack {
+                //                    Text("Sexuality:")
+                //                        .padding([.top, .leading, .trailing], 6.0)
+                //                    
+                //                    Spacer()
+                //                }
+                //                
+                //                ScrollView(.horizontal, showsIndicators: false) {
+                //                    HStack {
+                //                        ForEach(preferencesOptions?.sexualityOptions.options ?? [], id: \.self) { option in
+                //                            PreferButton(option: option, selectedOptions: $selectedSexualityOptions, multiple: preferencesOptions?.sexualityOptions.multiple)
+                //                        }
+                //                    }
+                //                }
+                //                
+                //                
+                //                
+                //                HStack {
+                //                    Text("Relationship Status:")
+                //                        .padding([.top, .leading, .trailing], 6.0)
+                //                    
+                //                    Spacer()
+                //                }
+                //                
+                //                ScrollView(.horizontal, showsIndicators: false) {
+                //                    HStack {
+                //                        ForEach(preferencesOptions?.relationshipStatusOptions.options ?? [], id: \.self) { option in
+                //                            PreferButton(option: option, selectedOptions: $selectedRelationshipStatusOptions, multiple: preferencesOptions?.relationshipStatusOptions.multiple)
+                //                        }
+                //                    }
+                //                }
+                //                
+                //                HStack {
+                //                    Text("Age Range:")
+                //                        .padding([.top, .leading, .trailing], 6.0)
+                //                    
+                //                    Spacer()
+                //                }
+                //                
+                //                ScrollView(.horizontal, showsIndicators: false) {
+                //                    HStack {
+                //                        ForEach(preferencesOptions?.ageRange.options ?? [], id: \.self) { option in
+                //                            PreferButton(option: option, selectedOptions: $selectedAgeRangeOptions, multiple: preferencesOptions?.ageRange.multiple)
+                //                        }
+                //                    }
+                //                }
                 
+                PreferenceSelectionSection(title: "Gender:", options: preferencesOptions?.genderOptions.options ?? [], selectedOptions: $selectedGenderOptions, allowsMultipleSelection: preferencesOptions?.genderOptions.multiple ?? false)
                 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(preferencesOptions?.genderOptions.options ?? [], id: \.self) { option in
-                            PreferButton(option: option, selectedOptions: $selectedGenderOptions, multiple: preferencesOptions?.genderOptions.multiple)
+                PreferenceSelectionSection(title: "Sex:", options: preferencesOptions?.sexOptions.options ?? [], selectedOptions: $selectedSexOptions, allowsMultipleSelection: preferencesOptions?.sexOptions.multiple ?? false)
+                
+                PreferenceSelectionSection(title: "Sexuality:", options: preferencesOptions?.sexualityOptions.options ?? [], selectedOptions: $selectedSexualityOptions, allowsMultipleSelection: preferencesOptions?.sexualityOptions.multiple ?? false)
+                
+                PreferenceSelectionSection(title: "Relationship Status:", options: preferencesOptions?.relationshipStatusOptions.options ?? [], selectedOptions: $selectedRelationshipStatusOptions, allowsMultipleSelection: preferencesOptions?.relationshipStatusOptions.multiple ?? false)
+                
+                PreferenceSelectionSection(title: "Age Range:", options: preferencesOptions?.ageRange.options ?? [], selectedOptions: $selectedAgeRangeOptions, allowsMultipleSelection: preferencesOptions?.ageRange.multiple ?? false)
+                
+                if (!selectedAgeRangeOptions.isEmpty && selectedAgeRangeOptions[0] == "Custom") {
+                    VStack {
+                        HStack {
+                            Toggle(isOn: $isNegitiveLowerLimit) {
+                                Image(systemName: "plus.forwardslash.minus")
+                            }
+                            .frame(width: 100)
+                            
+                            TextField("Lower Limit", text: $customAgeRangeLowerLimit)
+                                .padding()
+                                .keyboardType(.decimalPad)
+                        }
+                        HStack {
+                            Toggle(isOn: $isNegitiveUpperLimit) {
+                                Image(systemName: "plus.forwardslash.minus")
+                            }
+                            .frame(width: 100)
+                            
+                            TextField("Upper Limit", text: $customAgeRangeUpperLimit)
+                                .padding()
+                                .keyboardType(.decimalPad)
                         }
                     }
                 }
                 
-                HStack {
-                    Text("Sex:")
-                        .padding([.top, .leading, .trailing], 6.0)
-                    
-                    Spacer()
-                }
+                Spacer()
                 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(preferencesOptions?.sexOptions.options ?? [], id: \.self) { option in
-                            PreferButton(option: option, selectedOptions: $selectedSexOptions, multiple: preferencesOptions?.sexOptions.multiple)
-                        }
-                    }
-                }
-                
-                HStack {
-                    Text("Sexuality:")
-                        .padding([.top, .leading, .trailing], 6.0)
-                    
-                    Spacer()
-                }
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(preferencesOptions?.sexualityOptions.options ?? [], id: \.self) { option in
-                            PreferButton(option: option, selectedOptions: $selectedSexualityOptions, multiple: preferencesOptions?.sexualityOptions.multiple)
-                        }
-                    }
-                }
-                
-                
-                
-                HStack {
-                    Text("Relationship Status:")
-                        .padding([.top, .leading, .trailing], 6.0)
-                    
-                    Spacer()
-                }
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(preferencesOptions?.relationshipStatusOptions.options ?? [], id: \.self) { option in
-                            PreferButton(option: option, selectedOptions: $selectedRelationshipStatusOptions, multiple: preferencesOptions?.relationshipStatusOptions.multiple)
-                        }
-                    }
-                }
-                
-                HStack {
-                    Text("Age Range:")
-                        .padding([.top, .leading, .trailing], 6.0)
-                    
-                    Spacer()
-                }
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(preferencesOptions?.ageRange.options ?? [], id: \.self) { option in
-                            PreferButton(option: option, selectedOptions: $selectedAgeRangeOptions, multiple: preferencesOptions?.ageRange.multiple)
-                        }
-                    }
-                }
-            }
-            
-            if (!selectedAgeRangeOptions.isEmpty && selectedAgeRangeOptions[0] == "Custom") {
-                VStack {
-                    HStack {
-                        Toggle(isOn: $isPositiveLowerLimit) {
-                            Image(systemName: "plus.forwardslash.minus")
-                        }
-                        .frame(width: 100)
-                        
-                        TextField("Lower Limit", text: $customAgeRangeLowerLimit)
-                            .padding()
-                            .keyboardType(.decimalPad)
-                    }
-                    HStack {
-                        Toggle(isOn: $isPositiveUpperLimit) {
-                            Image(systemName: "plus.forwardslash.minus")
-                        }
-                        .frame(width: 100)
-                        
-                        TextField("Upper Limit", text: $customAgeRangeUpperLimit)
-                            .padding()
-                            .keyboardType(.decimalPad)
-                    }
-                }
-            }
-            
-            Spacer()
-            
-            Button(action: {
-                addPrefs()
-            }, label: {
-                Text("Next")
-                    .font(.headline)
-                    .frame(width: 300.0, height: 60.0)
-                    .cornerRadius(23)
-                    .overlay(
-                        RoundedRectangle(cornerRadius: 23)
-                            .stroke(Color.white, lineWidth: 2)
-                            .padding(2)
-                    )
-            })
-            .padding()
+                Button(action: {
+                    addPrefs()
+                }, label: {
+                    Text("Next")
+                        .font(.headline)
+                        .frame(width: 300.0, height: 60.0)
+                        .cornerRadius(23)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 23)
+                                .stroke(Color.white, lineWidth: 2)
+                                .padding(2)
+                        )
+                })
             .onAppear {
                 Preferences.PreferencesOptionsModel.loadPreferences { loadedPreferences in
                     preferencesOptions = loadedPreferences
@@ -167,10 +203,11 @@ struct PreferencesView: View {
                 )
             }
         }
-        .padding()
+        .frame(height: UIScreen.main.bounds.height - 150)
     }
-        
-            
+}
+    
+    
     func showAlert(title: String, message: String) {
         showAlert = true
         errorTitle = title
@@ -181,13 +218,13 @@ struct PreferencesView: View {
         var lowerAge = 0
         var upperAge = 0
         
-        if (selectedAgeRangeOptions[0] == "custom") {
-            lowerAge = Int(isPositiveLowerLimit ? "+" : "-" + customAgeRangeLowerLimit) ?? 0
-            upperAge = Int(isPositiveLowerLimit ? "+" : "-" + customAgeRangeLowerLimit) ?? 0
+        if (selectedAgeRangeOptions.contains("Custom")) {
+            lowerAge = Int((isNegitiveLowerLimit ? "" : "-") + customAgeRangeLowerLimit) ?? 0
+            upperAge = Int((isNegitiveUpperLimit ? "" : "-") + customAgeRangeUpperLimit) ?? 0
         } else {
-            let ageComponents = selectedAgeRangeOptions[0].split(separator: "±")
-            let lowerAge = Int(ageComponents[0]) ?? 0
-            let upperAge = Int(ageComponents[0]) ?? 0
+            let ageComponent = selectedAgeRangeOptions[0].replacingOccurrences(of: "±", with: "", options: NSString.CompareOptions.literal, range: nil)
+            lowerAge = (Int(ageComponent) ?? 0) * -1
+            upperAge = Int(ageComponent) ?? 0
         }
         
         let parameters: [String: Any] = [
@@ -196,14 +233,14 @@ struct PreferencesView: View {
             "intrests": selectedInterestsOptions,
             "sexuality": selectedSexualityOptions,
             "relationshipStatus": selectedRelationshipStatusOptions,
-            "ageRange": "\(lowerAge)-\(upperAge)"
+            "ageRange": "\(lowerAge) \(upperAge)"
         ]
         
         let headers: [String: String] = [
             "Authorization": "Bearer \(String(describing: KeychainManager.loadString(key: "token")))",
         ]
         
-//        request.addValue("Bearer \(UserDefaults.standard.string(forKey: "token") ?? "")", forHTTPHeaderField: "Authorization")
+        //        request.addValue("Bearer \(UserDefaults.standard.string(forKey: "token") ?? "")", forHTTPHeaderField: "Authorization")
         
         NetworkManager.shared.post(to: URL(string: "\(apiURL)/prefs")!, body: parameters, headers: headers) { data, response, error in
             if let error = error {
@@ -269,72 +306,81 @@ struct DescriptorsView: View {
     @Binding var email: String
     
     var body: some View {
+        ScrollView(showsIndicators: false) {
             VStack {
                 Text("Select who you are")
                     .font(.title)
                     .fontWeight(.medium)
                 
-                HStack {
-                    Text("Gender:")
-                        .padding([.top, .leading, .trailing], 6.0)
-                    
-                    Spacer()
-                }
+                //                    HStack {
+                //                        Text("Gender:")
+                //                            .padding([.top, .leading, .trailing], 6.0)
+                //                        
+                //                        Spacer()
+                //                    }
+                //                    
+                //                    
+                //                    ScrollView(.horizontal, showsIndicators: false) {
+                //                        HStack {
+                //                            ForEach(preferencesOptions?.genderOptions.options ?? [], id: \.self) { option in
+                //                                PreferButton(option: option, selectedOptions: $selectedGenderOptions, multiple: preferencesOptions?.genderOptions.multiple)
+                //                            }
+                //                        }
+                //                    }
+                //                    
+                //                    HStack {
+                //                        Text("Sex:")
+                //                            .padding([.top, .leading, .trailing], 6.0)
+                //                        
+                //                        Spacer()
+                //                    }
+                //                    
+                //                    ScrollView(.horizontal, showsIndicators: false) {
+                //                        HStack {
+                //                            ForEach(preferencesOptions?.sexOptions.options ?? [], id: \.self) { option in
+                //                                PreferButton(option: option, selectedOptions: $selectedSexOptions, multiple: preferencesOptions?.sexOptions.multiple)
+                //                            }
+                //                        }
+                //                    }
+                //                    
+                //                    HStack {
+                //                        Text("Sexuality:")
+                //                            .padding([.top, .leading, .trailing], 6.0)
+                //                        
+                //                        Spacer()
+                //                    }
+                //                    ScrollView(.horizontal, showsIndicators: false) {
+                //                        HStack {
+                //                            ForEach(preferencesOptions?.sexualityOptions.options ?? [], id: \.self) { option in
+                //                                PreferButton(option: option, selectedOptions: $selectedSexualityOptions, multiple: preferencesOptions?.sexualityOptions.multiple)
+                //                            }
+                //                        }
+                //                    }
+                //                    
+                //                    
+                //                    
+                //                    HStack {
+                //                        Text("Relationship Status:")
+                //                            .padding([.top, .leading, .trailing], 6.0)
+                //                        
+                //                        Spacer()
+                //                    }
+                //                    
+                //                    ScrollView(.horizontal, showsIndicators: false) {
+                //                        HStack {
+                //                            ForEach(preferencesOptions?.relationshipStatusOptions.options ?? [], id: \.self) { option in
+                //                                PreferButton(option: option, selectedOptions: $selectedRelationshipStatusOptions, multiple: preferencesOptions?.relationshipStatusOptions.multiple)
+                //                            }
+                //                        }
+                //                    }
                 
+                PreferenceSelectionSection(title: "Gender:", options: preferencesOptions?.genderOptions.options ?? [], selectedOptions: $selectedGenderOptions, allowsMultipleSelection: preferencesOptions?.genderOptions.multiple ?? false)
                 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(preferencesOptions?.genderOptions.options ?? [], id: \.self) { option in
-                            PreferButton(option: option, selectedOptions: $selectedGenderOptions, multiple: preferencesOptions?.genderOptions.multiple)
-                        }
-                    }
-                }
+                PreferenceSelectionSection(title: "Sex:", options: preferencesOptions?.sexOptions.options ?? [], selectedOptions: $selectedSexOptions, allowsMultipleSelection: preferencesOptions?.sexOptions.multiple ?? false)
                 
-                HStack {
-                    Text("Sex:")
-                        .padding([.top, .leading, .trailing], 6.0)
-                    
-                    Spacer()
-                }
+                PreferenceSelectionSection(title: "Sexuality:", options: preferencesOptions?.sexualityOptions.options ?? [], selectedOptions: $selectedSexualityOptions, allowsMultipleSelection: preferencesOptions?.sexualityOptions.multiple ?? false)
                 
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(preferencesOptions?.sexOptions.options ?? [], id: \.self) { option in
-                            PreferButton(option: option, selectedOptions: $selectedSexOptions, multiple: preferencesOptions?.sexOptions.multiple)
-                        }
-                    }
-                }
-                
-                HStack {
-                    Text("Sexuality:")
-                        .padding([.top, .leading, .trailing], 6.0)
-                    
-                    Spacer()
-                }
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(preferencesOptions?.sexualityOptions.options ?? [], id: \.self) { option in
-                            PreferButton(option: option, selectedOptions: $selectedSexualityOptions, multiple: preferencesOptions?.sexualityOptions.multiple)
-                        }
-                    }
-                }
-                
-                
-                
-                HStack {
-                    Text("Relationship Status:")
-                        .padding([.top, .leading, .trailing], 6.0)
-                    
-                    Spacer()
-                }
-                
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(preferencesOptions?.relationshipStatusOptions.options ?? [], id: \.self) { option in
-                            PreferButton(option: option, selectedOptions: $selectedRelationshipStatusOptions, multiple: preferencesOptions?.relationshipStatusOptions.multiple)
-                        }
-                    }
-                }
+                PreferenceSelectionSection(title: "Relationship Status:", options: preferencesOptions?.relationshipStatusOptions.options ?? [], selectedOptions: $selectedRelationshipStatusOptions, allowsMultipleSelection: preferencesOptions?.relationshipStatusOptions.multiple ?? false)
                 
                 Spacer()
                 
@@ -351,22 +397,22 @@ struct DescriptorsView: View {
                                 .padding(2)
                         )
                 })
-                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-            }
-            .padding()
-            .onAppear {
-                Preferences.PreferencesOptionsModel.loadPreferences { loadedPreferences in
-                    preferencesOptions = loadedPreferences
-                    
-                    dump(loadedPreferences)
+                .onAppear {
+                    Preferences.PreferencesOptionsModel.loadPreferences { loadedPreferences in
+                        preferencesOptions = loadedPreferences
+                        
+                        dump(loadedPreferences)
+                    }
+                }.alert(isPresented: $showAlert) {
+                    Alert(
+                        title: Text(errorTitle),
+                        message: Text(errorMessage),
+                        dismissButton: .cancel()
+                    )
                 }
-            }.alert(isPresented: $showAlert) {
-                Alert(
-                    title: Text(errorTitle),
-                    message: Text(errorMessage),
-                    dismissButton: .cancel()
-                )
             }
+            .frame(height: UIScreen.main.bounds.height - 150)
+        }
     }
     
     func showAlert(title: String, message: String) {
@@ -478,6 +524,6 @@ struct PreferButton: View {
 }
 
 #Preview {
-    PreferencesView(addedPreferences: .constant(false), email: .constant("hanna@hannaskairipa.com"))
+    DescriptorsView(addedDetails: .constant(false), email: .constant("hanna@hannaskairipa.com"))
         .preferredColorScheme(.dark)
 }

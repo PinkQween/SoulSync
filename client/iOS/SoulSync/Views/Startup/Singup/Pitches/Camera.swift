@@ -62,7 +62,7 @@ struct CameraView: UIViewControllerRepresentable {
         // Update logic if needed
     }
     
-    func stopRecording() {
-        CameraViewController.cameraViewController?.stopRecording()
+    func stopRecording() -> URL? {
+        return CameraViewController.cameraViewController?.stopRecording()
     }
 }

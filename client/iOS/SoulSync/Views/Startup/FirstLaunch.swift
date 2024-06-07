@@ -10,25 +10,62 @@ import SwiftUI
 struct FirstLaunchView: View {
     @State private var selectedTab = 0
     @State private var isSignUp = true
+    @State private var isSwipeable = true
+    @State private var addedDetails = false
+    @State private var addedPreferences = false
+    @State private var addedPitch = false
+    @State private var email = ""
+    @State private var pitchURL: URL?
+    @State private var addedBio = false
     
     var body: some View {
         ZStack {
             Color.black.ignoresSafeArea()
             
-            TabView(selection: $selectedTab) {
-                WelcomeView(selectedTab: $selectedTab, isSignUp: $isSignUp)
-                    .tag(0)
-                    .transition(.slide)
-                OnboardingProcess(signUp: $isSignUp)                    .tag(1)
-                    .transition(.slide)
+            if isSwipeable {
+                TabView(selection: $selectedTab) {
+                    WelcomeFAKEView(selectedTab: $selectedTab, isSignUp: $isSignUp)
+                        .tag(0)
+                        .transition(.slide)
+                    
+                    OnboardingProcess(signUp: $isSignUp, swipeable: $isSwipeable, email: $email)
+                        .tag(1)
+                        .transition(.slide)
+                }
+                .tabViewStyle(.page(indexDisplayMode: .always))
+                .indexViewStyle(.page(backgroundDisplayMode: .always))
+            } else {
+                if isSignUp {
+                    signUpView
+                } else {
+                    loginView
+                }
             }
-            .tabViewStyle(.page(indexDisplayMode: .always))
-            .indexViewStyle(.page(backgroundDisplayMode: .always))
         }
         .foregroundColor(Color.white)
         .onAppear(perform: {
             print(UserDefaults.standard.string(forKey: "token") ?? "Not found")
         })
+    }
+    
+    @ViewBuilder
+    private var signUpView: some View {
+        if !addedDetails {
+            DescriptorsView(addedDetails: $addedDetails, email: $email)
+        } else if !addedPreferences {
+            PreferencesView(addedPreferences: $addedPreferences, email: $email)
+        } else if !addedPitch {
+            PitchCreatorView(addedPitch: $addedPitch, pitchURL: $pitchURL)
+        } else if !addedBio {
+            MatchingBio(manager: PreviewVideoPlayerManager(url: pitchURL!), addedBio: $addedBio, addedPitch: $addedPitch, video: pitchURL!)
+        } else {
+            RewelcomeView()
+        }
+    }
+    
+    @ViewBuilder
+    private var loginView: some View {
+        RewelcomeView()
     }
 }
 
@@ -89,15 +126,14 @@ struct WelcomeView: View {
 }
 
 struct OnboardingProcess: View {
-    @State private var isSignUpSuccessful = false
-    @State private var isLoginSuccessful = false
     @Binding var signUp: Bool
-    @State private var isCompleteSignUp = false
-//    @State private var phone = ""
-    @State private var email = ""
-    @State private var token = ""
-    @State private var addedDetails = false
-    @State private var addedPreferences = false
+    @Binding var swipeable: Bool
+    @Binding var email: String
+    
+    @State var isSignUpSuccessful = false
+    @State var isLoginSuccessful = false
+    @State var isCompleteSignUp = false
+    @State var token = ""
     
     var body: some View {
         Group {
@@ -113,7 +149,10 @@ struct OnboardingProcess: View {
     @ViewBuilder
     private var loginView: some View {
         if isLoginSuccessful {
-            RewelcomeView()
+            Color.clear
+                    .onAppear(perform: {
+                        swipeable.toggle()
+                    })
         } else {
             LoginInfoView(isLoginSuccessful: $isLoginSuccessful)
         }
@@ -125,12 +164,11 @@ struct OnboardingProcess: View {
             SignUpInfoView(isSignUpSuccessful: $isSignUpSuccessful, email: $email, token: $token)
         } else if !isCompleteSignUp {
             PhoneVerificationView(isCompleteSignUp: $isCompleteSignUp, email: $email, token: $token)
-        } else if !addedDetails {
-            DescriptorsView(addedDetails: $addedDetails, email: $email)
-        } else if !addedPreferences {
-            PreferencesView(addedPreferences: $addedPreferences, email: $email)
         } else {
-            RewelcomeView()
+            Color.clear
+                .onAppear(perform: {
+                    swipeable.toggle()
+                })
         }
     }
 }
