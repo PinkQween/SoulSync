@@ -6,14 +6,18 @@ import { env } from './utils';
 import bodyParser from 'body-parser';
 import requireAdmin from "./middleware/requireAdmin";
 import checkAdminReferer from "./middleware/checkAdminReferer";
-import {} from './utils/saving';
-import { execSync } from "child_process";
+import proxy from 'express-http-proxy'
+import http from 'http';
+import EventEmitter from "events";
+import setContextByHost from "./middleware/setContextByHost";
+
+EventEmitter.defaultMaxListeners = 200;
 
 const findNextAvailablePort = (port: number) => {
-    return new Promise<number>((resolve, reject) => {
+    return new Promise((resolve, reject) => {
         const portTester = net.createServer();
-        portTester.once("error", (err) => {
-            if ((err as NodeJS.ErrnoException).code === "EADDRINUSE") {
+        portTester.once("error", (err: any) => {
+            if (err.code === "EADDRINUSE") {
                 resolve(findNextAvailablePort(port + 1));
             } else {
                 reject(err);
@@ -28,51 +32,47 @@ const findNextAvailablePort = (port: number) => {
     });
 }
 
-const PORT = await findNextAvailablePort(process.env.PORT as unknown as number || 443);
-const app = express();
-// const key = fs.readFileSync('certs/server.key');
-// const cert = fs.readFileSync('certs/server.crt');
-const publicDir = path.join(__dirname, env === 'dev' ? '..' : '../..', 'public');
-const adminDir = path.join(__dirname, env === 'dev' ? '..' : '../..', 'admin');
+(async () => {
+    const PORT = await findNextAvailablePort(parseInt(process.env.PORT || "443") || 443);
+    const app = express();
+    const publicDir = path.join(__dirname, env === 'dev' ? '..' : '../..', 'public');
+    const adminDir = path.join(__dirname, env === 'dev' ? '..' : '../..', 'admin');
+    const adminRouter = express.Router();
+    const publicRouter = express.Router();
 
+    app.disable('x-powered-by');
 
-app.use('/api/admin/*', checkAdminReferer);
-app.use('/admin/*', requireAdmin);
+    adminRouter.use(bodyParser.json());
+    adminRouter.use('/api/*', checkAdminReferer);
+    adminRouter.use("/api", api);
+    adminRouter.use('/', express.static(adminDir));
+    adminRouter.get('*', (req, res) => res.sendFile(path.join(adminDir, 'index.html')));
+    adminRouter.use('/dev/*', proxy("http://localhost:5173/"));
 
-app.use(bodyParser.json());
-app.use("/api", api);
+    publicRouter.use(bodyParser.json());
+    publicRouter.use("/api", api);
+    publicRouter.use(express.static(publicDir));
+    publicRouter.get('*', (req, res) => {
+        res.sendFile(path.join(publicDir, 'index.html'));
+    });
 
-app.use('/admin', express.static(adminDir));
-app.get('/admin/*', (req, res) => {
-    res.sendFile(path.join(adminDir, 'index.html'));
-});
+    app.use(setContextByHost);
 
-app.use(express.static(publicDir));
-app.get('*', (req, res) => {
-    res.sendFile(path.join(publicDir, 'index.html'));
-});
+    app.use((req: any, res, next) => {
+        if (req.context && req.context.isAdmin) {
+            adminRouter(req, res, next);
+        } else {
+            publicRouter(req, res, next);
+        }
+    });
 
+    const server = http.createServer(app);
 
+    server.on('connection', (conn) => {
+        conn.setMaxListeners(200); // Set to an appropriate number
+    });
 
-// const httpsServer = https.createServer({ key: key, cert: cert }, app);
-
-function killProcessOnPort(port: number) {
-    try {
-        // Use lsof to find the process ID (PID) using the specified port
-        const pid = execSync(`lsof -ti tcp:${port}`);
-
-        // Use kill command to terminate the process
-        execSync(`kill -9 ${pid}`);
-
-        console.log(`Successfully killed process on port ${port}.`);
-    } catch (error: any) {
-        console.error(`Error killing process on port ${port}: ${error.stderr ? error.stderr.toString() : error.toString()}`);
-    }
-}
-
-
-killProcessOnPort(PORT);
-
-app.listen(PORT, () => {
-    console.log(`Server listening on port ${PORT}`);
-});
+    server.listen(PORT, () => {
+        console.log(`Server listening on port ${PORT}`);
+    });
+})();

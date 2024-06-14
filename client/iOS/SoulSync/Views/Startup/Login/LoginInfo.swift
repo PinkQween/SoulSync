@@ -25,6 +25,13 @@ struct LoginInfoView: View {
     @State private var selectedCountryCodeIndex = 0
     @State private var email: String = ""
     let phoneNumberKit = PhoneNumberKit()
+    @FocusState private var focusedField: Fields?
+    
+    enum Fields: Hashable {
+        case email
+        case password
+    }
+    
     
     var isPasswordValid: Bool {
         let passwordRegex = "^(?=.*\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z])(?=.*[^a-zA-Z\\d]).{8,}$"
@@ -33,8 +40,10 @@ struct LoginInfoView: View {
     }
     
     var isEmailValid: Bool {
-        let emailRegex = #"^[^!-/\[-_{-~]*(?:[0-9A-Za-z](?:[0-9A-Za-z]+|(\.)(?!\1)))*([^!-/\[-_{-~]){1,256}@[a-zA-Z0-9][a-zA-Z0-9-]{0,64}(?:\.[a-zA-Z0-9][a-zA-Z0-9-]{0,25})+"#
-        return NSPredicate(format: "SELF MATCHES %@", emailRegex).evaluate(with: email)
+        let emailRegex = "(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|\"(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21\\x23-\\x5b\\x5d-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])*\")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\\x01-\\x08\\x0b\\x0c\\x0e-\\x1f\\x21-\\x5a\\x53-\\x7f]|\\\\[\\x01-\\x09\\x0b\\x0c\\x0e-\\x7f])+)\\])"
+        let regex = try! NSRegularExpression(pattern: emailRegex, options: .caseInsensitive)
+        let range = NSRange(location: 0, length: email.utf16.count)
+        return regex.firstMatch(in: email, options: [], range: range) != nil
     }
     
     var isLoginButtonEnabled: Bool {
@@ -102,11 +111,24 @@ struct LoginInfoView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .textContentType(.emailAddress)
                 .keyboardType(.emailAddress)
+                .focused($focusedField, equals: .email)
+                .onAppear {
+                    focusedField = .email
+                }
+                .onSubmit {
+                    focusedField = .password
+                }
             
             SecureField("Password", text: $password)
                 .padding(textBoxPadding)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .textContentType(.password)
+                .focused($focusedField, equals: .password)
+                .onSubmit {
+                    if isLoginButtonEnabled {
+                        login()
+                    }
+                }
             
             Button(action: {
                 login()

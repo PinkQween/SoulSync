@@ -1,9 +1,10 @@
 import { Router } from 'express';
 import findUserByEmail from '../../../utils/findUserByEmail';
 import bcrypt from 'bcrypt';
-import { saveUserDataToFile } from '../../../utils/saving';
+import { updateUser } from '../../../utils/saving';
 import resJSONWrapper from '../../../utils/resJSONWrapper';
 import { Errors } from '../../../types/Errors';
+import findUserIndex from '../../../utils/findUserIndex';
 
 const route = Router();
 
@@ -31,7 +32,7 @@ route.post('/', async (req, res) => {
         // Add the new device ID to the array
         user.deviceID.push(deviceID);
         // Save user data
-        saveUserDataToFile();
+        updateUser(user, findUserIndex(user));
     }
 });
 

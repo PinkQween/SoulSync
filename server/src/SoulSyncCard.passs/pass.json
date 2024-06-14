@@ -1,0 +1,23 @@
+{
+  "formatVersion" : 1,
+  "passTypeIdentifier" : "pass.com.hannaskairipa.soulsync.example",
+  "teamIdentifier" : "8UA385N825",
+  "barcode" : {
+    "message" : "123456789",
+    "format" : "PKBarcodeFormatPDF417",
+    "messageEncoding" : "iso-8859-1"
+  },
+  "organizationName" : "SoulSync",
+  "description" : "SoulSync Card",
+  "logoText" : "SoulSync",
+  "foregroundColor" : "rgb(255, 255, 255)",
+  "backgroundColor" : "rgb(0, 0, 0)",
+  "storeCard" : {
+    "primaryFields" : [
+      
+    ],
+    "auxiliaryFields" : [
+    
+    ]
+  }
+}

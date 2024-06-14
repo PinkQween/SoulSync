@@ -7,6 +7,7 @@ import tests from './tests';
 import prefs from './prefs'
 import details from './details'
 import uploadPitch from './uploadPitch'
+import validateToken from './validateToken';
 
 const route = Router();
 
@@ -22,5 +23,6 @@ export default {
     '/tests': tests,
     '/prefs': prefs,
     '/details': details,
-    '/upload-pitch': uploadPitch
+    '/upload-pitch': uploadPitch,
+    '/validate-token': validateToken,
 } as Routes;

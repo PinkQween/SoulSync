@@ -32,6 +32,9 @@
 		955C2D4A2C0CF2C300F30F83 /* Rewelcome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C2D492C0CF2C300F30F83 /* Rewelcome.swift */; };
 		955C2D4C2C0CFC6D00F30F83 /* NetworkInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C2D4B2C0CFC6C00F30F83 /* NetworkInfo.swift */; };
 		955F573C2B4D7892009AC08D /* PitchCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955F573B2B4D7892009AC08D /* PitchCreator.swift */; };
+		956ABBE72C1A636F00C2DF60 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956ABBE62C1A636F00C2DF60 /* Wallet.swift */; };
+		956ABBE92C1BAD6600C2DF60 /* CheckLoginStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956ABBE82C1BAD6600C2DF60 /* CheckLoginStatus.swift */; };
+		956ABBEB2C1C9A2800C2DF60 /* ReloadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956ABBEA2C1C9A2800C2DF60 /* ReloadView.swift */; };
 		9576BD882B5747C5001240B3 /* videoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9576BD872B5747C5001240B3 /* videoEditor.swift */; };
 		957B94B52B4B1385009A52A7 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 957B94B42B4B1385009A52A7 /* iPhoneNumberField */; };
 		958072642C10A608002E9DF3 /* Streaming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958072632C10A608002E9DF3 /* Streaming.swift */; };
@@ -110,6 +113,9 @@
 		955C2D492C0CF2C300F30F83 /* Rewelcome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rewelcome.swift; sourceTree = "<group>"; };
 		955C2D4B2C0CFC6C00F30F83 /* NetworkInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkInfo.swift; sourceTree = "<group>"; };
 		955F573B2B4D7892009AC08D /* PitchCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PitchCreator.swift; sourceTree = "<group>"; };
+		956ABBE62C1A636F00C2DF60 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		956ABBE82C1BAD6600C2DF60 /* CheckLoginStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckLoginStatus.swift; sourceTree = "<group>"; };
+		956ABBEA2C1C9A2800C2DF60 /* ReloadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReloadView.swift; sourceTree = "<group>"; };
 		9576BD872B5747C5001240B3 /* videoEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = videoEditor.swift; sourceTree = "<group>"; };
 		958072632C10A608002E9DF3 /* Streaming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Streaming.swift; sourceTree = "<group>"; };
 		958072652C10AB12002E9DF3 /* VideoStreamingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoStreamingManager.swift; sourceTree = "<group>"; };
@@ -189,6 +195,7 @@
 				958072652C10AB12002E9DF3 /* VideoStreamingManager.swift */,
 				95118B3E2C114D3200C867FB /* PreviewVideoPlayerManager.swift */,
 				951F27E02C0F43580085E581 /* KeychainManager.swift */,
+				956ABBEA2C1C9A2800C2DF60 /* ReloadView.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -286,10 +293,11 @@
 		955937672B40B533006BF0D3 /* Startup */ = {
 			isa = PBXGroup;
 			children = (
+				956ABBE82C1BAD6600C2DF60 /* CheckLoginStatus.swift */,
 				954EF3EF2B1573F800925972 /* FirstLaunch.swift */,
-				955C2D492C0CF2C300F30F83 /* Rewelcome.swift */,
 				955C2D3E2C0CEB3400F30F83 /* Singup */,
 				955C2D3D2C0CEB2D00F30F83 /* Login */,
+				955C2D492C0CF2C300F30F83 /* Rewelcome.swift */,
 			);
 			path = Startup;
 			sourceTree = "<group>";
@@ -317,6 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				9576BD872B5747C5001240B3 /* videoEditor.swift */,
+				956ABBE62C1A636F00C2DF60 /* Wallet.swift */,
 				958072632C10A608002E9DF3 /* Streaming.swift */,
 			);
 			path = Tests;
@@ -544,9 +553,11 @@
 				95118B3D2C1142FE00C867FB /* MatchingBioController.swift in Sources */,
 				952E8DA02B2F72EF0055CEEA /* LoadPrefrences.swift in Sources */,
 				955C2D4C2C0CFC6D00F30F83 /* NetworkInfo.swift in Sources */,
+				956ABBE92C1BAD6600C2DF60 /* CheckLoginStatus.swift in Sources */,
 				951F27E32C0F4EBA0085E581 /* ServerErrors.swift in Sources */,
 				955C2D402C0CEC7A00F30F83 /* LoginInfo.swift in Sources */,
 				954EF3F02B1573F800925972 /* FirstLaunch.swift in Sources */,
+				956ABBE72C1A636F00C2DF60 /* Wallet.swift in Sources */,
 				958BED562C0CAB4A000A5DE0 /* VideoPicker.swift in Sources */,
 				95A8665C2C0AB0E600B7C2A7 /* ReactNativeController.swift in Sources */,
 				958072662C10AB12002E9DF3 /* VideoStreamingManager.swift in Sources */,
@@ -561,6 +572,7 @@
 				955F573C2B4D7892009AC08D /* PitchCreator.swift in Sources */,
 				958BED462C0BDA72000A5DE0 /* URLSessionDelegate.swift in Sources */,
 				958BED542C0CAA17000A5DE0 /* CameraController.swift in Sources */,
+				956ABBEB2C1C9A2800C2DF60 /* ReloadView.swift in Sources */,
 				95A8665E2C0AB17700B7C2A7 /* ReactNative.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -781,6 +793,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hannaskairipa.SoulSync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_ENABLE_BARE_SLASH_REGEX = NO;
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = NO;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = NO;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = NO;
+				SWIFT_UPCOMING_FEATURE_EXISTENTIAL_ANY = NO;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = NO;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = NO;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = NO;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = NO;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = NO;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = NO;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -821,6 +846,19 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hannaskairipa.SoulSync;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_ENABLE_BARE_SLASH_REGEX = NO;
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_UPCOMING_FEATURE_CONCISE_MAGIC_FILE = NO;
+				SWIFT_UPCOMING_FEATURE_DEPRECATE_APPLICATION_MAIN = NO;
+				SWIFT_UPCOMING_FEATURE_DISABLE_OUTWARD_ACTOR_ISOLATION = NO;
+				SWIFT_UPCOMING_FEATURE_EXISTENTIAL_ANY = NO;
+				SWIFT_UPCOMING_FEATURE_FORWARD_TRAILING_CLOSURES = NO;
+				SWIFT_UPCOMING_FEATURE_GLOBAL_CONCURRENCY = NO;
+				SWIFT_UPCOMING_FEATURE_IMPLICIT_OPEN_EXISTENTIALS = NO;
+				SWIFT_UPCOMING_FEATURE_IMPORT_OBJC_FORWARD_DECLS = NO;
+				SWIFT_UPCOMING_FEATURE_INFER_SENDABLE_FROM_CAPTURES = NO;
+				SWIFT_UPCOMING_FEATURE_ISOLATED_DEFAULT_VALUES = NO;
+				SWIFT_UPCOMING_FEATURE_REGION_BASED_ISOLATION = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

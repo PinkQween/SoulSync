@@ -8,11 +8,40 @@
 import SwiftUI
 
 struct RewelcomeView: View {
+    @State var ready: Bool = false
+    
     var body: some View {
-        Text("Welcome!")
+        if (!ready) {
+            VStack {
+                Spacer()
+                Spacer()
+                
+                Text("Welcome!")
+                    .font(.largeTitle)
+                
+                Spacer()
+                
+                Button {
+                    withAnimation {
+                        ready.toggle()
+                    }
+                } label: {
+                    Text("Continue")
+                        .font(.title3)
+                }
+                .bold()
+                .buttonStyle(.borderedProminent)
+                
+                Spacer()
+                Spacer()
+            }
+        } else {
+            Color.white
+        }
     }
 }
 
 #Preview {
     RewelcomeView()
+        .preferredColorScheme(.dark)
 }

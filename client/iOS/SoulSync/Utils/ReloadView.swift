@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+class ReloadViewHelper: ObservableObject {
+    func reloadView() {
+        objectWillChange.send()
+    }
+}
