@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "weathering-with-you-powers-of-hina-sozt6skrz2gh0ga9.jpg",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
