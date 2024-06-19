@@ -59,3 +59,5 @@ We welcome contributions from everyone! If you're interested in helping out, you
 - Open a pull request with a detailed description of your changes
 
 Thank you for your interest in SoulSync! Together, we can make a difference in how people connect and build relationships.
+
+> Creating connections one swipe at a time
