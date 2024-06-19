@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct TinderEntry: View {
+    @StateObject var matchManager = MatchManager()
+    
     var body: some View {
         MainTabBar()
-            .preferredColorScheme(.light)
+            .environmentObject(matchManager)
     }
 }
 

@@ -1,0 +1,21 @@
+{
+  "images" : [
+    {
+      "filename" : "434-4345378_you-and-have-liked-each-other-its-a.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

@@ -41,5 +41,8 @@ extension TinderEntry {
 }
 
 #Preview {
-    TinderEntry.MainTabBar()
+    ZStack {
+        TinderEntry.MainTabBar()
+    }
+    .environmentObject(MatchManager())
 }

@@ -13,6 +13,11 @@
 		95118B3F2C114D3200C867FB /* PreviewVideoPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95118B3E2C114D3200C867FB /* PreviewVideoPlayerManager.swift */; };
 		951E21172C224F4500E10B70 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951E21162C224F4500E10B70 /* EditProfile.swift */; };
 		951E21192C22519000E10B70 /* ProfileImageGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951E21182C22519000E10B70 /* ProfileImageGrid.swift */; };
+		951E211B2C22638A00E10B70 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951E211A2C22638A00E10B70 /* Match.swift */; };
+		951E211F2C226D7400E10B70 /* MatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951E211E2C226D7400E10B70 /* MatchManager.swift */; };
+		951E21222C227A6400E10B70 /* NewMatches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951E21212C227A6400E10B70 /* NewMatches.swift */; };
+		951E21242C227AA400E10B70 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951E21232C227AA400E10B70 /* Messages.swift */; };
+		951E21272C227BC200E10B70 /* Inbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951E21262C227BC200E10B70 /* Inbox.swift */; };
 		951F27E12C0F43580085E581 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F27E02C0F43580085E581 /* KeychainManager.swift */; };
 		951F27E32C0F4EBA0085E581 /* ServerErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F27E22C0F4EBA0085E581 /* ServerErrors.swift */; };
 		952A746F2C22386300F3D48B /* Legal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A746E2C22386000F3D48B /* Legal.swift */; };
@@ -148,6 +153,11 @@
 		95118B3E2C114D3200C867FB /* PreviewVideoPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewVideoPlayerManager.swift; sourceTree = "<group>"; };
 		951E21162C224F4500E10B70 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
 		951E21182C22519000E10B70 /* ProfileImageGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageGrid.swift; sourceTree = "<group>"; };
+		951E211A2C22638A00E10B70 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		951E211E2C226D7400E10B70 /* MatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchManager.swift; sourceTree = "<group>"; };
+		951E21212C227A6400E10B70 /* NewMatches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatches.swift; sourceTree = "<group>"; };
+		951E21232C227AA400E10B70 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+		951E21262C227BC200E10B70 /* Inbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Inbox.swift; sourceTree = "<group>"; };
 		951F27E02C0F43580085E581 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		951F27E22C0F4EBA0085E581 /* ServerErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerErrors.swift; sourceTree = "<group>"; };
 		952A746E2C22386000F3D48B /* Legal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Legal.swift; sourceTree = "<group>"; };
@@ -286,6 +296,32 @@
 			path = EditProfile;
 			sourceTree = "<group>";
 		};
+		951E211D2C226D5900E10B70 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				951E211E2C226D7400E10B70 /* MatchManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		951E21202C227A4000E10B70 /* Messages */ = {
+			isa = PBXGroup;
+			children = (
+				951E21232C227AA400E10B70 /* Messages.swift */,
+				951E21212C227A6400E10B70 /* NewMatches.swift */,
+				951E21252C227BB100E10B70 /* Inbox */,
+			);
+			path = Messages;
+			sourceTree = "<group>";
+		};
+		951E21252C227BB100E10B70 /* Inbox */ = {
+			isa = PBXGroup;
+			children = (
+				951E21262C227BC200E10B70 /* Inbox.swift */,
+			);
+			path = Inbox;
+			sourceTree = "<group>";
+		};
 		952E8D982B2F6EF70055CEEA /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -327,6 +363,7 @@
 				95369ABD2C20FC3300D3D78D /* ImageScrollingOverlay.swift */,
 				95369ABF2C21019A00D3D78D /* CardImageIndicator.swift */,
 				9546A98C2C21FEE800773D8E /* UserProfileView.swift */,
+				951E211A2C22638A00E10B70 /* Match.swift */,
 			);
 			path = Card;
 			sourceTree = "<group>";
@@ -432,6 +469,7 @@
 				95369AD02C211C5A00D3D78D /* Services */,
 				952E8D9B2B2F6F610055CEEA /* Models */,
 				95369ACF2C211B5500D3D78D /* ViewModels */,
+				951E211D2C226D5900E10B70 /* Managers */,
 				952E8D9E2B2F72DD0055CEEA /* Utils */,
 				952E8D982B2F6EF70055CEEA /* Data */,
 				95CC64142B3BB4770010ABC2 /* Constants */,
@@ -611,6 +649,7 @@
 				95D14F982C20980D00592F52 /* TinderEntry.swift */,
 				95D14F942C20924000592F52 /* MainTabBar.swift */,
 				95369AC12C21051E00D3D78D /* Home */,
+				951E21202C227A4000E10B70 /* Messages */,
 				9546A98B2C21FEA700773D8E /* Profile */,
 			);
 			path = TinderBased;
@@ -828,10 +867,13 @@
 			files = (
 				95D14FA12C20DC4F00592F52 /* Size.swift in Sources */,
 				958BED432C0BD9BC000A5DE0 /* NetworkManager.swift in Sources */,
+				951E21222C227A6400E10B70 /* NewMatches.swift in Sources */,
 				95E893462C1DF0EA00F27E08 /* Feed.swift in Sources */,
 				955C2D482C0CF0F400F30F83 /* Prefrences.swift in Sources */,
 				952A746F2C22386300F3D48B /* Legal.swift in Sources */,
+				951E21272C227BC200E10B70 /* Inbox.swift in Sources */,
 				958BED4A2C0BE73A000A5DE0 /* JailbreakDetector.swift in Sources */,
+				951E21242C227AA400E10B70 /* Messages.swift in Sources */,
 				95D14F9F2C20D7BB00592F52 /* SwipeActionIndicator.swift in Sources */,
 				95118B3F2C114D3200C867FB /* PreviewVideoPlayerManager.swift in Sources */,
 				95369AC32C21054600D3D78D /* CardStack.swift in Sources */,
@@ -864,6 +906,7 @@
 				95369AC92C211A9A00D3D78D /* CardModels.swift in Sources */,
 				95D14F992C20980D00592F52 /* TinderEntry.swift in Sources */,
 				951E21172C224F4500E10B70 /* EditProfile.swift in Sources */,
+				951E211F2C226D7400E10B70 /* MatchManager.swift in Sources */,
 				9546A9882C21EBDE00773D8E /* SwipeActionButtons.swift in Sources */,
 				95A8665C2C0AB0E600B7C2A7 /* ReactNativeController.swift in Sources */,
 				958072662C10AB12002E9DF3 /* VideoStreamingManager.swift in Sources */,
@@ -880,6 +923,7 @@
 				958BED522C0CA9CF000A5DE0 /* Camera.swift in Sources */,
 				95118B392C112F9700C867FB /* FirstLaunchFAKEView.swift in Sources */,
 				958072642C10A608002E9DF3 /* Streaming.swift in Sources */,
+				951E211B2C22638A00E10B70 /* Match.swift in Sources */,
 				95369AC72C2119D600D3D78D /* UserModels.swift in Sources */,
 				95E893482C1DF27100F27E08 /* FeedCell.swift in Sources */,
 				955F573C2B4D7892009AC08D /* PitchCreator.swift in Sources */,

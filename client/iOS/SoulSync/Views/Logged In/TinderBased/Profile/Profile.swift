@@ -69,7 +69,7 @@ extension TinderEntry {
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
             .fullScreenCover(isPresented: $editingProfile) {
-                EditProfile()
+                EditProfile(user: user)
             }
         }
     }
@@ -203,5 +203,5 @@ private extension TinderEntry.Profile {
 }
 
 #Preview {
-    TinderEntry.Profile(user: MockData.users[0])
+    TinderEntry.Profile(user: MockData.users[2])
 }

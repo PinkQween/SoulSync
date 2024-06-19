@@ -10,8 +10,8 @@ import AVKit
 
 extension TinderEntry.Home.CardStack {
     struct Card: View {
-        @ObservedObject var viewModel: CardsViewModel
-        //        @State private var manager: VideoPlayerManager = VideoPlayerManager(url: URL(string: "\(testingApiURL)/streaming/9:16")!, authorizationToken: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuZXdVc2VyIjp7InVzZXJuYW1lIjoiSGFubmEgU2thaXJpcGEiLCJiaXJ0aGRhdGUiOiIxMi8xMC8wOCIsImVtYWlsIjoiaGFubmFAaGFubmFza2FpcmlwYS5jb20iLCJoYXNoZWRQYXNzd29yZCI6IiQyYiQxMCRydzI0bzBzd1hrdHFYN0ZpT2FrODZlNXljZkhYMlJNeFN4S2I0ek1SUDdzaVpKV1dQanIuRyIsImNvZGUiOjUxMzUzNSwiZGV2aWNlSUQiOlsiMmE3OGM0ZmRlZTY1YmQ1NzBjNjYxY2U1Y2ZlNGQ2MzFhOGY3YjQwOWE2NzgyYmMzNzM1MjFhN2FjYTljZTBiZSJdLCJ2ZXJpZmllZCI6ZmFsc2UsInRlbXAiOnRydWUsImNyZWF0ZWRBdCI6MTcxNzU5NjE0NDI0N30sImlhdCI6MTcxNzU5NjE0NH0._T9XRScIQ2CNnk_8jOSDvfgehezpf4G2Qc6S4Tlfsmg")
+        @EnvironmentObject var matchManager: MatchManager
+        @StateObject var viewModel: CardsViewModel
         @State private var xOffset: CGFloat = 0
         @State private var degrees: Double = 0
         @State private var currentImageIndex = 0
@@ -21,7 +21,6 @@ extension TinderEntry.Home.CardStack {
         
         var body: some View {
             ZStack(alignment: .bottom) {
-                //#if targetEnvironment(simulator)
                 ZStack(alignment: .top) {
                     Image(user.profileImages[currentImageIndex])
                         .resizable()
@@ -37,20 +36,6 @@ extension TinderEntry.Home.CardStack {
                     
                     SwipeActionIndicator(xOffset: $xOffset)
                 }
-                //#else
-                //                ZStack(alignment: .top) {
-                //                    StreamingViewController(manager: manager)
-                //                        .background(.primary)
-                //                        .onAppear {
-                //                            manager.play()
-                //                        }
-                //                        .onDisappear {
-                //                            manager.pause()
-                //                        }
-                //
-                //                    SwipeActionIndicator(xOffset: $xOffset)
-                //                }
-                //#endif
                 
                 CardUserInfo(user: user, showProfileModel: $showProfileModel)
             }
@@ -113,23 +98,19 @@ private extension TinderEntry.Home.CardStack.Card {
     
     func swipeRight() {
         withAnimation {
-            
             xOffset = 500
             degrees = 500 / 25
         } completion: {
-            
             viewModel.removeCard(model)
+            matchManager.checkForMatch(withUser: user)
         }
-        
     }
     
     func swipeLeft() {
         withAnimation {
-            
             xOffset = -500
             degrees = -500 / 25
         } completion: {
-            
             viewModel.removeCard(model)
         }
     }

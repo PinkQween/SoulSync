@@ -9,7 +9,7 @@ import SwiftUI
 
 extension TinderEntry.Home.CardStack {
     struct SwipeActionButtons: View {
-        @ObservedObject var viewModel: CardsViewModel
+        @StateObject var viewModel: CardsViewModel
         
         var body: some View {
             HStack(spacing: 32) {
