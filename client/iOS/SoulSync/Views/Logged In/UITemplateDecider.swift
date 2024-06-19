@@ -8,8 +8,18 @@
 import SwiftUI
 
 struct UITemplateDecider: View {
+    enum Templates {
+        case tinder, tiktok
+    }
+    
+    @State var template: Templates = .tinder
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        if (template == .tinder) {
+            TinderEntry()
+        } else {
+            TikTokEntry()
+        }
     }
 }
 

@@ -35,8 +35,9 @@ struct HandwritingText: Shape {
 
                 if let letter = CTFontCreatePathForGlyph(runFont, glyph, nil) {
                     let xPosition = position.x + rect.midX - CTLineGetOffsetForStringIndex(line, CTRunGetStringRange(run).location, nil)
-                    let yPosition = position.y + rect.midY - CTFontGetCapHeight(runFont) / 2
-                    path.addPath(Path(letter).offsetBy(dx: xPosition, dy: yPosition))
+                    let yPosition = rect.midY - position.y
+                    let transform = CGAffineTransform(translationX: xPosition, y: yPosition).scaledBy(x: 1, y: -1)
+                    path.addPath(Path(letter).applying(transform))
                 }
             }
         }
@@ -50,6 +51,35 @@ struct HandwritingText: Shape {
     }
 }
 
+extension HandwritingText {
+    struct Preview: View {
+        @State var progress: CGFloat = 0.0
+        let text: String
+        let fontSize: CGFloat
+        let fontName: String
+        let duration: Double
+        
+        var body: some View {
+            
+            HandwritingText(text: text, fontSize: fontSize, fontName: fontName, progress: progress)
+                .stroke(Color.black, lineWidth: 2)
+                .frame(width: 300, height: 100)
+                .onAppear {
+                    withAnimation(.linear(duration: duration)) {
+                        progress = 1.0
+                    }
+                }
+        }
+    }
+}
+
 #Preview {
-    HandwritingText()
+    HandwritingText.Preview(text: "SoulSync", fontSize: 52, fontName: "Weather-Sunday---Personal-Use", duration: 4)
+        .padding(.trailing, UIScreen.main.bounds.width / 2)
+        .onAppear {
+            for family in UIFont.familyNames.sorted() {
+                let names = UIFont.fontNames(forFamilyName: family)
+                print("Family: \(family) Font names: \(names)")
+            }
+        }
 }

@@ -36,7 +36,7 @@ struct RewelcomeView: View {
                 Spacer()
             }
         } else {
-            Color.white
+            UITemplateDecider()
         }
     }
 }

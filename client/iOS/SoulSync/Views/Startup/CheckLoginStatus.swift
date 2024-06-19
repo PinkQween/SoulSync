@@ -16,10 +16,7 @@ struct CheckLoginStatus: View {
     @State private var showAlert = false
     @State private var errorTitle = ""
     @State private var errorMessage = ""
-    @ObservedObject var reloadViewHelper = ReloadViewHelper()
-    
     var body: some View {
-//        error
         containedView()
             .alert(isPresented: $showAlert) {
                 Alert(
@@ -29,39 +26,7 @@ struct CheckLoginStatus: View {
                 )
             }
             .onAppear {
-                let headers: [String: String] = [
-                    "Authorization": "Bearer \(String(describing: KeychainManager.loadString(key: "token")))",
-                ]
-                
-                NetworkManager.shared.post(to: URL(string: "\(apiURL)/validate-token")!, headers: headers) { data, res, error in
-                    
-                    if error != nil {
-                        screen = .error
-                        return
-                    }
-                    
-                    guard let data = data else {
-                        screen = .error
-                        return
-                    }
-                    
-                    do {
-                        let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
-                        
-                        // Handle the response from the server
-                        if let success = jsonResponse?["success"] as? Bool, success {
-                            screen = .loggedIn
-                        } else if ServerErrors(rawValue: jsonResponse?["error"] as? String ?? "") != nil {
-                            screen = .first
-                        } else {
-                            screen = .error
-                        }
-                    } catch {
-                        print("Error decoding JSON: \(error)")
-                        
-                        screen = .error
-                    }
-                }
+                validateToken()
             }
     }
     
@@ -93,11 +58,47 @@ struct CheckLoginStatus: View {
         .buttonStyle(.borderedProminent)
     }
     
+    func validateToken() {
+        let headers: [String: String] = [
+            "Authorization": "Bearer \(String(describing: KeychainManager.loadString(key: "token")))",
+        ]
+        
+        NetworkManager.shared.post(to: URL(string: "\(apiURL)/validate-token")!, headers: headers) { data, res, error in
+            
+            if error != nil {
+                screen = .error
+                return
+            }
+            
+            guard let data = data else {
+                screen = .error
+                return
+            }
+            
+            do {
+                let jsonResponse = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any]
+                
+                // Handle the response from the server
+                if let success = jsonResponse?["success"] as? Bool, success {
+                    screen = .loggedIn
+                } else if ServerErrors(rawValue: jsonResponse?["error"] as? String ?? "") != nil {
+                    screen = .first
+                } else {
+                    screen = .error
+                }
+            } catch {
+                print("Error decoding JSON: \(error)")
+                
+                screen = .error
+            }
+        }
+    }
+    
     func containedView() -> AnyView {
         switch (screen) {
             case .loading: return AnyView(loading)
             case .first: return AnyView(FirstLaunchView())
-            case .loggedIn: return AnyView(Color.white)
+        case .loggedIn: return AnyView(UITemplateDecider())
             case .error: return AnyView(error)
         }
     }
@@ -109,8 +110,9 @@ struct CheckLoginStatus: View {
     }
     
     func reload() {
-        reloadViewHelper.reloadView()
-    }
+            screen = .loading
+            validateToken()
+        }
 }
 
 struct LaunchScreenView: UIViewControllerRepresentable {

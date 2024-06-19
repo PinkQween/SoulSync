@@ -7,12 +7,39 @@
 
 import SwiftUI
 
-struct MainTabBar: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+extension TinderEntry {
+    struct MainTabBar: View {
+        var body: some View {
+            TabView {
+                Home()
+                    .tabItem {
+                        Image(systemName: "heart")
+                    }
+                    .tag(0)
+                
+                Text("Search View")
+                    .tabItem {
+                        Image(systemName: "magnifyingglass")
+                    }
+                    .tag(1)
+                
+                Text("Inbox View")
+                    .tabItem {
+                        Image(systemName: "bubble.left.and.text.bubble.right")
+                    }
+                    .tag(2)
+                
+                Profile(user: MockData.users[0])
+                    .tabItem {
+                        Image(systemName: "person")
+                    }
+                    .tag(3)
+            }
+            .tint(.primary)
+        }
     }
 }
 
 #Preview {
-    MainTabBar()
+    TinderEntry.MainTabBar()
 }

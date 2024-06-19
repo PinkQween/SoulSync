@@ -11,11 +11,32 @@
 		95118B3B2C1142AB00C867FB /* MatchingBio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95118B3A2C1142AB00C867FB /* MatchingBio.swift */; };
 		95118B3D2C1142FE00C867FB /* MatchingBioController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95118B3C2C1142FE00C867FB /* MatchingBioController.swift */; };
 		95118B3F2C114D3200C867FB /* PreviewVideoPlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95118B3E2C114D3200C867FB /* PreviewVideoPlayerManager.swift */; };
+		951E21172C224F4500E10B70 /* EditProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951E21162C224F4500E10B70 /* EditProfile.swift */; };
+		951E21192C22519000E10B70 /* ProfileImageGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951E21182C22519000E10B70 /* ProfileImageGrid.swift */; };
 		951F27E12C0F43580085E581 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F27E02C0F43580085E581 /* KeychainManager.swift */; };
 		951F27E32C0F4EBA0085E581 /* ServerErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951F27E22C0F4EBA0085E581 /* ServerErrors.swift */; };
+		952A746F2C22386300F3D48B /* Legal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A746E2C22386000F3D48B /* Legal.swift */; };
 		952E8D9A2B2F6F380055CEEA /* preferences.json in Resources */ = {isa = PBXBuildFile; fileRef = 952E8D992B2F6F380055CEEA /* preferences.json */; };
-		952E8D9D2B2F6F800055CEEA /* SignUpModals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E8D9C2B2F6F800055CEEA /* SignUpModals.swift */; };
+		952E8D9D2B2F6F800055CEEA /* SignUpModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E8D9C2B2F6F800055CEEA /* SignUpModels.swift */; };
 		952E8DA02B2F72EF0055CEEA /* LoadPrefrences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952E8D9F2B2F72EF0055CEEA /* LoadPrefrences.swift */; };
+		95369ABE2C20FC3300D3D78D /* ImageScrollingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95369ABD2C20FC3300D3D78D /* ImageScrollingOverlay.swift */; };
+		95369AC02C21019A00D3D78D /* CardImageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95369ABF2C21019A00D3D78D /* CardImageIndicator.swift */; };
+		95369AC32C21054600D3D78D /* CardStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95369AC22C21054600D3D78D /* CardStack.swift */; };
+		95369AC52C2105B700D3D78D /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95369AC42C2105B700D3D78D /* Home.swift */; };
+		95369AC72C2119D600D3D78D /* UserModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95369AC62C2119D600D3D78D /* UserModels.swift */; };
+		95369AC92C211A9A00D3D78D /* CardModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95369AC82C211A9700D3D78D /* CardModels.swift */; };
+		95369ACD2C211B2100D3D78D /* CardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95369ACC2C211B2100D3D78D /* CardsViewModel.swift */; };
+		95369AD22C211C7F00D3D78D /* CardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95369AD12C211C7800D3D78D /* CardService.swift */; };
+		95369AD42C211D4400D3D78D /* MockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95369AD32C211D4400D3D78D /* MockData.swift */; };
+		95369AD62C21CAA500D3D78D /* TikTokEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95369AD52C21CAA500D3D78D /* TikTokEntry.swift */; };
+		95369AD82C21D14900D3D78D /* HandwritingText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95369AD72C21D14900D3D78D /* HandwritingText.swift */; };
+		95369ADC2C21D39A00D3D78D /* Weather Sunday - Personal Use.otf in Resources */ = {isa = PBXBuildFile; fileRef = 95369ADB2C21D39A00D3D78D /* Weather Sunday - Personal Use.otf */; };
+		95369ADD2C21D39A00D3D78D /* Weather Sunday - Personal Use.otf in Resources */ = {isa = PBXBuildFile; fileRef = 95369ADB2C21D39A00D3D78D /* Weather Sunday - Personal Use.otf */; };
+		9546A9882C21EBDE00773D8E /* SwipeActionButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9546A9872C21EBDE00773D8E /* SwipeActionButtons.swift */; };
+		9546A98A2C21F13A00773D8E /* SwipeActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9546A9892C21F13100773D8E /* SwipeActions.swift */; };
+		9546A98D2C21FEE800773D8E /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9546A98C2C21FEE800773D8E /* UserProfileView.swift */; };
+		9546A98F2C22174D00773D8E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9546A98E2C22174500773D8E /* Profile.swift */; };
+		9546A9912C22186A00773D8E /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9546A9902C22186A00773D8E /* Header.swift */; };
 		95489BF22B486E3D004160F6 /* SoulSyncDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95489BF12B486E3D004160F6 /* SoulSyncDelegate.swift */; };
 		954B5F972C0D0E690022F859 /* SoulSyncUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B5F962C0D0E690022F859 /* SoulSyncUITests.swift */; };
 		954B5F992C0D0E690022F859 /* SoulSyncUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B5F982C0D0E690022F859 /* SoulSyncUITestsLaunchTests.swift */; };
@@ -25,7 +46,7 @@
 		954EF3F52B1573FA00925972 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 954EF3F42B1573FA00925972 /* Preview Assets.xcassets */; };
 		954EF47B2B1CDCD100925972 /* PhoneNumberKit in Frameworks */ = {isa = PBXBuildFile; productRef = 954EF47A2B1CDCD100925972 /* PhoneNumberKit */; };
 		955937612B40B0EF006BF0D3 /* SoulSyncTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955937602B40B0EF006BF0D3 /* SoulSyncTests.swift */; };
-		955C2D402C0CEC7A00F30F83 /* LoginInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C2D3F2C0CEC7A00F30F83 /* LoginInfo.swift */; };
+		955C2D402C0CEC7A00F30F83 /* LogInInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C2D3F2C0CEC7A00F30F83 /* LogInInfo.swift */; };
 		955C2D442C0CEFCD00F30F83 /* BasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C2D432C0CEFCD00F30F83 /* BasicInfo.swift */; };
 		955C2D462C0CF05E00F30F83 /* Verifacation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C2D452C0CF05E00F30F83 /* Verifacation.swift */; };
 		955C2D482C0CF0F400F30F83 /* Prefrences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 955C2D472C0CF0F400F30F83 /* Prefrences.swift */; };
@@ -50,6 +71,24 @@
 		9598AE3A2B37337B00899429 /* video2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9598AE372B37301D00899429 /* video2.mp4 */; };
 		95A8665C2C0AB0E600B7C2A7 /* ReactNativeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8665B2C0AB0E600B7C2A7 /* ReactNativeController.swift */; };
 		95A8665E2C0AB17700B7C2A7 /* ReactNative.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A8665D2C0AB17700B7C2A7 /* ReactNative.swift */; };
+		95D14F912C208E5E00592F52 /* UITemplateDecider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D14F902C208E5E00592F52 /* UITemplateDecider.swift */; };
+		95D14F952C20924000592F52 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D14F942C20924000592F52 /* MainTabBar.swift */; };
+		95D14F972C20974300592F52 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D14F962C20974300592F52 /* Card.swift */; };
+		95D14F992C20980D00592F52 /* TinderEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D14F982C20980D00592F52 /* TinderEntry.swift */; };
+		95D14F9B2C20C6BE00592F52 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95D14F9A2C20C6BE00592F52 /* Media.xcassets */; };
+		95D14F9D2C20CEFD00592F52 /* CardUserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D14F9C2C20CEFD00592F52 /* CardUserInfo.swift */; };
+		95D14F9F2C20D7BB00592F52 /* SwipeActionIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D14F9E2C20D7BB00592F52 /* SwipeActionIndicator.swift */; };
+		95D14FA12C20DC4F00592F52 /* Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95D14FA02C20DC4A00592F52 /* Size.swift */; };
+		95E893262C1D351600F27E08 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 95E893252C1D351600F27E08 /* Messages.framework */; };
+		95E893292C1D351600F27E08 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E893282C1D351600F27E08 /* MessagesViewController.swift */; };
+		95E8932C2C1D351600F27E08 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 95E8932B2C1D351600F27E08 /* Base */; };
+		95E8932E2C1D351800F27E08 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95E8932D2C1D351800F27E08 /* Assets.xcassets */; };
+		95E893322C1D351800F27E08 /* SoulSync iMessage extension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 95E893242C1D351600F27E08 /* SoulSync iMessage extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		95E8933E2C1D3DE600F27E08 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 95E8933D2C1D3DE600F27E08 /* 1.png */; };
+		95E893422C1DCEA500F27E08 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E893412C1DCEA500F27E08 /* TabBar.swift */; };
+		95E893442C1DDF7600F27E08 /* OnWillDisappear.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E893432C1DDF6200F27E08 /* OnWillDisappear.swift */; };
+		95E893462C1DF0EA00F27E08 /* Feed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E893452C1DF0EA00F27E08 /* Feed.swift */; };
+		95E893482C1DF27100F27E08 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95E893472C1DF27100F27E08 /* FeedCell.swift */; };
 		95EB6FA72B55B968005CD892 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 95EB6FA62B55B968005CD892 /* Launch Screen.storyboard */; };
 		95EB6FA92B55BA69005CD892 /* Launch Screen Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 95EB6FA82B55BA69005CD892 /* Launch Screen Assets.xcassets */; };
 /* End PBXBuildFile section */
@@ -69,6 +108,13 @@
 			remoteGlobalIDString = 954EF3E92B1573F800925972;
 			remoteInfo = SoulSync;
 		};
+		95E893302C1D351800F27E08 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 954EF3E22B1573F800925972 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 95E893232C1D351600F27E08;
+			remoteInfo = "SoulSync iMessage extension";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -82,6 +128,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		956ABBFA2C1D26DF00C2DF60 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				95E893322C1D351800F27E08 /* SoulSync iMessage extension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -89,11 +146,31 @@
 		95118B3A2C1142AB00C867FB /* MatchingBio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingBio.swift; sourceTree = "<group>"; };
 		95118B3C2C1142FE00C867FB /* MatchingBioController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchingBioController.swift; sourceTree = "<group>"; };
 		95118B3E2C114D3200C867FB /* PreviewVideoPlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewVideoPlayerManager.swift; sourceTree = "<group>"; };
+		951E21162C224F4500E10B70 /* EditProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfile.swift; sourceTree = "<group>"; };
+		951E21182C22519000E10B70 /* ProfileImageGrid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileImageGrid.swift; sourceTree = "<group>"; };
 		951F27E02C0F43580085E581 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		951F27E22C0F4EBA0085E581 /* ServerErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerErrors.swift; sourceTree = "<group>"; };
+		952A746E2C22386000F3D48B /* Legal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Legal.swift; sourceTree = "<group>"; };
 		952E8D992B2F6F380055CEEA /* preferences.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = preferences.json; sourceTree = "<group>"; usesTabs = 1; };
-		952E8D9C2B2F6F800055CEEA /* SignUpModals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModals.swift; sourceTree = "<group>"; };
+		952E8D9C2B2F6F800055CEEA /* SignUpModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpModels.swift; sourceTree = "<group>"; };
 		952E8D9F2B2F72EF0055CEEA /* LoadPrefrences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadPrefrences.swift; sourceTree = "<group>"; };
+		95369ABD2C20FC3300D3D78D /* ImageScrollingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollingOverlay.swift; sourceTree = "<group>"; };
+		95369ABF2C21019A00D3D78D /* CardImageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageIndicator.swift; sourceTree = "<group>"; };
+		95369AC22C21054600D3D78D /* CardStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardStack.swift; sourceTree = "<group>"; };
+		95369AC42C2105B700D3D78D /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		95369AC62C2119D600D3D78D /* UserModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModels.swift; sourceTree = "<group>"; };
+		95369AC82C211A9700D3D78D /* CardModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardModels.swift; sourceTree = "<group>"; };
+		95369ACC2C211B2100D3D78D /* CardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsViewModel.swift; sourceTree = "<group>"; };
+		95369AD12C211C7800D3D78D /* CardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardService.swift; sourceTree = "<group>"; };
+		95369AD32C211D4400D3D78D /* MockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockData.swift; sourceTree = "<group>"; };
+		95369AD52C21CAA500D3D78D /* TikTokEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TikTokEntry.swift; sourceTree = "<group>"; };
+		95369AD72C21D14900D3D78D /* HandwritingText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HandwritingText.swift; sourceTree = "<group>"; };
+		95369ADB2C21D39A00D3D78D /* Weather Sunday - Personal Use.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Weather Sunday - Personal Use.otf"; sourceTree = "<group>"; };
+		9546A9872C21EBDE00773D8E /* SwipeActionButtons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionButtons.swift; sourceTree = "<group>"; };
+		9546A9892C21F13100773D8E /* SwipeActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActions.swift; sourceTree = "<group>"; };
+		9546A98C2C21FEE800773D8E /* UserProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileView.swift; sourceTree = "<group>"; };
+		9546A98E2C22174500773D8E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		9546A9902C22186A00773D8E /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		95489BF02B48646E004160F6 /* SoulSync.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SoulSync.entitlements; sourceTree = "<group>"; };
 		95489BF12B486E3D004160F6 /* SoulSyncDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulSyncDelegate.swift; sourceTree = "<group>"; };
 		954B5F942C0D0E690022F859 /* SoulSyncUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoulSyncUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -106,7 +183,7 @@
 		954EF3F42B1573FA00925972 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9559375E2B40B0EE006BF0D3 /* SoulSyncTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoulSyncTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		955937602B40B0EF006BF0D3 /* SoulSyncTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulSyncTests.swift; sourceTree = "<group>"; };
-		955C2D3F2C0CEC7A00F30F83 /* LoginInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInfo.swift; sourceTree = "<group>"; };
+		955C2D3F2C0CEC7A00F30F83 /* LogInInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogInInfo.swift; sourceTree = "<group>"; };
 		955C2D432C0CEFCD00F30F83 /* BasicInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInfo.swift; sourceTree = "<group>"; };
 		955C2D452C0CF05E00F30F83 /* Verifacation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Verifacation.swift; sourceTree = "<group>"; };
 		955C2D472C0CF0F400F30F83 /* Prefrences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prefrences.swift; sourceTree = "<group>"; };
@@ -133,6 +210,26 @@
 		95A8665D2C0AB17700B7C2A7 /* ReactNative.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactNative.swift; sourceTree = "<group>"; };
 		95CC64152B3BB4B90010ABC2 /* Config.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Config.xcconfig; sourceTree = "<group>"; };
 		95CC641A2B3BB9130010ABC2 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95D14F902C208E5E00592F52 /* UITemplateDecider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITemplateDecider.swift; sourceTree = "<group>"; };
+		95D14F942C20924000592F52 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		95D14F962C20974300592F52 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		95D14F982C20980D00592F52 /* TinderEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TinderEntry.swift; sourceTree = "<group>"; };
+		95D14F9A2C20C6BE00592F52 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		95D14F9C2C20CEFD00592F52 /* CardUserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardUserInfo.swift; sourceTree = "<group>"; };
+		95D14F9E2C20D7BB00592F52 /* SwipeActionIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionIndicator.swift; sourceTree = "<group>"; };
+		95D14FA02C20DC4A00592F52 /* Size.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Size.swift; sourceTree = "<group>"; };
+		95E893242C1D351600F27E08 /* SoulSync iMessage extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "SoulSync iMessage extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		95E893252C1D351600F27E08 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		95E893282C1D351600F27E08 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		95E8932B2C1D351600F27E08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		95E8932D2C1D351800F27E08 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		95E8932F2C1D351800F27E08 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		95E8933D2C1D3DE600F27E08 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		95E893402C1DC98A00F27E08 /* SoulSync iMessage extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "SoulSync iMessage extension.entitlements"; sourceTree = "<group>"; };
+		95E893412C1DCEA500F27E08 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		95E893432C1DDF6200F27E08 /* OnWillDisappear.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnWillDisappear.swift; sourceTree = "<group>"; };
+		95E893452C1DF0EA00F27E08 /* Feed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feed.swift; sourceTree = "<group>"; };
+		95E893472C1DF27100F27E08 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
 		95EB6FA62B55B968005CD892 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		95EB6FA82B55BA69005CD892 /* Launch Screen Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Launch Screen Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -161,6 +258,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		95E893212C1D351600F27E08 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95E893262C1D351600F27E08 /* Messages.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -172,6 +277,15 @@
 			path = Debugging;
 			sourceTree = "<group>";
 		};
+		951E21152C224F3300E10B70 /* EditProfile */ = {
+			isa = PBXGroup;
+			children = (
+				951E21162C224F4500E10B70 /* EditProfile.swift */,
+				951E21182C22519000E10B70 /* ProfileImageGrid.swift */,
+			);
+			path = EditProfile;
+			sourceTree = "<group>";
+		};
 		952E8D982B2F6EF70055CEEA /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,17 +294,21 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		952E8D9B2B2F6F610055CEEA /* Modals */ = {
+		952E8D9B2B2F6F610055CEEA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				952E8D9C2B2F6F800055CEEA /* SignUpModals.swift */,
+				952E8D9C2B2F6F800055CEEA /* SignUpModels.swift */,
+				95369AC62C2119D600D3D78D /* UserModels.swift */,
+				95369AC82C211A9700D3D78D /* CardModels.swift */,
+				9546A9892C21F13100773D8E /* SwipeActions.swift */,
 			);
-			path = Modals;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		952E8D9E2B2F72DD0055CEEA /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				95E893432C1DDF6200F27E08 /* OnWillDisappear.swift */,
 				952E8D9F2B2F72EF0055CEEA /* LoadPrefrences.swift */,
 				958072652C10AB12002E9DF3 /* VideoStreamingManager.swift */,
 				95118B3E2C114D3200C867FB /* PreviewVideoPlayerManager.swift */,
@@ -198,6 +316,71 @@
 				956ABBEA2C1C9A2800C2DF60 /* ReloadView.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		95369ABC2C20FC0D00D3D78D /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				95D14F962C20974300592F52 /* Card.swift */,
+				95D14F9C2C20CEFD00592F52 /* CardUserInfo.swift */,
+				95D14F9E2C20D7BB00592F52 /* SwipeActionIndicator.swift */,
+				95369ABD2C20FC3300D3D78D /* ImageScrollingOverlay.swift */,
+				95369ABF2C21019A00D3D78D /* CardImageIndicator.swift */,
+				9546A98C2C21FEE800773D8E /* UserProfileView.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		95369AC12C21051E00D3D78D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				95369AC42C2105B700D3D78D /* Home.swift */,
+				95369AC22C21054600D3D78D /* CardStack.swift */,
+				9546A9872C21EBDE00773D8E /* SwipeActionButtons.swift */,
+				95369ABC2C20FC0D00D3D78D /* Card */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		95369ACF2C211B5500D3D78D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				95369ACC2C211B2100D3D78D /* CardsViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		95369AD02C211C5A00D3D78D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				95369AD12C211C7800D3D78D /* CardService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		95369AD92C21D30E00D3D78D /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		95369ADA2C21D31D00D3D78D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				95369ADB2C21D39A00D3D78D /* Weather Sunday - Personal Use.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		9546A98B2C21FEA700773D8E /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				9546A98E2C22174500773D8E /* Profile.swift */,
+				9546A9902C22186A00773D8E /* Header.swift */,
+				951E21152C224F3300E10B70 /* EditProfile */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		954B5F952C0D0E690022F859 /* SoulSyncUITests */ = {
@@ -212,9 +395,11 @@
 		954EF3E12B1573F800925972 = {
 			isa = PBXGroup;
 			children = (
+				95369ADA2C21D31D00D3D78D /* Fonts */,
 				954EF3EC2B1573F800925972 /* SoulSync */,
 				9559375F2B40B0EF006BF0D3 /* SoulSyncTests */,
 				954B5F952C0D0E690022F859 /* SoulSyncUITests */,
+				95E893272C1D351600F27E08 /* SoulSync iMessage extension */,
 				954EF3EB2B1573F800925972 /* Products */,
 				954EF45E2B1CD40D00925972 /* Frameworks */,
 			);
@@ -226,6 +411,7 @@
 				954EF3EA2B1573F800925972 /* SoulSync.app */,
 				9559375E2B40B0EE006BF0D3 /* SoulSyncTests.xctest */,
 				954B5F942C0D0E690022F859 /* SoulSyncUITests.xctest */,
+				95E893242C1D351600F27E08 /* SoulSync iMessage extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -233,6 +419,7 @@
 		954EF3EC2B1573F800925972 /* SoulSync */ = {
 			isa = PBXGroup;
 			children = (
+				95369AD92C21D30E00D3D78D /* New Group */,
 				95489BF02B48646E004160F6 /* SoulSync.entitlements */,
 				958BED472C0BDC7B000A5DE0 /* server.cer */,
 				954EF3ED2B1573F800925972 /* SoulSyncApp.swift */,
@@ -242,7 +429,9 @@
 				958BED442C0BDA4A000A5DE0 /* Networking */,
 				95A8665A2C0AB0C000B7C2A7 /* ViewControllers */,
 				954EF3FB2B164E8500925972 /* Views */,
-				952E8D9B2B2F6F610055CEEA /* Modals */,
+				95369AD02C211C5A00D3D78D /* Services */,
+				952E8D9B2B2F6F610055CEEA /* Models */,
+				95369ACF2C211B5500D3D78D /* ViewModels */,
 				952E8D9E2B2F72DD0055CEEA /* Utils */,
 				952E8D982B2F6EF70055CEEA /* Data */,
 				95CC64142B3BB4770010ABC2 /* Constants */,
@@ -269,8 +458,10 @@
 			isa = PBXGroup;
 			children = (
 				955937672B40B533006BF0D3 /* Startup */,
+				956ABBEC2C1D0C6300C2DF60 /* Logged In */,
 				9576BD862B5747A6001240B3 /* Tests */,
 				95A8665D2C0AB17700B7C2A7 /* ReactNative.swift */,
+				95369AD72C21D14900D3D78D /* HandwritingText.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -278,6 +469,7 @@
 		954EF45E2B1CD40D00925972 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				95E893252C1D351600F27E08 /* Messages.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -305,7 +497,7 @@
 		955C2D3D2C0CEB2D00F30F83 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				955C2D3F2C0CEC7A00F30F83 /* LoginInfo.swift */,
+				955C2D3F2C0CEC7A00F30F83 /* LogInInfo.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -319,6 +511,16 @@
 				958BED502C0CA965000A5DE0 /* Pitches */,
 			);
 			path = Singup;
+			sourceTree = "<group>";
+		};
+		956ABBEC2C1D0C6300C2DF60 /* Logged In */ = {
+			isa = PBXGroup;
+			children = (
+				95D14F902C208E5E00592F52 /* UITemplateDecider.swift */,
+				95D14F8F2C208D1D00592F52 /* TinderBased */,
+				95D14F8E2C208D0800592F52 /* TikTokBased */,
+			);
+			path = "Logged In";
 			sourceTree = "<group>";
 		};
 		9576BD862B5747A6001240B3 /* Tests */ = {
@@ -366,6 +568,8 @@
 			children = (
 				9598AE362B37301C00899429 /* video1.mp4 */,
 				9598AE372B37301D00899429 /* video2.mp4 */,
+				95D14F9A2C20C6BE00592F52 /* Media.xcassets */,
+				95369AD32C211D4400D3D78D /* MockData.swift */,
 			);
 			path = TestingData;
 			sourceTree = "<group>";
@@ -383,9 +587,54 @@
 		95CC64142B3BB4770010ABC2 /* Constants */ = {
 			isa = PBXGroup;
 			children = (
+				95D14FA02C20DC4A00592F52 /* Size.swift */,
 				955C2D4B2C0CFC6C00F30F83 /* NetworkInfo.swift */,
+				952A746E2C22386000F3D48B /* Legal.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		95D14F8E2C208D0800592F52 /* TikTokBased */ = {
+			isa = PBXGroup;
+			children = (
+				95369AD52C21CAA500D3D78D /* TikTokEntry.swift */,
+				95E893412C1DCEA500F27E08 /* TabBar.swift */,
+				95E893452C1DF0EA00F27E08 /* Feed.swift */,
+				95E893472C1DF27100F27E08 /* FeedCell.swift */,
+			);
+			path = TikTokBased;
+			sourceTree = "<group>";
+		};
+		95D14F8F2C208D1D00592F52 /* TinderBased */ = {
+			isa = PBXGroup;
+			children = (
+				95D14F982C20980D00592F52 /* TinderEntry.swift */,
+				95D14F942C20924000592F52 /* MainTabBar.swift */,
+				95369AC12C21051E00D3D78D /* Home */,
+				9546A98B2C21FEA700773D8E /* Profile */,
+			);
+			path = TinderBased;
+			sourceTree = "<group>";
+		};
+		95E893272C1D351600F27E08 /* SoulSync iMessage extension */ = {
+			isa = PBXGroup;
+			children = (
+				95E893402C1DC98A00F27E08 /* SoulSync iMessage extension.entitlements */,
+				95E893282C1D351600F27E08 /* MessagesViewController.swift */,
+				95E8932A2C1D351600F27E08 /* MainInterface.storyboard */,
+				95E8932D2C1D351800F27E08 /* Assets.xcassets */,
+				95E8932F2C1D351800F27E08 /* Info.plist */,
+				95E8933F2C1D3DF900F27E08 /* stickers */,
+			);
+			path = "SoulSync iMessage extension";
+			sourceTree = "<group>";
+		};
+		95E8933F2C1D3DF900F27E08 /* stickers */ = {
+			isa = PBXGroup;
+			children = (
+				95E8933D2C1D3DE600F27E08 /* 1.png */,
+			);
+			path = stickers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,10 +666,12 @@
 				954EF3E72B1573F800925972 /* Frameworks */,
 				954EF3E82B1573F800925972 /* Resources */,
 				954EF4532B1CD1DB00925972 /* Embed Frameworks */,
+				956ABBFA2C1D26DF00C2DF60 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				95E893312C1D351800F27E08 /* PBXTargetDependency */,
 			);
 			name = SoulSync;
 			packageProductDependencies = (
@@ -449,6 +700,23 @@
 			productReference = 9559375E2B40B0EE006BF0D3 /* SoulSyncTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		95E893232C1D351600F27E08 /* SoulSync iMessage extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95E893332C1D351800F27E08 /* Build configuration list for PBXNativeTarget "SoulSync iMessage extension" */;
+			buildPhases = (
+				95E893202C1D351600F27E08 /* Sources */,
+				95E893212C1D351600F27E08 /* Frameworks */,
+				95E893222C1D351600F27E08 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SoulSync iMessage extension";
+			productName = "SoulSync iMessage extension";
+			productReference = 95E893242C1D351600F27E08 /* SoulSync iMessage extension.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -456,7 +724,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1540;
+				LastSwiftUpdateCheck = 1600;
 				LastUpgradeCheck = 1510;
 				TargetAttributes = {
 					954B5F932C0D0E690022F859 = {
@@ -469,6 +737,9 @@
 					9559375D2B40B0EE006BF0D3 = {
 						CreatedOnToolsVersion = 15.0.1;
 						TestTargetID = 954EF3E92B1573F800925972;
+					};
+					95E893232C1D351600F27E08 = {
+						CreatedOnToolsVersion = 16.0;
 					};
 				};
 			};
@@ -492,6 +763,7 @@
 				954EF3E92B1573F800925972 /* SoulSync */,
 				9559375D2B40B0EE006BF0D3 /* SoulSyncTests */,
 				954B5F932C0D0E690022F859 /* SoulSyncUITests */,
+				95E893232C1D351600F27E08 /* SoulSync iMessage extension */,
 			);
 		};
 /* End PBXProject section */
@@ -510,8 +782,10 @@
 			files = (
 				95EB6FA72B55B968005CD892 /* Launch Screen.storyboard in Resources */,
 				954EF3F52B1573FA00925972 /* Preview Assets.xcassets in Resources */,
+				95D14F9B2C20C6BE00592F52 /* Media.xcassets in Resources */,
 				95EB6FA92B55BA69005CD892 /* Launch Screen Assets.xcassets in Resources */,
 				9598AE392B37337800899429 /* video1.mp4 in Resources */,
+				95369ADC2C21D39A00D3D78D /* Weather Sunday - Personal Use.otf in Resources */,
 				952E8D9A2B2F6F380055CEEA /* preferences.json in Resources */,
 				9598AE3A2B37337B00899429 /* video2.mp4 in Resources */,
 				954EF3F22B1573FA00925972 /* Assets.xcassets in Resources */,
@@ -522,6 +796,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95E893222C1D351600F27E08 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95E8932E2C1D351800F27E08 /* Assets.xcassets in Resources */,
+				95E8933E2C1D3DE600F27E08 /* 1.png in Resources */,
+				95369ADD2C21D39A00D3D78D /* Weather Sunday - Personal Use.otf in Resources */,
+				95E8932C2C1D351600F27E08 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -541,38 +826,68 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				95D14FA12C20DC4F00592F52 /* Size.swift in Sources */,
 				958BED432C0BD9BC000A5DE0 /* NetworkManager.swift in Sources */,
+				95E893462C1DF0EA00F27E08 /* Feed.swift in Sources */,
 				955C2D482C0CF0F400F30F83 /* Prefrences.swift in Sources */,
+				952A746F2C22386300F3D48B /* Legal.swift in Sources */,
 				958BED4A2C0BE73A000A5DE0 /* JailbreakDetector.swift in Sources */,
+				95D14F9F2C20D7BB00592F52 /* SwipeActionIndicator.swift in Sources */,
 				95118B3F2C114D3200C867FB /* PreviewVideoPlayerManager.swift in Sources */,
+				95369AC32C21054600D3D78D /* CardStack.swift in Sources */,
+				9546A9912C22186A00773D8E /* Header.swift in Sources */,
+				9546A98A2C21F13A00773D8E /* SwipeActions.swift in Sources */,
 				955C2D4A2C0CF2C300F30F83 /* Rewelcome.swift in Sources */,
 				958BED582C0CACE6000A5DE0 /* Editor.swift in Sources */,
+				95D14F972C20974300592F52 /* Card.swift in Sources */,
+				95369AD42C211D4400D3D78D /* MockData.swift in Sources */,
+				95D14F9D2C20CEFD00592F52 /* CardUserInfo.swift in Sources */,
 				95118B3B2C1142AB00C867FB /* MatchingBio.swift in Sources */,
+				95E893422C1DCEA500F27E08 /* TabBar.swift in Sources */,
 				9576BD882B5747C5001240B3 /* videoEditor.swift in Sources */,
+				95369AD22C211C7F00D3D78D /* CardService.swift in Sources */,
 				955C2D462C0CF05E00F30F83 /* Verifacation.swift in Sources */,
 				95118B3D2C1142FE00C867FB /* MatchingBioController.swift in Sources */,
 				952E8DA02B2F72EF0055CEEA /* LoadPrefrences.swift in Sources */,
 				955C2D4C2C0CFC6D00F30F83 /* NetworkInfo.swift in Sources */,
 				956ABBE92C1BAD6600C2DF60 /* CheckLoginStatus.swift in Sources */,
 				951F27E32C0F4EBA0085E581 /* ServerErrors.swift in Sources */,
-				955C2D402C0CEC7A00F30F83 /* LoginInfo.swift in Sources */,
+				95D14F912C208E5E00592F52 /* UITemplateDecider.swift in Sources */,
+				9546A98F2C22174D00773D8E /* Profile.swift in Sources */,
+				9546A98D2C21FEE800773D8E /* UserProfileView.swift in Sources */,
+				95369AC02C21019A00D3D78D /* CardImageIndicator.swift in Sources */,
+				955C2D402C0CEC7A00F30F83 /* LogInInfo.swift in Sources */,
+				95369AD62C21CAA500D3D78D /* TikTokEntry.swift in Sources */,
 				954EF3F02B1573F800925972 /* FirstLaunch.swift in Sources */,
 				956ABBE72C1A636F00C2DF60 /* Wallet.swift in Sources */,
 				958BED562C0CAB4A000A5DE0 /* VideoPicker.swift in Sources */,
+				95369AC92C211A9A00D3D78D /* CardModels.swift in Sources */,
+				95D14F992C20980D00592F52 /* TinderEntry.swift in Sources */,
+				951E21172C224F4500E10B70 /* EditProfile.swift in Sources */,
+				9546A9882C21EBDE00773D8E /* SwipeActionButtons.swift in Sources */,
 				95A8665C2C0AB0E600B7C2A7 /* ReactNativeController.swift in Sources */,
 				958072662C10AB12002E9DF3 /* VideoStreamingManager.swift in Sources */,
 				955C2D442C0CEFCD00F30F83 /* BasicInfo.swift in Sources */,
+				951E21192C22519000E10B70 /* ProfileImageGrid.swift in Sources */,
 				95489BF22B486E3D004160F6 /* SoulSyncDelegate.swift in Sources */,
-				952E8D9D2B2F6F800055CEEA /* SignUpModals.swift in Sources */,
+				95369ABE2C20FC3300D3D78D /* ImageScrollingOverlay.swift in Sources */,
+				952E8D9D2B2F6F800055CEEA /* SignUpModels.swift in Sources */,
+				95369ACD2C211B2100D3D78D /* CardsViewModel.swift in Sources */,
 				954EF3EE2B1573F800925972 /* SoulSyncApp.swift in Sources */,
+				95D14F952C20924000592F52 /* MainTabBar.swift in Sources */,
+				95E893442C1DDF7600F27E08 /* OnWillDisappear.swift in Sources */,
 				951F27E12C0F43580085E581 /* KeychainManager.swift in Sources */,
 				958BED522C0CA9CF000A5DE0 /* Camera.swift in Sources */,
 				95118B392C112F9700C867FB /* FirstLaunchFAKEView.swift in Sources */,
 				958072642C10A608002E9DF3 /* Streaming.swift in Sources */,
+				95369AC72C2119D600D3D78D /* UserModels.swift in Sources */,
+				95E893482C1DF27100F27E08 /* FeedCell.swift in Sources */,
 				955F573C2B4D7892009AC08D /* PitchCreator.swift in Sources */,
 				958BED462C0BDA72000A5DE0 /* URLSessionDelegate.swift in Sources */,
 				958BED542C0CAA17000A5DE0 /* CameraController.swift in Sources */,
+				95369AD82C21D14900D3D78D /* HandwritingText.swift in Sources */,
 				956ABBEB2C1C9A2800C2DF60 /* ReloadView.swift in Sources */,
+				95369AC52C2105B700D3D78D /* Home.swift in Sources */,
 				95A8665E2C0AB17700B7C2A7 /* ReactNative.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -582,6 +897,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				955937612B40B0EF006BF0D3 /* SoulSyncTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		95E893202C1D351600F27E08 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				95E893292C1D351600F27E08 /* MessagesViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -598,7 +921,23 @@
 			target = 954EF3E92B1573F800925972 /* SoulSync */;
 			targetProxy = 955937622B40B0EF006BF0D3 /* PBXContainerItemProxy */;
 		};
+		95E893312C1D351800F27E08 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 95E893232C1D351600F27E08 /* SoulSync iMessage extension */;
+			targetProxy = 95E893302C1D351800F27E08 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		95E8932A2C1D351600F27E08 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				95E8932B2C1D351600F27E08 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		954B5F9D2C0D0E690022F859 /* Debug */ = {
@@ -910,6 +1249,62 @@
 			};
 			name = Release;
 		};
+		95E893342C1D351800F27E08 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = "SoulSync iMessage extension/SoulSync iMessage extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8UA385N825;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SoulSync iMessage extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = SoulSync;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hannaskairipa.SoulSync.SoulSync-iMessage-extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		95E893352C1D351800F27E08 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				CODE_SIGN_ENTITLEMENTS = "SoulSync iMessage extension/SoulSync iMessage extension.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8UA385N825;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SoulSync iMessage extension/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = SoulSync;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.hannaskairipa.SoulSync.SoulSync-iMessage-extension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -945,6 +1340,15 @@
 			buildConfigurations = (
 				955937652B40B0EF006BF0D3 /* Debug */,
 				955937662B40B0EF006BF0D3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		95E893332C1D351800F27E08 /* Build configuration list for PBXNativeTarget "SoulSync iMessage extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				95E893342C1D351800F27E08 /* Debug */,
+				95E893352C1D351800F27E08 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
