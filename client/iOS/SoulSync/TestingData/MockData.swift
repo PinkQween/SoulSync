@@ -61,3 +61,13 @@ struct MockData {
         ),
     ]
 }
+
+extension MockData {
+    static var matches: [Match] {
+        return [
+            .init(id: NSUUID().uuidString, userId: users[3].id, timestamp: Date(), user: users[2]),
+            .init(id: NSUUID().uuidString, userId: users[1].id, timestamp: Date(), user: users[1]),
+            .init(id: NSUUID().uuidString, userId: users[4].id, timestamp: Date(), user: users[4]),
+        ]
+    }
+}
