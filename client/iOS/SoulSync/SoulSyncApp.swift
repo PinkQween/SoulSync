@@ -14,8 +14,7 @@ struct SoulSyncApp: App {
     var body: some Scene {
         WindowGroup {
             UITemplateDecider()
-//                .environmentObject(soulSyncDelegate.deviceIDProvider)
-                .environmentObject(DeviceIDProvider())
+                .environmentObject(appDelegate.deviceIDProvider)
                 .onOpenURL { url in
                     print(url)
                 }

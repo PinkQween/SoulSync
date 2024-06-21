@@ -46,6 +46,8 @@
 		956E7EA82C2367F000C11C4A /* MatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E7EA72C2367EA00C11C4A /* MatchService.swift */; };
 		956E7EAA2C23681000C11C4A /* MockMatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E7EA92C23680B00C11C4A /* MockMatchService.swift */; };
 		9573E0BA2C25146C0004DD44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9573E0B92C25146C0004DD44 /* AppDelegate.swift */; };
+		9573E0BD2C25AFE90004DD44 /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9573E0BC2C25AFE90004DD44 /* Onboarding.swift */; };
+		9573E0BF2C25B2AC0004DD44 /* OnboardingConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9573E0BE2C25B2AA0004DD44 /* OnboardingConstants.swift */; };
 		957B94B52B4B1385009A52A7 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 957B94B42B4B1385009A52A7 /* iPhoneNumberField */; settings = {ATTRIBUTES = (Required, ); }; };
 		958BED4A2C0BE73A000A5DE0 /* JailbreakDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958BED492C0BE73A000A5DE0 /* JailbreakDetector.swift */; };
 		9598AE392B37337800899429 /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9598AE362B37301C00899429 /* video1.mp4 */; };
@@ -182,6 +184,8 @@
 		956E7EA72C2367EA00C11C4A /* MatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchService.swift; sourceTree = "<group>"; };
 		956E7EA92C23680B00C11C4A /* MockMatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMatchService.swift; sourceTree = "<group>"; };
 		9573E0B92C25146C0004DD44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9573E0BC2C25AFE90004DD44 /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
+		9573E0BE2C25B2AA0004DD44 /* OnboardingConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingConstants.swift; sourceTree = "<group>"; };
 		958BED472C0BDC7B000A5DE0 /* server.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = server.cer; sourceTree = "<group>"; };
 		958BED492C0BE73A000A5DE0 /* JailbreakDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailbreakDetector.swift; sourceTree = "<group>"; };
 		9598AE362B37301C00899429 /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
@@ -436,8 +440,8 @@
 		954EF3EC2B1573F800925972 /* SoulSync */ = {
 			isa = PBXGroup;
 			children = (
-				958BED472C0BDC7B000A5DE0 /* server.cer */,
 				95489BF02B48646E004160F6 /* SoulSync.entitlements */,
+				958BED472C0BDC7B000A5DE0 /* server.cer */,
 				95CC641A2B3BB9130010ABC2 /* Info.plist */,
 				95264F542C24B25200404164 /* GoogleService-Info.plist */,
 				95EB6FA62B55B968005CD892 /* Launch Screen.storyboard */,
@@ -499,6 +503,14 @@
 				955937602B40B0EF006BF0D3 /* SoulSyncTests.swift */,
 			);
 			path = SoulSyncTests;
+			sourceTree = "<group>";
+		};
+		9573E0BB2C25AFAC0004DD44 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				9573E0BC2C25AFE90004DD44 /* Onboarding.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 		958BED442C0BDA4A000A5DE0 /* Networking */ = {
@@ -567,6 +579,7 @@
 			children = (
 				952A746E2C22386000F3D48B /* Legal.swift */,
 				955C2D4B2C0CFC6C00F30F83 /* NetworkInfo.swift */,
+				9573E0BE2C25B2AA0004DD44 /* OnboardingConstants.swift */,
 				95D14FA02C20DC4A00592F52 /* Size.swift */,
 			);
 			path = Constants;
@@ -588,6 +601,7 @@
 			children = (
 				95D14F982C20980D00592F52 /* TinderEntry.swift */,
 				95B13CE62C237A83000D5540 /* Auth */,
+				9573E0BB2C25AFAC0004DD44 /* Onboarding */,
 				95D14F942C20924000592F52 /* MainTabBar.swift */,
 				95369AC12C21051E00D3D78D /* Home */,
 				951E21202C227A4000E10B70 /* Messages */,
@@ -835,6 +849,7 @@
 				95A191BF2C24F48000C7F9A9 /* NotifacationService.swift in Sources */,
 				95B13CE52C236D26000D5540 /* NewMatchItem.swift in Sources */,
 				955C2D4C2C0CFC6D00F30F83 /* NetworkInfo.swift in Sources */,
+				9573E0BF2C25B2AC0004DD44 /* OnboardingConstants.swift in Sources */,
 				956E7EAA2C23681000C11C4A /* MockMatchService.swift in Sources */,
 				95D14F912C208E5E00592F52 /* UITemplateDecider.swift in Sources */,
 				95B13CE82C237A9C000D5540 /* Auth.swift in Sources */,
@@ -862,6 +877,7 @@
 				95B13CEC2C238263000D5540 /* Password.swift in Sources */,
 				95A191C42C24F8E100C7F9A9 /* DeviceIDProvider.swift in Sources */,
 				95D14F952C20924000592F52 /* MainTabBar.swift in Sources */,
+				9573E0BD2C25AFE90004DD44 /* Onboarding.swift in Sources */,
 				951E211B2C22638A00E10B70 /* Match.swift in Sources */,
 				95369AC72C2119D600D3D78D /* UserModels.swift in Sources */,
 				956E7EA62C23663900C11C4A /* MatchModels.swift in Sources */,
