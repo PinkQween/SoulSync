@@ -61,6 +61,9 @@ extension TinderEntry.Auth {
                     }
                 }
             }
+            .onAppear {
+                dump(authDataStore.deviceIDProvider.deviceID)
+            }
         }
     }
 }
@@ -83,5 +86,5 @@ private extension TinderEntry.Auth.Email {
 #Preview {
     TinderEntry.Auth.Email()
         .environmentObject(AuthManager(service: MockAuthService()))
-        .environmentObject(AuthDataStore())
+        .environmentObject(AuthDataStore(deviceIDProvider: DeviceIDProvider()))
 }

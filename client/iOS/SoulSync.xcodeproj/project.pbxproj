@@ -15,6 +15,7 @@
 		951E21242C227AA400E10B70 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 951E21232C227AA400E10B70 /* Messages.swift */; };
 		95264F4F2C248BD500404164 /* AuthDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95264F4E2C248BCB00404164 /* AuthDataStore.swift */; };
 		95264F522C24929100404164 /* AuthModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95264F512C24928C00404164 /* AuthModels.swift */; };
+		95264F552C24B25200404164 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 95264F542C24B25200404164 /* GoogleService-Info.plist */; };
 		952A746F2C22386300F3D48B /* Legal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952A746E2C22386000F3D48B /* Legal.swift */; };
 		95369ABE2C20FC3300D3D78D /* ImageScrollingOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95369ABD2C20FC3300D3D78D /* ImageScrollingOverlay.swift */; };
 		95369AC02C21019A00D3D78D /* CardImageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95369ABF2C21019A00D3D78D /* CardImageIndicator.swift */; };
@@ -33,7 +34,6 @@
 		9546A98D2C21FEE800773D8E /* UserProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9546A98C2C21FEE800773D8E /* UserProfileView.swift */; };
 		9546A98F2C22174D00773D8E /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9546A98E2C22174500773D8E /* Profile.swift */; };
 		9546A9912C22186A00773D8E /* Header.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9546A9902C22186A00773D8E /* Header.swift */; };
-		95489BF22B486E3D004160F6 /* SoulSyncDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95489BF12B486E3D004160F6 /* SoulSyncDelegate.swift */; };
 		954B5F972C0D0E690022F859 /* SoulSyncUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B5F962C0D0E690022F859 /* SoulSyncUITests.swift */; };
 		954B5F992C0D0E690022F859 /* SoulSyncUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954B5F982C0D0E690022F859 /* SoulSyncUITestsLaunchTests.swift */; };
 		954EF3EE2B1573F800925972 /* SoulSyncApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 954EF3ED2B1573F800925972 /* SoulSyncApp.swift */; };
@@ -45,10 +45,23 @@
 		956E7EA62C23663900C11C4A /* MatchModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E7EA52C23663500C11C4A /* MatchModels.swift */; };
 		956E7EA82C2367F000C11C4A /* MatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E7EA72C2367EA00C11C4A /* MatchService.swift */; };
 		956E7EAA2C23681000C11C4A /* MockMatchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 956E7EA92C23680B00C11C4A /* MockMatchService.swift */; };
+		9573E0BA2C25146C0004DD44 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9573E0B92C25146C0004DD44 /* AppDelegate.swift */; };
 		957B94B52B4B1385009A52A7 /* iPhoneNumberField in Frameworks */ = {isa = PBXBuildFile; productRef = 957B94B42B4B1385009A52A7 /* iPhoneNumberField */; settings = {ATTRIBUTES = (Required, ); }; };
 		958BED4A2C0BE73A000A5DE0 /* JailbreakDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 958BED492C0BE73A000A5DE0 /* JailbreakDetector.swift */; };
 		9598AE392B37337800899429 /* video1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9598AE362B37301C00899429 /* video1.mp4 */; };
 		9598AE3A2B37337B00899429 /* video2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 9598AE372B37301D00899429 /* video2.mp4 */; };
+		95A191B02C24F29F00C7F9A9 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 95A191AF2C24F29F00C7F9A9 /* FirebaseAnalytics */; };
+		95A191B22C24F29F00C7F9A9 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */ = {isa = PBXBuildFile; productRef = 95A191B12C24F29F00C7F9A9 /* FirebaseAnalyticsOnDeviceConversion */; };
+		95A191B42C24F29F00C7F9A9 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 95A191B32C24F29F00C7F9A9 /* FirebaseAnalyticsSwift */; };
+		95A191B62C24F29F00C7F9A9 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = 95A191B52C24F29F00C7F9A9 /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		95A191B82C24F29F00C7F9A9 /* FirebaseAppCheck in Frameworks */ = {isa = PBXBuildFile; productRef = 95A191B72C24F29F00C7F9A9 /* FirebaseAppCheck */; };
+		95A191BF2C24F48000C7F9A9 /* NotifacationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A191BE2C24F46D00C7F9A9 /* NotifacationService.swift */; };
+		95A191C12C24F4E300C7F9A9 /* NotificationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A191C02C24F4E200C7F9A9 /* NotificationServiceProtocol.swift */; };
+		95A191C42C24F8E100C7F9A9 /* DeviceIDProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95A191C32C24F8C300C7F9A9 /* DeviceIDProvider.swift */; };
+		95A191C62C2505BB00C7F9A9 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 95A191C52C2505BB00C7F9A9 /* FirebaseAuth */; };
+		95A191C82C2505C800C7F9A9 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 95A191C72C2505C800C7F9A9 /* FirebaseFirestore */; };
+		95A191CA2C2505C800C7F9A9 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 95A191C92C2505C800C7F9A9 /* FirebaseFirestoreSwift */; };
+		95A191CC2C2505D400C7F9A9 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 95A191CB2C2505D400C7F9A9 /* FirebaseStorage */; };
 		95B13CE52C236D26000D5540 /* NewMatchItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B13CE42C236D26000D5540 /* NewMatchItem.swift */; };
 		95B13CE82C237A9C000D5540 /* Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B13CE72C237A9C000D5540 /* Auth.swift */; };
 		95B13CEA2C237FD7000D5540 /* Email.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95B13CE92C237FD7000D5540 /* Email.swift */; };
@@ -136,6 +149,7 @@
 		951E21232C227AA400E10B70 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
 		95264F4E2C248BCB00404164 /* AuthDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthDataStore.swift; sourceTree = "<group>"; };
 		95264F512C24928C00404164 /* AuthModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModels.swift; sourceTree = "<group>"; };
+		95264F542C24B25200404164 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		952A746E2C22386000F3D48B /* Legal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Legal.swift; sourceTree = "<group>"; };
 		95369ABD2C20FC3300D3D78D /* ImageScrollingOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageScrollingOverlay.swift; sourceTree = "<group>"; };
 		95369ABF2C21019A00D3D78D /* CardImageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardImageIndicator.swift; sourceTree = "<group>"; };
@@ -154,7 +168,6 @@
 		9546A98E2C22174500773D8E /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		9546A9902C22186A00773D8E /* Header.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Header.swift; sourceTree = "<group>"; };
 		95489BF02B48646E004160F6 /* SoulSync.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SoulSync.entitlements; sourceTree = "<group>"; };
-		95489BF12B486E3D004160F6 /* SoulSyncDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulSyncDelegate.swift; sourceTree = "<group>"; };
 		954B5F942C0D0E690022F859 /* SoulSyncUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SoulSyncUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		954B5F962C0D0E690022F859 /* SoulSyncUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulSyncUITests.swift; sourceTree = "<group>"; };
 		954B5F982C0D0E690022F859 /* SoulSyncUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoulSyncUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -168,10 +181,14 @@
 		956E7EA52C23663500C11C4A /* MatchModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchModels.swift; sourceTree = "<group>"; };
 		956E7EA72C2367EA00C11C4A /* MatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchService.swift; sourceTree = "<group>"; };
 		956E7EA92C23680B00C11C4A /* MockMatchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMatchService.swift; sourceTree = "<group>"; };
+		9573E0B92C25146C0004DD44 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		958BED472C0BDC7B000A5DE0 /* server.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = server.cer; sourceTree = "<group>"; };
 		958BED492C0BE73A000A5DE0 /* JailbreakDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JailbreakDetector.swift; sourceTree = "<group>"; };
 		9598AE362B37301C00899429 /* video1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video1.mp4; sourceTree = "<group>"; };
 		9598AE372B37301D00899429 /* video2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video2.mp4; sourceTree = "<group>"; };
+		95A191BE2C24F46D00C7F9A9 /* NotifacationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotifacationService.swift; sourceTree = "<group>"; };
+		95A191C02C24F4E200C7F9A9 /* NotificationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationServiceProtocol.swift; sourceTree = "<group>"; };
+		95A191C32C24F8C300C7F9A9 /* DeviceIDProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceIDProvider.swift; sourceTree = "<group>"; };
 		95B13CE42C236D26000D5540 /* NewMatchItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMatchItem.swift; sourceTree = "<group>"; };
 		95B13CE72C237A9C000D5540 /* Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Auth.swift; sourceTree = "<group>"; };
 		95B13CE92C237FD7000D5540 /* Email.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Email.swift; sourceTree = "<group>"; };
@@ -219,7 +236,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				954EF47B2B1CDCD100925972 /* PhoneNumberKit in Frameworks */,
+				95A191B62C24F29F00C7F9A9 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 				957B94B52B4B1385009A52A7 /* iPhoneNumberField in Frameworks */,
+				95A191B02C24F29F00C7F9A9 /* FirebaseAnalytics in Frameworks */,
+				95A191B82C24F29F00C7F9A9 /* FirebaseAppCheck in Frameworks */,
+				95A191CA2C2505C800C7F9A9 /* FirebaseFirestoreSwift in Frameworks */,
+				95A191C82C2505C800C7F9A9 /* FirebaseFirestore in Frameworks */,
+				95A191B22C24F29F00C7F9A9 /* FirebaseAnalyticsOnDeviceConversion in Frameworks */,
+				95A191CC2C2505D400C7F9A9 /* FirebaseStorage in Frameworks */,
+				95A191B42C24F29F00C7F9A9 /* FirebaseAnalyticsSwift in Frameworks */,
+				95A191C62C2505BB00C7F9A9 /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,6 +377,7 @@
 				956E7EA72C2367EA00C11C4A /* MatchService.swift */,
 				95B13CF22C2384F1000D5540 /* MockAuthService.swift */,
 				956E7EA92C23680B00C11C4A /* MockMatchService.swift */,
+				95A191BE2C24F46D00C7F9A9 /* NotifacationService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -412,9 +439,10 @@
 				958BED472C0BDC7B000A5DE0 /* server.cer */,
 				95489BF02B48646E004160F6 /* SoulSync.entitlements */,
 				95CC641A2B3BB9130010ABC2 /* Info.plist */,
+				95264F542C24B25200404164 /* GoogleService-Info.plist */,
 				95EB6FA62B55B968005CD892 /* Launch Screen.storyboard */,
 				954EF3ED2B1573F800925972 /* SoulSyncApp.swift */,
-				95489BF12B486E3D004160F6 /* SoulSyncDelegate.swift */,
+				9573E0B92C25146C0004DD44 /* AppDelegate.swift */,
 				958BED482C0BE6FD000A5DE0 /* AntiTheift */,
 				95CC64142B3BB4770010ABC2 /* Constants */,
 				952E8D982B2F6EF70055CEEA /* Data */,
@@ -424,6 +452,7 @@
 				952E8D9B2B2F6F610055CEEA /* Models */,
 				958BED442C0BDA4A000A5DE0 /* Networking */,
 				95B13CED2C238468000D5540 /* Protocols */,
+				95A191C22C24F8B600C7F9A9 /* Providers */,
 				95369AD02C211C5A00D3D78D /* Services */,
 				9598AE382B37302500899429 /* TestingData */,
 				952E8D9E2B2F72DD0055CEEA /* Utils */,
@@ -498,6 +527,14 @@
 			path = TestingData;
 			sourceTree = "<group>";
 		};
+		95A191C22C24F8B600C7F9A9 /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				95A191C32C24F8C300C7F9A9 /* DeviceIDProvider.swift */,
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
 		95A8665A2C0AB0C000B7C2A7 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
@@ -520,6 +557,7 @@
 			children = (
 				95B13CF02C2384A4000D5540 /* AuthServiceProtocol.swift */,
 				95B13CEE2C238487000D5540 /* MatchServiceProtocol.swift */,
+				95A191C02C24F4E200C7F9A9 /* NotificationServiceProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -619,6 +657,15 @@
 			packageProductDependencies = (
 				954EF47A2B1CDCD100925972 /* PhoneNumberKit */,
 				957B94B42B4B1385009A52A7 /* iPhoneNumberField */,
+				95A191AF2C24F29F00C7F9A9 /* FirebaseAnalytics */,
+				95A191B12C24F29F00C7F9A9 /* FirebaseAnalyticsOnDeviceConversion */,
+				95A191B32C24F29F00C7F9A9 /* FirebaseAnalyticsSwift */,
+				95A191B52C24F29F00C7F9A9 /* FirebaseAnalyticsWithoutAdIdSupport */,
+				95A191B72C24F29F00C7F9A9 /* FirebaseAppCheck */,
+				95A191C52C2505BB00C7F9A9 /* FirebaseAuth */,
+				95A191C72C2505C800C7F9A9 /* FirebaseFirestore */,
+				95A191C92C2505C800C7F9A9 /* FirebaseFirestoreSwift */,
+				95A191CB2C2505D400C7F9A9 /* FirebaseStorage */,
 			);
 			productName = SoulSync;
 			productReference = 954EF3EA2B1573F800925972 /* SoulSync.app */;
@@ -697,6 +744,7 @@
 			packageReferences = (
 				954EF4792B1CDCD100925972 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */,
 				957B94B32B4B1385009A52A7 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */,
+				95264F532C24B0EA00404164 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = 954EF3EB2B1573F800925972 /* Products */;
 			projectDirPath = "";
@@ -723,6 +771,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				95EB6FA72B55B968005CD892 /* Launch Screen.storyboard in Resources */,
+				95264F552C24B25200404164 /* GoogleService-Info.plist in Resources */,
 				954EF3F52B1573FA00925972 /* Preview Assets.xcassets in Resources */,
 				95D14F9B2C20C6BE00592F52 /* Media.xcassets in Resources */,
 				95EB6FA92B55BA69005CD892 /* Launch Screen Assets.xcassets in Resources */,
@@ -783,6 +832,7 @@
 				95D14F9D2C20CEFD00592F52 /* CardUserInfo.swift in Sources */,
 				95E893422C1DCEA500F27E08 /* TabBar.swift in Sources */,
 				95369AD22C211C7F00D3D78D /* CardService.swift in Sources */,
+				95A191BF2C24F48000C7F9A9 /* NotifacationService.swift in Sources */,
 				95B13CE52C236D26000D5540 /* NewMatchItem.swift in Sources */,
 				955C2D4C2C0CFC6D00F30F83 /* NetworkInfo.swift in Sources */,
 				956E7EAA2C23681000C11C4A /* MockMatchService.swift in Sources */,
@@ -797,18 +847,20 @@
 				95369AC92C211A9A00D3D78D /* CardModels.swift in Sources */,
 				95D14F992C20980D00592F52 /* TinderEntry.swift in Sources */,
 				951E21172C224F4500E10B70 /* EditProfile.swift in Sources */,
+				9573E0BA2C25146C0004DD44 /* AppDelegate.swift in Sources */,
 				951E211F2C226D7400E10B70 /* MatchManager.swift in Sources */,
 				95B13CEF2C238491000D5540 /* MatchServiceProtocol.swift in Sources */,
+				95A191C12C24F4E300C7F9A9 /* NotificationServiceProtocol.swift in Sources */,
 				9546A9882C21EBDE00773D8E /* SwipeActionButtons.swift in Sources */,
 				95B13CF52C238505000D5540 /* AuthService.swift in Sources */,
 				95B13CEA2C237FD7000D5540 /* Email.swift in Sources */,
 				95264F4F2C248BD500404164 /* AuthDataStore.swift in Sources */,
 				951E21192C22519000E10B70 /* ProfileImageGrid.swift in Sources */,
-				95489BF22B486E3D004160F6 /* SoulSyncDelegate.swift in Sources */,
 				95369ABE2C20FC3300D3D78D /* ImageScrollingOverlay.swift in Sources */,
 				95369ACD2C211B2100D3D78D /* CardsViewModel.swift in Sources */,
 				954EF3EE2B1573F800925972 /* SoulSyncApp.swift in Sources */,
 				95B13CEC2C238263000D5540 /* Password.swift in Sources */,
+				95A191C42C24F8E100C7F9A9 /* DeviceIDProvider.swift in Sources */,
 				95D14F952C20924000592F52 /* MainTabBar.swift in Sources */,
 				951E211B2C22638A00E10B70 /* Match.swift in Sources */,
 				95369AC72C2119D600D3D78D /* UserModels.swift in Sources */,
@@ -1189,7 +1241,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_ENTITLEMENTS = "SoulSync iMessage extension/SoulSync iMessage extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = 8UA385N825;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SoulSync iMessage extension/Info.plist";
@@ -1217,7 +1269,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_ENTITLEMENTS = "SoulSync iMessage extension/SoulSync iMessage extension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 20;
 				DEVELOPMENT_TEAM = 8UA385N825;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SoulSync iMessage extension/Info.plist";
@@ -1290,6 +1342,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		95264F532C24B0EA00404164 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.28.0;
+			};
+		};
 		954EF4792B1CDCD100925972 /* XCRemoteSwiftPackageReference "PhoneNumberKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/marmelroy/PhoneNumberKit.git";
@@ -1318,6 +1378,51 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 957B94B32B4B1385009A52A7 /* XCRemoteSwiftPackageReference "iPhoneNumberField" */;
 			productName = iPhoneNumberField;
+		};
+		95A191AF2C24F29F00C7F9A9 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95264F532C24B0EA00404164 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		95A191B12C24F29F00C7F9A9 /* FirebaseAnalyticsOnDeviceConversion */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95264F532C24B0EA00404164 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsOnDeviceConversion;
+		};
+		95A191B32C24F29F00C7F9A9 /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95264F532C24B0EA00404164 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		95A191B52C24F29F00C7F9A9 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95264F532C24B0EA00404164 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		95A191B72C24F29F00C7F9A9 /* FirebaseAppCheck */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95264F532C24B0EA00404164 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAppCheck;
+		};
+		95A191C52C2505BB00C7F9A9 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95264F532C24B0EA00404164 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		95A191C72C2505C800C7F9A9 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95264F532C24B0EA00404164 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		95A191C92C2505C800C7F9A9 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95264F532C24B0EA00404164 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		95A191CB2C2505D400C7F9A9 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 95264F532C24B0EA00404164 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

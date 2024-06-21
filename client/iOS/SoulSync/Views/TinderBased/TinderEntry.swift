@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TinderEntry: View {
     @StateObject var matchManager = MatchManager(service: MockMatchService())
-    @StateObject var authManager = AuthManager(service: MockAuthService())
+    @StateObject var authManager = AuthManager(service: AuthService())
     
     var body: some View {
         Group {

@@ -10,7 +10,7 @@ import SwiftUI
 extension TinderEntry {
     struct Auth: View {
         @EnvironmentObject var authManager: AuthManager
-        @StateObject var authDataStore = AuthDataStore()
+        @EnvironmentObject var deviceIDProvider: DeviceIDProvider
         
         var body: some View {
             NavigationStack {
@@ -75,7 +75,7 @@ extension TinderEntry {
                     ZStack {
                         Email()
                     }
-                    .environmentObject(authDataStore)
+                    .environmentObject(AuthDataStore(deviceIDProvider: deviceIDProvider))
                 })
                 .frame(maxWidth: .infinity)
                 .background(gradientBackground)

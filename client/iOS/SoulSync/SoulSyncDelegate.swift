@@ -8,6 +8,7 @@
 import UIKit
 import UserNotifications
 import PushKit
+import FirebaseCore
 
 class SoulSyncDelegate: UIResponder, UIApplicationDelegate {
     

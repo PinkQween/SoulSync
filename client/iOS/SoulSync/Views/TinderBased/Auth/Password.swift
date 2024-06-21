@@ -91,6 +91,6 @@ private extension TinderEntry.Auth.Password {
 #Preview {
     TinderEntry.Auth.Password()
         .environmentObject(AuthManager(service: MockAuthService()))
-        .environmentObject(AuthDataStore())
+        .environmentObject(AuthDataStore(deviceIDProvider: DeviceIDProvider()))
 }
 

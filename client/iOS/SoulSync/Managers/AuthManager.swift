@@ -5,7 +5,7 @@
 //  Created by Hanna Skairipa on 6/19/24.
 //
 
-import Foundation
+import FirebaseAuth
 import SwiftUICore
 
 @MainActor
@@ -17,6 +17,10 @@ class AuthManager: ObservableObject {
     
     init(service: AuthServiceProtocol) {
         self.service = service
+        
+        if let currentUid = Auth.auth().currentUser?.uid {
+            self.authState = .authenticated(currentUid)
+        }
     }
     
     func authenticate(with authDataStore: AuthDataStore) async {
